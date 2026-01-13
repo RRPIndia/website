@@ -88,22 +88,81 @@ body {
     preserveAspectRatio="xMidYMin meet"
     class="svg-vvpat"
   >
+<style>
+  #vvpat-top {
+    transform-origin: 0% 50%;
+    transform-box: fill-box;
+    transition: transform 0.9s ease;
+  }
 
-    <!-- this is VVPAT Main Box-->
-	<rect 
-	  x="0" 
-	  y="0" 
-	  width="200" 
-	  height="240" 
-	  rx="6"
-	  fill="gainsboro" 
-	  stroke="#aaa"/>
-		
-    <!--this is vvpat screen from which voters see their vote slip-->
-    <rect x="40" y="30"
-	width="120" 
-	height="80"
-        fill="black"/>
+  #vvpat-top.open {
+    transform: perspective(800px) rotateY(-120deg);
+  }
+
+  #vvpat-inner-face {
+    transition: opacity 0.4s ease;
+  }
+
+  #vvpat-top.open #vvpat-inner-face {
+    opacity: 1;
+  }
+  #vvpat-inner-shadow {
+	    transition: opacity 0.5s ease;
+  }
+
+  #vvpat-top.open ~ #vvpat-inner-shadow {
+	    opacity: 0.08;
+  }
+</style>
+
+<!-- Hinges on LEFT side -->
+<g id="hinges">
+  <!-- top hinge -->
+  <rect x="-6" y="40" width="6" height="24" rx="2" fill="#999"/>
+  <circle cx="-3" cy="52" r="2" fill="#666"/>
+
+  <!-- bottom hinge -->
+  <rect x="-6" y="170" width="6" height="24" rx="2" fill="#999"/>
+  <circle cx="-3" cy="182" r="2" fill="#666"/>
+</g>
+
+<rect
+  id="vvpat-inner-shadow"
+  x="0" y="0"
+  width="200" height="240"
+  rx="6"
+  fill="black"
+  opacity="0"/>
+	  <g id="vvpat-top">
+  <!-- Main VVPAT box -->
+  <rect
+    x="0" y="0"
+    width="200" height="240"
+    rx="6"
+    fill="gainsboro"
+    stroke="#aaa"/>
+
+  <!-- Inside face of lid (only visible when open) -->
+  <rect
+    id="vvpat-inner-face"
+      x="4" y="4"
+        width="192" height="232"
+	  rx="4"
+	    fill="#e6e6e6"
+	      opacity="0"/>
+
+  <!-- Lid thickness (spine edge) -->
+<rect
+  x="0" y="0"
+  width="6" height="240"
+  fill="#b5b5b5"/>
+
+  <!-- black Glass / screen -->
+  <rect
+    x="40" y="30"
+    width="120" height="80"
+    fill="black"/>
+</g>
 
     <g id="slip" opacity="0">
       <rect x="41" y="31"
@@ -127,6 +186,9 @@ MOCK VVPAT
 
   </svg>
 	</div>
+	<button onclick="toggleVVPAT()">
+  Open / Close VVPAT
+</button>
 
 <!-- ================= BALLOT UNIT ================= -->
 <div class="svg-ballot-unit-wrapper">
@@ -295,6 +357,21 @@ MOCK VVPAT
     console.log('Machine unlocked, ready for next vote');
   }, 7000);
 } 
+
+let vvpatOpen = false;
+
+function toggleVVPAT() {
+  const top = document.getElementById('vvpat-top');
+
+  vvpatOpen = !vvpatOpen;
+
+  if (vvpatOpen) {
+    top.classList.add('open');
+  } else {
+    top.classList.remove('open');
+  }
+}
+
 </script>
 
 </body>
