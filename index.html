@@ -81,12 +81,12 @@
         stroke: #ccc;
         rx: 8;
       }
-      .button {
+      .BallotUnitButton {
         fill: #d9d9d9;
         stroke: #999;
         cursor: pointer;
       }
-      .button:active {
+      .BallotUnitButton:active {
         transform: translateY(2px);
       }
       .led {
@@ -142,7 +142,7 @@
           <circle id="led-1" cx="250" cy="22" r="6"
                   class="led"/>
           <rect x="270" y="4" width="60" height="36" rx="6"
-                class="button" onclick="vote(1)"/>
+                class="BallotUnitButton" onclick="vote(1)"/>
         </g>
 
         <g transform="translate(0,60)">
@@ -156,7 +156,7 @@
           <circle id="led-2" cx="250" cy="22" r="6"
                   class="led"/>
           <rect x="270" y="4" width="60" height="36" rx="6"
-                class="button" onclick="vote(2)"/>
+                class="BallotUnitButton" onclick="vote(2)"/>
         </g>
 
       </g>
