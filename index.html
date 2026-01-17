@@ -186,29 +186,56 @@ body {
 <div class="svg-ballot-unit-wrapper">
 <svg xmlns="http://www.w3.org/2000/svg"
      viewBox="0 0 600 720"
-     class="svg-ballot-unit">
+     class="svg-ballot-unit"
+     style="outline:2px solid lime">
+
+
 
 <style>
-.BallotUnitBody {
+
+.bu-body {
   fill: gainsboro;
   stroke: #b5b5b5;
   stroke-width: 2;
+  filter: drop-shadow(3px 5px 2px rgb(0 0 0 / 0.4));
 }
 
-.BallotUnitHeader {
+.bu-header {
   fill: lightgray;
   stroke: darkgray;
+  stroke-width: 3px;
+  width: 320px;
+  height: 60px;
 }
 
-.BallotUnitNamePanel {
+.bu-header-text {
+  fill: #222;
+  stroke: #aaa;
+  stroke-width: 1.2;
+  paint-order: stroke fill;
+  font-size: 22px;
+  font-weight: bold;
+  letter-spacing: 0.5px;
+  filter: drop-shadow(2px 3px 2px rgb(0 0 0 / 0.4));
+}
+
+.bu-name-panel {
   fill: white;
   stroke: #ccc;
 }
 
-.BallotUnitButton {
-  fill: #d9d9d9;
-  stroke: #999;
+.bu-button {
+  fill: #cfcfcf;
+  stroke: #222;
+  stroke-width: 1.5px;
   cursor: pointer;
+  filter: drop-shadow(2px 3px 2px rgb(0 0 0 / 0.4));
+}
+
+
+.bu-button.pressed {
+  filter: drop-shadow(1px 2px 1px rgb(0 0 0 / 0.25));
+  fill: #c4c4c4;
 }
 
 .led {
@@ -222,45 +249,44 @@ body {
 </style>
 
 <g transform="translate(130,10)">
-  <rect x="0" y="0" width="340" height="550" rx="18"
-        class="BallotUnitBody"/>
+  <rect x="0" y="0" rx="18" width="340" height="550" class="bu-body"/>
 
-  <rect x="10" y="10" width="320" height="60" rx="8"
-        class="BallotUnitHeader"/>
+  <rect x="10" y="10" rx="8" class="bu-header"/>
 
   <!-- SVG has no parent-child layout.
        Center must be calculated manually -->
   <text x="170" y="40"
         text-anchor="middle"
         dominant-baseline="middle"
-        font-size="24"
-        font-weight="bold">
-MOCK VOTING MACHINE
+        class="bu-header-text">
+	MOCK VOTING MACHINE
   </text>
 
   <g transform="translate(0,100)">
     <g>
       <rect x="20" y="0" width="220" height="44"
-            class="BallotUnitNamePanel"/>
+            class="bu-name-panel"/>
       <text x="30" y="28" font-size="24" font-weight="bold">
 Apple 🍎
       </text>
       <circle id="led-1" cx="250" cy="22" r="6" class="led"/>
+      <circle id="led-2" cx="250" cy="82" r="6" class="led"/>
+      
       <rect x="270" y="4" width="60" height="36" rx="6"
-            class="BallotUnitButton"
-            onclick="vote(1)"/>
+            class="bu-button"
+            onclick="vote(this, 1)"/>
+      <rect x="270" y="64" width="60" height="36" rx="6"
+            class="bu-button"
+            onclick="vote(this, 2)"/>
     </g>
 
     <g transform="translate(0,60)">
       <rect x="20" y="0" width="220" height="44"
-            class="BallotUnitNamePanel"/>
+            class="bu-name-panel"/>
       <text x="30" y="28" font-size="24" font-weight="bold">
 Banana 🍌
       </text>
-      <circle id="led-2" cx="250" cy="22" r="6" class="led"/>
-      <rect x="270" y="4" width="60" height="36" rx="6"
-            class="BallotUnitButton"
-            onclick="vote(2)"/>
+
     </g>
   </g>
 </g>
@@ -299,11 +325,20 @@ function releaseLock() {
   console.log('Machine unlocked');
 }
 
-function activateLED(n) {
+function tempLED(n) {
   document.querySelectorAll('.led')
+    //remove on from class="led on"
     .forEach(l => l.classList.remove('on'));
-  document.getElementById('led-' + n)
-    .classList.add('on');
+
+  const led = document.getElementById('led-' + n);
+  if (!led) return;
+
+  led.classList.add('on');
+
+  // turn OFF after 7 seconds
+  setTimeout(() => {
+    led.classList.remove('on');
+  }, 7000);
 }
 
 function showVVPAT(n) {
@@ -315,17 +350,16 @@ function showVVPAT(n) {
   artificialLightOn = true;   // internal lamp ON
   updateSlipVisibility();
 }
-
-function resetLED(n) {
-  document.getElementById('led-' + n).classList.remove('on');
-}
-
-function vote(n) {
+function vote(el, n) {
   if (!acquireLock()) return;
 
   if (unlockTimer) clearTimeout(unlockTimer);
+  
+  // visual press
+  el.classList.add("pressed");
+  setTimeout(() => el.classList.remove("pressed"), 1500);
 
-  activateLED(n);
+  tempLED(n);
   showVVPAT(n);
 
   // turn OFF artificial light after 7 seconds
