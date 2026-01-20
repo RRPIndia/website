@@ -331,6 +331,47 @@ let unlockTimer = null;
 let vvpatOpen = false;
 let artificialLightOn = false;
 
+const PREVIEW_POS = { x: 96, y: 31 };
+
+const STORAGE_POSITIONS = [
+  { x: 18,  y: 436 }, // vote-1
+  { x: 184, y: 436 }, // vote-2
+  { x: 18,  y: 320 }, // vote-3
+  { x: 184, y: 320 }  // vote-4
+];
+
+function repositionSlips() {
+  const slips = Array.from(voteLog.values());
+
+  // iterate from oldest to newest
+  slips.forEach((slip, index) => {
+    if (index === slips.length - 1) {
+      // newest → preview
+      slip.setAttribute(
+        "transform",
+        `translate(${PREVIEW_POS.x} ${PREVIEW_POS.y})`
+      );
+
+      document
+        .getElementById("vvpat-slip-placeholder")
+        .appendChild(slip);
+
+    } else {
+      // older → storage
+      const pos = STORAGE_POSITIONS[index];
+      if (!pos) return;
+
+      slip.setAttribute(
+        "transform",
+        `translate(${pos.x} ${pos.y})`
+      );
+
+      document
+        .getElementById(`vote-${index + 1}-placeholder`)
+        .appendChild(slip);
+    }
+  });
+}
 
 // ordered vote history
 const voteLog = new Map();
@@ -404,29 +445,10 @@ function showVVPAT(buttonNumber) {
 
   slip.querySelector("text").textContent = symbol;
 
-  // preview position
-  slip.setAttribute("transform", "translate(96 31)");
-
-  document
-    .getElementById("vvpat-slip-placeholder")
-    .appendChild(slip);
-
+  // insert first (position will be set by repositionSlips)
   voteLog.set(id, slip);
 
-  setTimeout(() => {
-    let x, y, placeholderId;
-
-    switch (voteIndex) {
-      case 1: x = 18;  y = 436; placeholderId = "vote-1-placeholder"; break;
-      case 2: x = 184; y = 436; placeholderId = "vote-2-placeholder"; break;
-      case 3: x = 18;  y = 320; placeholderId = "vote-3-placeholder"; break;
-      case 4: x = 184; y = 320; placeholderId = "vote-4-placeholder"; break;
-      default: return;
-    }
-
-    slip.setAttribute("transform", `translate(${x} ${y})`);
-    document.getElementById(placeholderId).appendChild(slip);
-  }, 8000);
+  repositionSlips();
 }
 
 function vote(el, n) {
