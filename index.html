@@ -523,7 +523,7 @@ function tempLED(n) {
     // only for a limited visibility window
     setTimeout(() => {
       led.classList.remove('on');
-    }, 7000);
+    }, 1000);
 
   }, 1000);
 }
@@ -551,7 +551,7 @@ async function showFruit(symbol) {
   artificialLightOn = true;
   updateSlipVisibility();
 
-  await sleep(7000);
+  await sleep(2000); //tmp
 
   artificialLightOn = false;
   updateSlipVisibility();
@@ -656,7 +656,7 @@ function vote(el, n) {
   tempLED(n);
   const symbol = (n === 1) ? "🍎" : "🍌";
 handleVote(symbol);
-  unlockTimer = setTimeout(releaseLock, 14000); 
+  unlockTimer = setTimeout(releaseLock, 2000); 
 }
 
 function toggleVVPAT() {
