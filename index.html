@@ -151,7 +151,9 @@ body {
 </svg>
 </div>
 
-<button onclick="toggleVVPAT()">Open / Close VVPAT</button>
+<button id="vvpat-toggle-btn" onclick="toggleVVPAT()">
+	  ⚙️ Open VVPAT
+</button>
 
 <style>
 #vvpat-top {
@@ -223,6 +225,45 @@ body {
 
 .slip.printing {
   animation: fakePrint 1s linear forwards;
+}
+
+#vvpat-toggle-btn {
+  min-width: 160px;
+  padding: 10px 14px;
+
+  font-size: 15px;
+  font-weight: 600;
+
+  border-radius: 10px;
+  border: 2px solid #9a9a9a;
+  background: linear-gradient(#f6f6f6, #e0e0e0);
+
+  cursor: pointer;
+  user-select: none;
+
+  box-shadow:
+    0 3px 0 #b5b5b5,
+    0 4px 8px rgb(0 0 0 / 0.22);
+
+  transition:
+    transform 0.12s ease,
+    box-shadow 0.12s ease,
+    background 0.2s ease;
+}
+
+#vvpat-toggle-btn:active {
+  transform: translateY(2px);
+  box-shadow:
+    0 1px 0 #b5b5b5,
+    0 2px 5px rgb(0 0 0 / 0.28);
+}
+
+#vvpat-toggle-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  box-shadow:
+    0 2px 0 #b5b5b5,
+    0 2px 6px rgb(0 0 0 / 0.2);
 }
 
 </style>
@@ -523,7 +564,7 @@ function tempLED(n) {
     // only for a limited visibility window
     setTimeout(() => {
       led.classList.remove('on');
-    }, 1000);
+    }, 7000);
 
   }, 1000);
 }
@@ -551,7 +592,7 @@ async function showFruit(symbol) {
   artificialLightOn = true;
   updateSlipVisibility();
 
-  await sleep(2000); //tmp
+  await sleep(7000);
 
   artificialLightOn = false;
   updateSlipVisibility();
@@ -656,17 +697,27 @@ function vote(el, n) {
   tempLED(n);
   const symbol = (n === 1) ? "🍎" : "🍌";
 handleVote(symbol);
-  unlockTimer = setTimeout(releaseLock, 2000); 
+  unlockTimer = setTimeout(releaseLock, 14000); 
 }
 
 function toggleVVPAT() {
-  const top = document.getElementById('vvpat-top');
+	  const top = document.getElementById("vvpat-top");
+	  const btn = document.getElementById("vvpat-toggle-btn");
 
-  vvpatOpen = !vvpatOpen;
-  top.classList.toggle('open', vvpatOpen);
-    updateSlipVisibility();
+	  vvpatOpen = !vvpatOpen;
 
+	  // animate lid
+	  top.classList.toggle("open", vvpatOpen);
 
+	  // update visibility logic
+	  updateSlipVisibility();
+
+	  // update button text
+	  if (vvpatOpen) {
+		      btn.textContent = "⚙️ Close VVPAT";
+		    } else {
+			        btn.textContent = "⚙️ Open VVPAT";
+			      }
 }
 
 </script>
