@@ -1,0 +1,6 @@
+title: Sartaj Docs
+url: "https://sartaj.in"
+baseurl: "/rrp"
+
+markdown: kramdown
+theme: minima
