@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="google-site-verification" content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+
+  <title>{{ title or "Right to Recall Party" }}</title>
+
+  <link rel="stylesheet" href="/bundle.css">
+  <script src="/bundle.js"></script>
+
+</head>
+
+<body>
+
+  {# HEADER (global navigation + search) #}
+  {% include "header.html" %}
+
+  {# BREADCRUMB (contextual, page-specific) #}
+  {% if eleventyNavigationBreadcrumb %}
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    {% for crumb in eleventyNavigationBreadcrumb %}
+      {% if loop.last %}
+        <span>{{ crumb.title }}</span>
+      {% else %}
+        <a href="{{ crumb.url }}">{{ crumb.title }}</a>
+        <span class="sep">›</span>
+      {% endif %}
+    {% endfor %}
+  </nav>
+  {% endif %}
+
+  {# MAIN CONTENT (indexed by Pagefind) #}
+  <main data-pagefind-body>
+    {{ content | safe }}
+  </main>
+
+  {% include "footer.html" %}
+
+  {# SEARCH OVERLAY (lazy-loaded) #}
+  <div id="search-overlay" hidden>
+    <div id="search-box"></div>
+  </div>
+
+  <script>
+    let searchLoaded = false;
+
+    function loadSearch() {
+      if (searchLoaded) return;
+      searchLoaded = true;
+
+      const css = document.createElement("link");
+      css.rel = "stylesheet";
+      css.href = "/pagefind/pagefind-ui.css";
+      document.head.appendChild(css);
+
+      const script = document.createElement("script");
+      script.src = "/pagefind/pagefind-ui.js";
+      script.onload = () => {
+        new PagefindUI({ element: "#search-box" });
+      };
+      document.body.appendChild(script);
+    }
+
+    document.getElementById("open-search")?.addEventListener("click", () => {
+      document.getElementById("search-overlay").hidden = false;
+      loadSearch();
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "/" && !e.target.matches("input, textarea")) {
+        e.preventDefault();
+        document.getElementById("search-overlay").hidden = false;
+        loadSearch();
+      }
+    });
+
+    document.getElementById("search-overlay")?.addEventListener("click", (e) => {
+      if (e.target.id === "search-overlay") {
+        e.target.hidden = true;
+      }
+    });
+  </script>
+
+</body>
+</html>
