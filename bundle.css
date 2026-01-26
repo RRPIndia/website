@@ -24,11 +24,13 @@
   text-align: center;
 }
 
-.header-brand .brand-link {
+.brand-link {
   text-decoration: none;
-  font-size: clamp(20px, 6vw, 36px);
-  font-weight: 700;
+  font-size: clamp(28px, 11vw, 48px); /* bigger overall */
+  font-weight: 900;
   line-height: 1.15;
+  color: #000; /* solid black */
+  letter-spacing: -0.02em;
 }
 
 /* ROW 2: sections (nav only) */
