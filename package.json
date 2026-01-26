@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "build": "eleventy",
-    "build-ghpages": "eleventy --pathprefix=/website/ && npx pagefind --site _site",
-    "serve": "eleventy --serve"
+    "build": "npx @11ty/eleventy",
+    "build-ghpages": "npx @11ty/eleventy --pathprefix=/website/ && npx pagefind --site _site",
+    "serve": "npx @11ty/eleventy --serve"
   },
   "devDependencies": {
     "@11ty/eleventy": "^2.0.1",
