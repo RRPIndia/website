@@ -1,0 +1,39 @@
+<header class="elv-header{% if headerClass %} {{ headerClass }}{% endif %}">
+
+<div class="elv-menu">
+    <ul class="elv-nav-menu list-bare fl fl-inline fl-nowrap">
+
+      <li>
+        <a href="/" class="elv-nav-menu-logo">
+          <span class="sr-only">RRP</span>
+        </a>
+      </li>
+
+     <li>
+  <details class="nav-expand">
+    <summary>Read all drafts</summary>
+    <ul>
+      <li><a href="/drafts/personal/">Personal drafts</a></li>
+      <li><a href="/drafts/political/">Political drafts</a></li>
+      <li><a href="/drafts/archived/">Archived drafts</a></li>
+    </ul>
+  </details>
+</li> 
+      <li>
+     </li>
+
+      <li class="util-grow">
+
+        <form action="/search/" class="util-stack">
+          <label>
+            <input type="search" name="q" placeholder="Search…">
+          </label>
+          <button type="submit">
+            <span class="sr-only">Search</span>
+          </button>
+        </form>
+      </li>
+
+    </ul>
+  </div>
+</header>
