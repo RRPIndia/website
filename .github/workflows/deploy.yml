@@ -34,10 +34,15 @@ jobs:
         with:
           path: _site
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Deploy to GitHub Pages
-        uses: actions/deploy-pages@v4
+  
+    deploy:
+      needs: build
+      runs-on: ubuntu-latest
+      environment:
+        name: github-pages
+      permissions:
+        pages: write
+        id-token: write
+      steps:
+        - name: Deploy to GitHub Pages
+          uses: actions/deploy-pages@v4

@@ -1,0 +1,9 @@
+Religion and guns saved Afghanistan and kisan andolan. So views of Indian Marxists Leninists on religion has been proven wrong , though not in a way RSS would like.
+.
+Marx, Lenin and particularly Indian Marxists Leninists have always considered religions as useless and sub standard. And sometimes, indian Marxist Leninist may support or praise Islam, but you will never ever find them praising Sikhism !!! ( Even though Sikh kings and religious bureaucracy created regimes and sub systems in India which were better than Afghans and Mughals did)
+.
+But coming to year 20219 - 2021, we saw that two forces which worked as speed breakers against usukmwe were Afghanistan rebels and kisan andolan. The Afghans were powered by Islam and one more societal factor ( which one?) . And kisan andolan was backed by gurudwara network which is based on Sikhism. So whatever theory one wants to put --- Marxists view and particularly Indian Marxists view on religion has been proven wrong 
+.
+And there is more. Indian Marxists have always oppose giving guns to commons in India. Kerala or west bengal or tripura ---- they never improved gun rate. And no private member bill came from CPM MPs to improve gun rate in India. And Afghan rebellion against usuk suceeded only because partial gun culture. And kisan andolan was successful only because policemen didn't start firing against agitators. And that was because of some 5% of population has guns and almost 100% has sharp 3 feet swords. 
+.
+Generall, Rss workers gloat when Marxists are proven wrong. But here, we see opposite. Rss workers are deeply saddened that Marxists view on religion and weaponization of masses has been proven wrong in Afghanistan and kisan andolan !!!

@@ -146,14 +146,16 @@ footer>a {
 /*
 .disclaimer {
    
-    justify-self: stretch;
-    grid-area: disclaimer;
-    color: white;
-    text-align: start;
+
 }
 */
 
-.disclaimer {                                 margin-top: 40px;
+.disclaimer {        
+    grid-area: disclaimer;
+    color: white;
+    text-align: start;
+    justify-self: stretch;
+	margin-top: 40px;
   padding: 12px 16px;
                                               font-size: 12.5px;
   line-height: 1.45;
