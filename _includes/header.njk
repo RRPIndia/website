@@ -11,23 +11,8 @@
     </div>
 
     <!-- ROW 2: Sections -->
-    <nav class="header-sections">
-      <ul class="elv-nav-menu">
-
-        <li>
-          <details class="nav-expand">
-            <summary>Placeholder</summary>
-            <ul>
-              <li><a href="/drafts/personal/">Placeholder 1</a></li>
-              <li><a href="/drafts/political/">Placeholder 2</a></li>
-              <li><a href="/drafts/archived/">placeholder 3</a></li>
-            </ul>
-          </details>
-        </li>
-
-      </ul>
-    </nav>
-
+    {% include "header/section.njk" %}
+    
     <!-- ROW 3: Search -->
     <div class="header-search">
       <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
@@ -44,6 +29,9 @@
         });
       </script>
     </div>
+
+    <!-- ROW-4  -->
+    {% include "layouts/lang-switcher.njk" %}
 
   </div>
 </header>
