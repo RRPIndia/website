@@ -137,14 +137,15 @@ main {
   flex: 1;
   text-align: start;
   position: relative;
-  margin: 5vw auto;
+  margin: 5vw 0;
   max-width: 80ch;
 }
-
 .content {
-  max-width: 95vw;
-  margin-inline: auto;
+  max-width: 93vw;
+  margin: 0;
+  padding-inline: 4vw;
 }
+
 
 /*====================
 ====================*/
@@ -157,18 +158,18 @@ br {
 /* =========================
    TABLES
    ========================= */
-.table-scroll {
+.table-wrapper {
   overflow-x: auto;
   -webkit-overflow-scrolling: touch; /* smooth swipe on mobile */
 }
 
-.table-scroll table {
+.table-wrapper table {
   width: max-content;      /* table grows as wide as needed */
   border-collapse: collapse;
 }
 
-.table-scroll th,
-.table-scroll td {
+.table-wrapper th,
+.table-wrapper td {
   white-space: nowrap;     /* 🚫 no text wrapping */
   text-align: left;        /* optional: avoids weird centering */
 }
