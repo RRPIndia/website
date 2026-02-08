@@ -1,5 +1,7 @@
 - [ ] merge donations and about us page in _includes
-- [ ] allow TCPIndia draft in eleventy ignore 
+- [ ] get every draft in hindi language
+- [ ] add links in frontmatter of all drafts so that download links and Facebook links can be generated in drafts as well as introduction to drafts.
+- [ ] also get drafts in English
 # 🗳️ Mock EVM + VVPAT Simulator (Browser-based)
 
 This project is a **browser-based simulation of an Electronic Voting Machine (EVM) with VVPAT**, built using **HTML, SVG, CSS, and Vanilla JavaScript**.
