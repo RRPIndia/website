@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "_includes/evm/demo_timeline/2026-02-05.en.md",
+                "file": "drafts/hi/tcpindia.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "2026-02-05.en"
+              "title": "tcpindia"
             }
           }
         ]
@@ -171,6 +171,7 @@
   },
   "active": "75eec577aca373fa",
   "lastOpenFiles": [
+    "_includes/evm/demo_timeline/2026-02-05.en.md",
     "personalities/Vivekanand/hi/index.html",
     "HTML import/tcp.md",
     "_includes/cow/Untitled.md",
@@ -202,7 +203,6 @@
     "religion/Christianity_vs_muslims.html",
     "history/history_is_useless.md",
     "HTML import/Usefulness_of_history.md",
-    "evm/hi/Paid_Media.html",
     "evm/en/New file.txt.md",
     "evm/en/index.md",
     "evm/en/EVMaction=render.md",

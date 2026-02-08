@@ -4,7 +4,7 @@ draftNumber: 18
 shortName: TCPIndia
 layout: layouts/base.njk
 ---
-{% include "drafts/tcpindia/gist.md" %}
+{% include "drafts/tcpindia/gist.hi.md" %}
 
 **यह कानून कैसे काम करेगा**
 मान लीजिए प्रधानमंत्री नागरिकों के दबाव में आकर टीसीपी कानून पर हस्ताक्षर कर देते हैं ।
