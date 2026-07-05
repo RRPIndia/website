@@ -1,5 +1,6 @@
 export default function(eleventyConfig) {
   eleventyConfig.addPassthroughCopy("assets");
+  eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   eleventyConfig.amendLibrary("md", (md) => {

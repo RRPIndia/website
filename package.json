@@ -10,5 +10,19 @@
     "@11ty/eleventy": "^3.1.2",
     "@11ty/eleventy-navigation": "^1.0.5",
     "pagefind": "^1.4.0"
-  }
+  },
+  "description": "- [ ] merge donations and about us page in _includes - [ ] get every draft in hindi language - [ ] add links in frontmatter of all drafts so that download links and Facebook links can be generated in drafts as well as introduction to drafts. - [ ] also get drafts in English # 🗳️ Mock EVM + VVPAT Simulator (Browser-based)",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rrpIndia/ebgdemo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rrpIndia/ebgdemo/issues"
+  },
+  "homepage": "https://github.com/rrpIndia/ebgdemo#readme"
 }

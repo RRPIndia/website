@@ -13,15 +13,44 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "drafts/hi/tcpindia.md",
+                "file": "tmp/Untitled 2.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "tcpindia"
+              "title": "Untitled 2"
+            }
+          },
+          {
+            "id": "025700aa3a67af0b",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "Untitled.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "Untitled"
+            }
+          },
+          {
+            "id": "79bc66558e58d354",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "evm/hi/New file (1).txt.md",
+                "mode": "source",
+                "source": false
+              },
+              "icon": "lucide-file",
+              "title": "New file (1).txt"
             }
           }
-        ]
+        ],
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -112,7 +141,7 @@
         "state": {
           "type": "backlink",
           "state": {
-            "file": "_includes/evm/demo_timeline/2026-02-05.en.md",
+            "file": "tmp/Untitled 3.md",
             "collapseAll": true,
             "extraContext": false,
             "sortOrder": "alphabetical",
@@ -153,6 +182,46 @@
           "icon": "lucide-list",
           "title": "Outline"
         }
+      },
+      {
+        "id": "5d087b4e4c5b4925",
+        "type": "leaf",
+        "state": {
+          "type": "transcript-view",
+          "state": {},
+          "icon": "scroll",
+          "title": "YouTube Transcript"
+        }
+      },
+      {
+        "id": "1896018e02034912",
+        "type": "leaf",
+        "state": {
+          "type": "transcript-view",
+          "state": {},
+          "icon": "scroll",
+          "title": "YouTube Transcript"
+        }
+      },
+      {
+        "id": "8e185dab002460a2",
+        "type": "leaf",
+        "state": {
+          "type": "transcript-view",
+          "state": {},
+          "icon": "scroll",
+          "title": "YouTube Transcript"
+        }
+      },
+      {
+        "id": "bcf1a459185b01a4",
+        "type": "leaf",
+        "state": {
+          "type": "transcript-view",
+          "state": {},
+          "icon": "scroll",
+          "title": "YouTube Transcript"
+        }
       }
     ],
     "currentTab": 0
@@ -169,44 +238,44 @@
       "obsidian-importer:Open Importer": false
     }
   },
-  "active": "75eec577aca373fa",
+  "active": "79bc66558e58d354",
   "lastOpenFiles": [
-    "_includes/evm/demo_timeline/2026-02-05.en.md",
+    "conflicts/Manipur.md",
+    "conflicts/Kargil_war.md",
+    "concepts/Soha mamo atke supporters.md",
+    "drafts/en/woic.md",
+    "drafts/en/gau_neeti.md",
+    "_includes/home/intro.hi.md",
+    "_includes/home/activities.en.md",
+    "index.md",
+    "_includes/home/intro.en.md",
+    "_includes/home/activities.hi.md",
+    "Untitled.md",
+    "tmp/Untitled 3.md",
+    "Untitled 1.md",
+    "tmp/Untitled 2.md",
+    "tmp/Untitled 1.md",
+    "tmp/Untitled.md",
+    "projects/petition/Blockchain based petition.md",
+    "drafts/hi/gau_niti.md",
+    "drafts/hi/tcpindia.md",
+    "projects/activists_network/index.md",
+    "conflicts/Iran_USA.md",
+    "religion/Christianity_vs_muslims.md",
+    "religion/Islam/protected by religion.md",
+    "religion/Islam/laws in religion.md",
+    "religion/Islam/weapons_and_gathering.md",
+    "religion/Islam/hindu vs muslim.md",
     "personalities/Vivekanand/hi/index.html",
-    "HTML import/tcp.md",
-    "_includes/cow/Untitled.md",
-    "_includes/concept/hijack/bhagat_singh_hijacked_by_gandhi.md",
-    "personalities/ullaskar dutt.md",
-    "personalities/Kalpana_Datta.md",
     "personalities/Kalpana_Datta.html",
-    "personalities/Jawahar Lal/index.md",
     "personalities/Jawahar Lal/index.html",
-    "personalities/Indira/Emergency 1.md",
-    "personalities/Mohan Gandhi/index.md",
-    "personalities/Indira/Devi_Indira_Amma.md",
-    "personalities/Indira/Banks.md",
-    "personalities/Indira/EMERGENCY.md",
-    "personalities/Indira/Shadhus Shot , Indira ordered.md",
     "personalities/Indira/Devi_Indira_Amma.html",
-    "personalities/Changez Khan/changez khan.md",
-    "personalities/Bhagat Singh/bhagat_singh.md",
-    "personalities/Bhagat Singh/hi/index.md",
-    "_includes/concept/hijack/hijack.md",
     "_includes/concept/hijack",
     "_includes/concept",
-    "personalities/Bhagat Singh/hijack.md",
     "personalities/Bhagat Singh/hi/index.html",
-    "religion/Hindu_Muslim.md",
     "personalities/Bhagat Singh/hijack.mf",
-    "religion/Christianity_vs_muslims.md",
     "religion/Hindu_Muslim.html",
     "religion/Christianity_vs_muslims.html",
-    "history/history_is_useless.md",
-    "HTML import/Usefulness_of_history.md",
-    "evm/en/New file.txt.md",
-    "evm/en/index.md",
-    "evm/en/EVMaction=render.md",
-    "evm/en/vvpat_slip_in_voter_hand.md",
     "assets/img/IMG_20250408_141128_948~2.jpg",
     "assets/img/IMG_20250408_141126_022~2.jpg",
     "assets/img/img_2_1747142377865.jpg",
