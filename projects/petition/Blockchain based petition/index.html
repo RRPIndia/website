@@ -1,0 +1,35 @@
+<h1>What is a petition?</h1>
+<p>According to me petition is a system where anyone can put his proposal and others can support that proposal.</p>
+<h1>what are must for petition</h1>
+<p>In my opinion a petition must have following properties</p>
+<ol>
+<li>server admins must not be able to interfere with process without being caught.</li>
+<li>server admin must not be able to interfere with results ever</li>
+<li>ideally one person must not vote twice. ( Atleast must not be able to spam vote )</li>
+<li>voters must be able to verify their votes.</li>
+<li>one should be able to verify other's vote.</li>
+<li>record of votes must never disappear.</li>
+</ol>
+<h1>How can a system be designed which satisfies above condition without putting faith in anyone?</h1>
+<p>it is impossible to be absolute sure because someone has to be trusted, maybe the CPU is tampered.
+Insted, focus should be to make it as secure or more as banking system.</p>
+<h1>What design I am proposing?</h1>
+<ol>
+<li>Use Oasis TEE. secure hardware backed server.</li>
+<li>Put votes with voter ID on Blockchain</li>
+<li>phone OTP Verification for every user on Oasis TEE.</li>
+<li>give voter ID to every voter for verification on Blockchain.</li>
+<li>Every vote most contain program code hash using which voting happened</li>
+<li>Put voter ID, vote, timestamp, program code hash on Blockchain.</li>
+</ol>
+<h2>voter ID</h2>
+<p>Every user shall use his/her phone number to sign up or login on a website.
+upon successful sign up, a public voter ID shall be created in such a way that phone number can't be guessed with voter ID.
+using voter ID, one can vote a petition, remove vote from petition and later see his/her votes on the website.</p>
+<h2>immutable verifiable authenticity</h2>
+<p>voter ID, timestamp of vote, hash of Petition, and type of vote will be put on Blockchain so that anyone can verify authenticity of votes.
+all the above parameters will remain unencrypted.</p>
+<h2>workflow</h2>
+<ol>
+<li></li>
+</ol>
