@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="{{ lang }}">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <meta name="google-site-verification"
+        content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-HHVG075GJS');
+  </script>
+
+  <title>{{ title or "Right to Recall Party" }}</title>
+
+  <link rel="stylesheet" href="/assets/bundle.css">
+  <script src="/assets/bundle.js" defer></script>
+
+</head>
+
+<body>
+
+  {% include "header/header.njk" %}
+
+  <main data-pagefind-body>
+    <div class="page-container content">
+      {% include "header/breadcrumb.njk" %}
+
+      {{ content | safe }}
+
+    </div>
+  </main>
+
+  <div class="page-container content">
+
+    <hr>
+
+    <h2>Post Information</h2>
+
+    {% if author %}
+      <p><strong>Author:</strong> {{ author }}</p>
+    {% endif %}
+
+    {% if group %}
+      <p><strong>Group:</strong> {{ group }}</p>
+    {% endif %}
+
+    <p><strong>Date:</strong> {{ date }}</p>
+
+    {% if facebook %}
+      <p>
+        <strong>Original:</strong>
+        <a href="{{ facebook }}" target="_blank" rel="noopener">
+          View on Facebook
+        </a>
+      </p>
+    {% endif %}
+
+    <!-- Pagefind facets -->
+    <div hidden data-pagefind-filter="author">{{ author }}</div>
+    <div hidden data-pagefind-filter="group">{{ group }}</div>
+    <div hidden data-pagefind-filter="lang">{{ lang }}</div>
+    <div hidden data-pagefind-filter="source">facebook-group</div>
+
+  </div>
+
+  {% include "footer/footer.html" %}
+
+</body>
+</html>
