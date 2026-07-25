@@ -3,6 +3,7 @@ title: पारदर्शी शिकायत प्रणाली
 draftNumber: 18
 shortName: TCPIndia
 layout: layouts/base.njk
+driveLink: https://drive.google.com/drive/folders/1IVs2I7toaI1EbjzClssp9SOJqAYPmqSv
 ---
 {% include "drafts/tcpindia/gist.hi.md" %}
 
@@ -34,9 +35,7 @@ etc
 ## टीसीपी: पारदर्शी शिकायत प्रणाली  
 **(TCP: Transparent Complaint Procedure)**
 
-> **टिप्पणी**: यह कानून भारत के राजपत्र में छापकर प्रधानमंत्री या मुख्यमंत्री द्वारा सीधे लागू किया जा सकता है। इसके लिए लोकसभा, राज्यसभा या विधानसभा से अनुमति की आवश्यकता नहीं है।  
-> #TcpIndiaRrp 
-> #RRP18
+> **टिप्पणी**: यह कानून भारत के राजपत्र में छापकर प्रधानमंत्री या मुख्यमंत्री द्वारा सीधे लागू किया जा सकता है। इसके लिए लोकसभा, राज्यसभा या विधानसभा से अनुमति की आवश्यकता नहीं है।   \#TcpIndiaRrp  \#RRP18
 
 -----
 
