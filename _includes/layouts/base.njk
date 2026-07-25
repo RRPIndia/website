@@ -8,7 +8,7 @@
   <meta name="google-site-verification"
         content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
 
-  
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
 <script>
@@ -29,15 +29,16 @@
 
 <body>
 
-	{# HEADER (global navigation) #}
-	{% include "header/header.njk" %}
+        {# HEADER (global navigation) #}
+        {% include "header/header.njk" %}
 
-  
+
   {# MAIN CONTENT #}
-  <main>
+  <!-- Add data-pagefind-body here so Pagefind knows what to index -->
+  <main data-pagefind-body>
     <div class="page-container content">
-	{% include "header/breadcrumb.njk" %}
-	{{ content | safe }}
+        {% include "header/breadcrumb.njk" %}
+        {{ content | safe }}
     </div>
   </main>
 
@@ -45,3 +46,4 @@
 
 </body>
 </html>
+
