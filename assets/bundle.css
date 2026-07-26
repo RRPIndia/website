@@ -186,6 +186,7 @@ a {
   color: #6200ea;
   text-decoration: none;
   font-weight: bold;
+  overflow-wrap: anywhere;
 }
 
 a:hover {
