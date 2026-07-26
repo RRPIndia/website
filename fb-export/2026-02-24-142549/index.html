@@ -75,6 +75,7 @@
         window.addEventListener('DOMContentLoaded', () => {
           new PagefindUI({
             element: "#search",
+	    showEmptyFilters: false,
             showSubResults: true
           });
         });
@@ -2186,10 +2187,10 @@
     
 
     <!-- Pagefind facets -->
-    <div hidden data-pagefind-filter="author">Aditya Prakash Sharma</div>
-    <div hidden data-pagefind-filter="group">Right to Recall Party (national)</div>
-    <div hidden data-pagefind-filter="lang">unknown</div>
-    <div hidden data-pagefind-filter="source">facebook-group</div>
+    <div hidden data-pagefind-filter="author" show-empty="false">Aditya Prakash Sharma</div>
+    <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
+    <div hidden data-pagefind-filter="lang" show-empty="false">unknown</div>
+    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

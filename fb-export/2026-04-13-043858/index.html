@@ -75,6 +75,7 @@
         window.addEventListener('DOMContentLoaded', () => {
           new PagefindUI({
             element: "#search",
+	    showEmptyFilters: false,
             showSubResults: true
           });
         });
@@ -2328,10 +2329,10 @@ End of exact English translation.
     
 
     <!-- Pagefind facets -->
-    <div hidden data-pagefind-filter="author">Kishan PanchkulaHr Jury</div>
-    <div hidden data-pagefind-filter="group">Right to Recall Party (national)</div>
-    <div hidden data-pagefind-filter="lang">en</div>
-    <div hidden data-pagefind-filter="source">facebook-group</div>
+    <div hidden data-pagefind-filter="author" show-empty="false">Kishan PanchkulaHr Jury</div>
+    <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
+    <div hidden data-pagefind-filter="lang" show-empty="false">en</div>
+    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

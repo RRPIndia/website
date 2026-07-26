@@ -75,6 +75,7 @@
         window.addEventListener('DOMContentLoaded', () => {
           new PagefindUI({
             element: "#search",
+	    showEmptyFilters: false,
             showSubResults: true
           });
         });
@@ -2193,10 +2194,10 @@ So MLA term can be 2 years. And CM term can be 4 years or more. But there will b
     
 
     <!-- Pagefind facets -->
-    <div hidden data-pagefind-filter="author">Rahul Mehta Gandhinagar LsCandidate</div>
-    <div hidden data-pagefind-filter="group">Right to Recall Party (national)</div>
-    <div hidden data-pagefind-filter="lang">en</div>
-    <div hidden data-pagefind-filter="source">facebook-group</div>
+    <div hidden data-pagefind-filter="author" show-empty="false">Rahul Mehta Gandhinagar LsCandidate</div>
+    <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
+    <div hidden data-pagefind-filter="lang" show-empty="false">en</div>
+    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

@@ -75,6 +75,7 @@
         window.addEventListener('DOMContentLoaded', () => {
           new PagefindUI({
             element: "#search",
+	    showEmptyFilters: false,
             showSubResults: true
           });
         });
@@ -2188,10 +2189,10 @@ Mahaveer Kumawat Bhilwara JuryCourt</p>
     
 
     <!-- Pagefind facets -->
-    <div hidden data-pagefind-filter="author">Mahaveer Kumawat Bhilwara JuryCourt</div>
-    <div hidden data-pagefind-filter="group">Right to Recall Party (national)</div>
-    <div hidden data-pagefind-filter="lang">en</div>
-    <div hidden data-pagefind-filter="source">facebook-group</div>
+    <div hidden data-pagefind-filter="author" show-empty="false">Mahaveer Kumawat Bhilwara JuryCourt</div>
+    <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
+    <div hidden data-pagefind-filter="lang" show-empty="false">en</div>
+    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 
