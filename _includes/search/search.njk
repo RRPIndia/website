@@ -1,0 +1,50 @@
+<div class="header-search">
+
+  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+
+  <pagefind-config faceted preload></pagefind-config>
+
+  <pagefind-input></pagefind-input>
+
+  <div id="search-panel" hidden>
+
+    <div class="search-filters">
+
+      <pagefind-filter-dropdown
+        filter="group"
+        label="Group"
+        hide-clear>
+      </pagefind-filter-dropdown>
+
+      <pagefind-filter-dropdown
+        filter="author"
+        label="Author"
+        hide-clear>
+      </pagefind-filter-dropdown>
+
+    </div>
+
+    <pagefind-summary></pagefind-summary>
+
+    <pagefind-results></pagefind-results>
+
+  </div>
+
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+
+    const input = document.querySelector("pagefind-input");
+    const panel = document.getElementById("search-panel");
+
+    function openPanel() {
+        panel.hidden = false;
+    }
+
+    input.addEventListener("click", openPanel);
+    input.addEventListener("focusin", openPanel);
+
+});
+</script>
