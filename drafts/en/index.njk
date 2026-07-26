@@ -1,0 +1,32 @@
+---
+title: All Draft Laws
+layout: layouts/base.njk
+---
+
+<h1>English Drafts</h1>
+
+{% set posts = collections.draft | sort(false, true, "data.draftNumber") %}
+
+{% for post in posts %}
+  {% if post.data.lang == lang and post.data.draftNumber %}
+
+    {% set gistPath = "drafts/" + post.fileSlug + "/gist.en.md" %}
+
+    <article class="draft">
+      <h2>
+        <a href="{{ post.url }}">
+          {{ post.data.draftNumber }}. {{ post.data.title }}
+        </a>
+      </h2>
+
+      <div class="gist">
+        {% include gistPath %}
+      </div>
+
+      <p><a href="{{ post.url }}">Read full draft →</a></p>
+    </article>
+
+    <hr>
+
+  {% endif %}
+{% endfor %}
