@@ -3,6 +3,7 @@ title: देशी नस्ल के गाय की सुरक्षा
 layout: layouts/base.njk
 draftNumber: 11
 driveLink: https://drive.google.com/drive/folders/1v3S94LiwaaTPhDKLv929NlatchM2K1iF
+lang: hi
 ---
 
 # गौ नीति : भारतीय नस्ल के गौ-धन को सरंक्षित करने के लिए प्रस्तावित क़ानून  
