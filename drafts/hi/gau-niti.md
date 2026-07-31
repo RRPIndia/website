@@ -3,7 +3,8 @@ title: देशी नस्ल के गाय की सुरक्षा
 layout: layouts/base.njk
 draftNumber: 11
 driveLink: https://drive.google.com/drive/folders/1v3S94LiwaaTPhDKLv929NlatchM2K1iF
-lang: hi
+facebook: https://www.facebook.com/story.php?story_fbid=pfbid0GE87RC9dQkEg8kmnhWxWBhz9M9dYcLdWfTcZFNE7dHeHkZ8sU1cBYU8Qc5rbLwMkl&id=100003247365514&post_id=100003247365514_pfbid0GE87RC9dQkEg8kmnhWxWBhz9M9dYcLdWfTcZFNE7dHeHkZ8sU1cBYU8Qc5rbLwMkl&mibextid=CDWPTG
+author: pawan jury
 ---
 
 # गौ नीति : भारतीय नस्ल के गौ-धन को सरंक्षित करने के लिए प्रस्तावित क़ानून  
@@ -176,7 +177,4 @@ _टिपण्णी : यह क़ानून लागू होने के
 
 
 8. अहिंसा मूर्ती महात्मा उधम सिंह जी से प्रेरित यह एक विकेन्द्रित जन आन्दोलन है। (15) धाराओं का यह ड्राफ्ट ही इस आन्दोलन का नेता है। यदि आप भी यह मांग आगे बढ़ाना चाहते है तो अपने स्तर पर जो भी आप कर सकते है करें। यह कॉपी लेफ्ट प्रपत्र है, और आप इस बुकलेट को अपने स्तर पर छपवाकर नागरिको में बाँट सकते है। इस आन्दोलन के कार्यकर्ता धरने, प्रदर्शन, जाम, मजमे, जुलूस जैसे उन कदमों से बहुधा परहेज करते है जिससे नागरिको को परेशानी होकर समय-श्रम-धन की हानि होती हो। अपनी मांग को स्पष्ट रूप से लिखकर चिट्ठी भेजने से नागरिक अपनी कोई भी मांग Pm तक पहुंचा सकते है। इसके लिए नागरिको को न तो किसी नेता की जरूरत है और न ही मीडिया की।
-
 ---
-Post by:- Pawan Jury
-https://www.facebook.com/story.php?story_fbid=pfbid0GE87RC9dQkEg8kmnhWxWBhz9M9dYcLdWfTcZFNE7dHeHkZ8sU1cBYU8Qc5rbLwMkl&id=100003247365514&post_id=100003247365514_pfbid0GE87RC9dQkEg8kmnhWxWBhz9M9dYcLdWfTcZFNE7dHeHkZ8sU1cBYU8Qc5rbLwMkl&mibextid=CDWPTG

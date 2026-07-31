@@ -8,3 +8,5 @@ job of LLM would be to categorize it from some given category list ( gun, EVM, s
 have pagefind display search results in current language and after that display other language's results as well
 
 Different layout for drafts which require some properties 
+
+navigation by tags
