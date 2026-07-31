@@ -7,6 +7,7 @@ facebook: https://www.facebook.com/share/p/1F7FAxGDD2/
 tags:
   - draft
 author: Rahul Mehta Gandhinagar LsCandidate
+layout: layouts/base.njk
 ---
 
 ---
