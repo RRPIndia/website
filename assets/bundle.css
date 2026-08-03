@@ -120,6 +120,80 @@
   justify-content: center;
 }
 
+/* ROW 3.5: Display Settings */
+.display-settings {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.display-settings details {
+  width: 100%;
+  max-width: 400px;
+  background: #f9f9f9;
+  border: 1px solid #e5e5e5;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+}
+
+.display-settings summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  list-style: none; /* Hide default triangle on some browsers */
+}
+
+/* Hide default marker in webkit */
+.display-settings summary::-webkit-details-marker {
+  display: none;
+}
+
+.display-settings .setting-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 0.75rem;
+  padding-top: 0.75rem;
+  border-top: 1px solid #e5e5e5;
+}
+
+.setting-label {
+  font-weight: 500;
+  color: #333;
+}
+
+.setting-controls {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.setting-btn {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  line-height: 1;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  cursor: pointer;
+  color: #333;
+  transition: background-color 0.2s, border-color 0.2s;
+}
+
+.setting-btn:hover,
+.setting-btn:focus-visible {
+  background: #eee;
+  border-color: #bbb;
+}
+
+.setting-btn:active {
+  background: #ddd;
+}
+
 /* =========================
    BASE LAYOUT
    ========================= */
