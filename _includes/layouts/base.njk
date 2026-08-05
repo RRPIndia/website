@@ -17,6 +17,18 @@
   gtag('js', new Date());
 
   gtag('config', 'G-HHVG075GJS');
+
+ (function() {
+      const size = localStorage.getItem('user-font-size');
+      const font = localStorage.getItem('user-font-family');
+      const lh = localStorage.getItem('user-line-height');
+      
+      const root = document.documentElement;
+      if (size) root.style.setProperty('--font-size', size + 'rem');
+      if (font) root.style.setProperty('--font-family', font);
+      if (lh) root.style.setProperty('--line-height', lh);
+    })();
+
 </script>
 
 
