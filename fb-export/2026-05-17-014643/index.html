@@ -59,11 +59,22 @@
           
             
               <li>
+                <a href="/drafts/hi/dhan-vapasi-passbook/">
+                  1.
+                  Dhan Vapasi Passbook
+                </a>
+              </li>
+            
+          
+            
+              <li>
                 <a href="/drafts/hi/gau-niti/">
                   11.
                   देशी नस्ल के गाय की सुरक्षा
                 </a>
               </li>
+            
+          
             
           
             
@@ -103,26 +114,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2185,69 +2227,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2264,48 +2248,26 @@
 
 
 
-      <p>क्या EVM सिर्फ एक “कैलकुलेटर” है, या फिर यह एक प्रोग्रामेबल इलेक्ट्रॉनिक मशीन है?
-.
-इसी विषय पर तकनीकी सवालों, प्रक्रियाओं और VVPAT से जुड़ी चिंताओं को समझाने के लिए “EVM Black Glass Demo” का आयोजन किया जा रहा है।
-.
-इस डेमो में निम्न विषयों पर चर्चा की जाएगी:</p>
-<ol>
-<li>
-<p>Form 17C और Symbol Loading Unit (SLU) की भूमिका क्या है?</p>
-</li>
-<li>
-<p>Candidate Serial File और VVPAT loading process की transparency कितनी है?</p>
-</li>
-<li>
-<p>क्या mock poll के बाद भी किसी प्रकार की तकनीकी गड़बड़ी संभव हो सकती है?</p>
-</li>
-<li>
-<p>क्या VVPAT की slip display प्रक्रिया मतदाता को भ्रमित कर सकती है?</p>
-</li>
-<li>
-<p>क्या EVM/VVPAT सिस्टम की independent public audit होनी चाहिए?</p>
-</li>
-<li>
-<p>RTI से प्राप्त दस्तावेजों और तकनीकी प्रक्रियाओं पर सार्वजनिक चर्चा क्यों जरूरी है?
-.
-यह कार्यक्रम चुनावी प्रक्रिया में पारदर्शिता, तकनीकी जागरूकता और लोकतांत्रिक जवाबदेही पर चर्चा के उद्देश्य से आयोजित किया जा रहा है। कृपया जरूर आएं।</p>
-</li>
-</ol>
-<p>Inventer – EVM Black Glass Demo<br>
-Shri Rahul Mehta<br>
-B.Tech., IIT-Delhi<br>
-M.S. Rutgers Univ., US</p>
+      
+<p>क्या EVM सिर्फ एक “कैलकुलेटर” है, या फिर यह एक प्रोग्रामेबल इलेक्ट्रॉनिक मशीन है?<br>.<br>इसी विषय पर तकनीकी सवालों, प्रक्रियाओं और VVPAT से जुड़ी चिंताओं को समझाने के लिए “EVM Black Glass Demo” का आयोजन किया जा रहा है।<br>.<br>इस डेमो में निम्न विषयों पर चर्चा की जाएगी:</p>
+<p>1.  Form 17C और Symbol Loading Unit (SLU) की भूमिका क्या है?</p>
+<p>2.  Candidate Serial File और VVPAT loading process की transparency कितनी है?</p>
+<p>3.  क्या mock poll के बाद भी किसी प्रकार की तकनीकी गड़बड़ी संभव हो सकती है?</p>
+<p>4.  क्या VVPAT की slip display प्रक्रिया मतदाता को भ्रमित कर सकती है?</p>
+<p>5.  क्या EVM/VVPAT सिस्टम की independent public audit होनी चाहिए?</p>
+<p>6.  RTI से प्राप्त दस्तावेजों और तकनीकी प्रक्रियाओं पर सार्वजनिक चर्चा क्यों जरूरी है?<br>.<br>यह कार्यक्रम चुनावी प्रक्रिया में पारदर्शिता, तकनीकी जागरूकता और लोकतांत्रिक जवाबदेही पर चर्चा के उद्देश्य से आयोजित किया जा रहा है। कृपया जरूर आएं।</p>
+<p>Inventer – EVM Black Glass Demo  <br>Shri Rahul Mehta  <br>B.Tech., IIT-Delhi  <br>M.S. Rutgers Univ., US</p>
 <p>Demo Giver:</p>
 <p>Shri Mohit Jain – Jaipur Rajasthan</p>
 <p>Lr. Gulshan Jury – Delhi</p>
 <p>दिनांक: 17 मई 2026 रविवार</p>
 <p>समय: सुबह 10:00 बजे से दोपहर 1:00 बजे तक</p>
 <p>स्थान: जंतर-मंतर, नई दिल्ली</p>
-<p>Website: <a href="http://EvmHatao.Com">http://EvmHatao.Com</a></p>
+<p>Website: EvmHatao.Com</p>
 <p>Contact: 85270 32988, 92201 75499</p>
-<p>EVM-VVPAT हटाओ – बैलेट पेपर लाओ – लोकतंत्र बचाओ।</p>
-<p>कृपया जरूर आए।।
-..</p>
+<p>EVM-VVPAT हटाओ – बैलेट पेपर लाओ – लोकतंत्र बचाओ। </p>
+<p>कृपया जरूर आए।।<br>..</p>
+
 
 
     </div>
@@ -2340,7 +2302,6 @@ M.S. Rutgers Univ., US</p>
     <div hidden data-pagefind-filter="author" show-empty="false">Rahul Tiwari Jury</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">hi</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

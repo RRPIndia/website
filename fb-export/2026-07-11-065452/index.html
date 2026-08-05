@@ -59,11 +59,22 @@
           
             
               <li>
+                <a href="/drafts/hi/dhan-vapasi-passbook/">
+                  1.
+                  Dhan Vapasi Passbook
+                </a>
+              </li>
+            
+          
+            
+              <li>
                 <a href="/drafts/hi/gau-niti/">
                   11.
                   देशी नस्ल के गाय की सुरक्षा
                 </a>
               </li>
+            
+          
             
           
             
@@ -103,26 +114,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2185,69 +2227,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2264,10 +2248,9 @@
 
 
 
-      <p>🚨 DEMO दिखाओ – EVM हटाओ 🚨</p>
-<p>📍 स्थान : जंतर-मंतर, नई दिल्ली
-📅 दिनांक : 12 जुलाई (रविवार)
-🕑 समय : दोपहर 2:00 बजे</p>
+      
+<p>🚨 DEMO दिखाओ – EVM हटाओ 🚨</p>
+<p>📍 स्थान : जंतर-मंतर, नई दिल्ली<br>📅 दिनांक : 12 जुलाई (रविवार)<br>🕑 समय : दोपहर 2:00 बजे</p>
 <p>संविधान के अनुच्छेद 328 के तहत हमें बैलेट पेपर से वोट देने का अधिकार दो।</p>
 <p>डेमो में हम बताएंगे :</p>
 <p>✅ चुनाव आयोग ने EVM-VVPAT के पारदर्शी काँच को बदलकर &quot;गहरा काला काँच (Black Glass)&quot; क्यों लगाया?</p>
@@ -2275,12 +2258,10 @@
 <p>✅ 100% VVPAT पर्चियों की गिनती होने के बाद भी वोटों की चोरी क्यों नहीं पकड़ी जा सकेगी – इसका डेमो दिखाया जाएगा।</p>
 <p>✅ हर चुनाव से लगभग 14 दिन पहले VVPAT में सिंबल लोडिंग सॉफ्टवेयर प्रोग्रामिंग की जाती है। हमारा दावा है कि इसी प्रक्रिया के दौरान ऐसा कोड डाला जा सकता है जो Mock Poll को बायपास करते हुए लाखों वोटों की चोरी कर सके।</p>
 <p>सभी नागरिकों, पत्रकारों एवं चुनाव सुधार में रुचि रखने वाले लोगों से अनुरोध है कि इस डेमो में अवश्य आएँ।</p>
-<p>📞 संपर्क :
-92201-75499
-85270-32988</p>
-<p>🌐 <a href="http://evmhatao.com">http://evmhatao.com</a>
-..</p>
+<p>📞 संपर्क :<br>92201-75499<br>85270-32988</p>
+<p>🌐 evmhatao.com<br>..</p>
 <p>@highlight</p>
+
 
 
     </div>
@@ -2315,7 +2296,6 @@
     <div hidden data-pagefind-filter="author" show-empty="false">Rahul Tiwari Jury</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">hi</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

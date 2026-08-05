@@ -55,9 +55,13 @@
               <li>
                 <a href="/drafts/en/gau-niti/">
                   11.
-                  Protection indigenous cow
+                  Protecting indigenous cow
                 </a>
               </li>
+            
+          
+            
+          
             
           
             
@@ -96,26 +100,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2178,69 +2213,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2257,38 +2234,17 @@
 
 
 
-      <p>I asked ChatGpt ( which isnt fully reliable )</p>
-<p>So if light is off, then viter cant see paper?
-.
-Answer : Yes — if the internal VVPAT light is completely off, the voter would usually find it very difficult or impossible to clearly see the printed slip through the dark tinted window.</p>
+      
+<p>I asked ChatGpt ( which isnt fully reliable )</p>
+<p>So if light is off, then viter cant see paper?<br>.<br>Answer : Yes — if the internal VVPAT light is completely off, the voter would usually find it very difficult or impossible to clearly see the printed slip through the dark tinted window.</p>
 <p>That is because:</p>
-<p>* the viewing panel is intentionally dark/tinted,
-* the slip is inside the machine,
-* and the paper is shown only briefly.</p>
-<h2>So the internal illumination is important for visibility. During normal operation, when a vote is cast, the VVPAT briefly lights up the printed slip so the voter can verify the candidate name and symbol before the slip drops into the sealed box
-.
-<a href="https://chatgpt.com/share/6a0d14bc-b518-8323-845e-30216259fb9b">https://chatgpt.com/share/6a0d14bc-b518-8323-845e-30216259fb9b</a>
-.</h2>
-<p>.
-After LightSensor and possible PrinterReverseScrolling , blackness of glass is lesser issue.
-.
-Now, i go my experience and many real booth voting video. When I voted, I could see paper ONLY after inside light was ON. As long as inside light was OFf, i could not see paper.
-.
-Also, distance between inner glass and paper will matter. In beginning, when roll is new, the distance between paper and inner glass in less. After 100 votes or more votes, distance between paper and glass will be more and paper will be less visible.
-.
-And light level in booth matters. Many trainning video are shot before camera and camera men use very bight light for shooting. In very bright light,  paper behind glass will be visible. But light level inside booth, near voting area is low.
-.
-And all glasses need not be equally dark.
-.
-And finally, we have LightSensorLogic. If voter is standing in front of vvpat, vvpat lightsensor will register low intensity. Say voter presses Banana. if voter leaves before printing has started, then vvpat can just turn light ON, show nothing, turn light OFF, and print anything. Or, say voter stood for 4 seconds, but left before 10 seconds, then after turning light OFF, printer can scroll paper back inside. Now if next voter presses Banana, then vvpat can show same print. And if voter presses Apple or WaterMelon , then witn light OFF, existing print can be disposed off and new Apple or WaterMelon can be printed.
-.
-So we have several factors
-.
-(1) how black is glass - are all glasses equally black? In 2019 and now?</p>
-<p>(2) distance between paper and glass - after 100 or more votes, distance between paper and glass is higher which decreases visibility</p>
+<p>* the viewing panel is intentionally dark/tinted,<br>* the slip is inside the machine,<br>* and the paper is shown only briefly.</p>
+<p>So the internal illumination is important for visibility. During normal operation, when a vote is cast, the VVPAT briefly lights up the printed slip so the voter can verify the candidate name and symbol before the slip drops into the sealed box<br>.<br>https://chatgpt.com/share/6a0d14bc-b518-8323-845e-30216259fb9b<br>.<br>-----<br>.<br>After LightSensor and possible PrinterReverseScrolling , blackness of glass is lesser issue. <br>.<br>Now, i go my experience and many real booth voting video. When I voted, I could see paper ONLY after inside light was ON. As long as inside light was OFf, i could not see paper.<br>.<br>Also, distance between inner glass and paper will matter. In beginning, when roll is new, the distance between paper and inner glass in less. After 100 votes or more votes, distance between paper and glass will be more and paper will be less visible. <br>.<br>And light level in booth matters. Many trainning video are shot before camera and camera men use very bight light for shooting. In very bright light,  paper behind glass will be visible. But light level inside booth, near voting area is low.<br>.<br>And all glasses need not be equally dark.<br>.<br>And finally, we have LightSensorLogic. If voter is standing in front of vvpat, vvpat lightsensor will register low intensity. Say voter presses Banana. if voter leaves before printing has started, then vvpat can just turn light ON, show nothing, turn light OFF, and print anything. Or, say voter stood for 4 seconds, but left before 10 seconds, then after turning light OFF, printer can scroll paper back inside. Now if next voter presses Banana, then vvpat can show same print. And if voter presses Apple or WaterMelon , then witn light OFF, existing print can be disposed off and new Apple or WaterMelon can be printed. <br>.<br>So we have several factors<br>.<br>(1) how black is glass - are all glasses equally black? In 2019 and now?</p>
+<p>(2) distance between paper and glass - after 100 or more votes, distance between paper and glass is higher which decreases visibility </p>
 <p>(3) light intensity in actual booth and light intensity in trainning video - light intensity in trainning video shooting is much higher and so paper may become visible in trainning videos</p>
-<p>(4) lightsensor tells vvpat if voter is present or has left</p>
+<p>(4) lightsensor tells vvpat if voter is present or has left </p>
 <p>(5) whether printer has reverse gear or not</p>
+
 
 
     </div>
@@ -2323,7 +2279,6 @@ So we have several factors
     <div hidden data-pagefind-filter="author" show-empty="false">Rahul Mehta Gandhinagar LsCandidate</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">en</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

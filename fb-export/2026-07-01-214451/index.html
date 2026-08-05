@@ -59,11 +59,22 @@
           
             
               <li>
+                <a href="/drafts/hi/dhan-vapasi-passbook/">
+                  1.
+                  Dhan Vapasi Passbook
+                </a>
+              </li>
+            
+          
+            
+              <li>
                 <a href="/drafts/hi/gau-niti/">
                   11.
                   देशी नस्ल के गाय की सुरक्षा
                 </a>
               </li>
+            
+          
             
           
             
@@ -103,26 +114,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2185,69 +2227,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2264,35 +2248,10 @@
 
 
 
-      <h2>आपका सवाल:
-Tujhe evm hack karna aata hai?
-.
-जवाब: नहीं,</h2>
-<p>(01) चुनाव आयोग के मैन्युअल बुक के हिसाब से evm में इंटरनेट वाई-फाई नहीं है , इसलिए evm को हैक नहीं किया जा सकता है।
-.
-(02) evm में &gt;इनसाइड टेंपरिंग&lt;  हो सकती है, मतलब जो लोग मशीन का एक्सेस रखते हैं वह प्रोग्राम द्वारा कागज और इलेक्ट्रॉनिक वोटों की चोरी कर सकते हैं।
-.
-(03) evm कोइ स्टैंड अलोन मशीन नहीं है , लेकिन चुनाव आयोग कहता है कि  evm स्टेंड अलोन मशीन है।
-.
-(04) हर चुनाव से 14 दिन पहले सॉफ्टवेयर प्रोग्रामेबल फाइल (जिसे सिंबल लोडिंग यूनिट कहा जाता है)  evm में BEL का टेक्निशन अपने लैपटॉप से डालता है, इसलिए evm का बाहरी मशीन से लेना देना है और इस वजह से evm एक स्टैंड अलोन डिवाइस नहीं है।
-.
-(05) सिम्बोल लोडिंग फाइल का प्रोग्राम जो 3-4 BEL-ECIL के प्रोग्रामर लिखते हैं, वह किसी एक पार्टी को अधिक वोट पहुंचाने के लिए भी प्रोग्राम लिख सकते हैं।
-.
-(06) तो जब सिंबल लोडिंग फाइल vvpat में पहुंचेगा तब vvpat में &gt;रियल टाइम क्लॉक&lt; होने के कारण वह सभी &gt;मॉक पोल&lt; को बायपास करते हुए - एक हीं पर्ची को vvpat में लगे हुए काले काँच और लाइट सेंसर की मदद से बार-बार कई मतदाताओं को दिखाकर लाखों एवं करोड़ों वोटों को आसानी से चुरा सकता है।
-.
-(07) 2010 में ही महात्मा हरी प्रसाद जी ने असली evm में - रिमोट कंट्रोल द्वारा वोटों की चोरी करके सहारा समय राष्ट्रीय न्यूज़ चैनल पर दिखा दिया था। इस लिंक पर जाकर वीडियो देखें <a href="http://Tinyurl.com/mhp2010">http://Tinyurl.com/mhp2010</a>
-.
-(08) 2017 से चुनाव आयोग ने evm-vvpat के पारदर्शी काँच को बदलकर गहरा &gt;काला काँच&lt; लगा दिया है और vvpat में &gt;लाइट सेंसर&lt; भी लगा दिया है और vvpat में रौशनी जलने की अवधि को घटाकर 15 सेकंड से &gt;7 सेकंड&lt; कर दिया है।
-.
-(09) &gt;यह 3 बदलाव तो सभी नागरिकों के सामने हुआ है जो हमारे आंखों से दिखाई भी देता है&lt;
-.
-(10) vvpat का काला काँच - अंधेरे में कागज की पर्चियों की चोरी को छुपा सकता है।
-.
-(11) लाइट सेंसर - सामने खड़े मतदाताओं को सेंस कर सकता है कि मतदाता सामने खड़ा है या नहीं।
-.
-(12) vvpat की रौशनी जलने की अवधि को 7 सेकंड कर देने से मतदाताओं को अपने वोट की जांच करने से टाला जा सकता है , स्टाफ बोलते हैं - आपका वोट हो गया आप जल्दी से बाहर चले जाओ।
-.
-(13) evm-vvpat में किए गए यह 3 बदलावों की वजह से और evm में डाले जाने वाले &gt;सॉफ्टवेयर प्रोग्रामेबल सिम्बोल लोडिंग फाइल&lt; की मदद से  — एक हीं पर्ची को बार-बार कई मतदाताओं को दिखाकर &gt;मॉक पोल&lt; को बायपास करते हुए करोड़ों वोटों को चुराया जा सकता है।</p>
+      
+<p>आपका सवाल:<br>Tujhe evm hack karna aata hai?<br>.<br>जवाब: नहीं,<br>---------------------------------------</p>
+<p>(01) चुनाव आयोग के मैन्युअल बुक के हिसाब से evm में इंटरनेट वाई-फाई नहीं है , इसलिए evm को हैक नहीं किया जा सकता है।<br>.<br>(02) evm में &gt;इनसाइड टेंपरिंग&lt;  हो सकती है, मतलब जो लोग मशीन का एक्सेस रखते हैं वह प्रोग्राम द्वारा कागज और इलेक्ट्रॉनिक वोटों की चोरी कर सकते हैं।<br>.<br>(03) evm कोइ स्टैंड अलोन मशीन नहीं है , लेकिन चुनाव आयोग कहता है कि  evm स्टेंड अलोन मशीन है।<br>.<br>(04) हर चुनाव से 14 दिन पहले सॉफ्टवेयर प्रोग्रामेबल फाइल (जिसे सिंबल लोडिंग यूनिट कहा जाता है)  evm में BEL का टेक्निशन अपने लैपटॉप से डालता है, इसलिए evm का बाहरी मशीन से लेना देना है और इस वजह से evm एक स्टैंड अलोन डिवाइस नहीं है।<br>.<br>(05) सिम्बोल लोडिंग फाइल का प्रोग्राम जो 3-4 BEL-ECIL के प्रोग्रामर लिखते हैं, वह किसी एक पार्टी को अधिक वोट पहुंचाने के लिए भी प्रोग्राम लिख सकते हैं।<br>.<br>(06) तो जब सिंबल लोडिंग फाइल vvpat में पहुंचेगा तब vvpat में &gt;रियल टाइम क्लॉक&lt; होने के कारण वह सभी &gt;मॉक पोल&lt; को बायपास करते हुए - एक हीं पर्ची को vvpat में लगे हुए काले काँच और लाइट सेंसर की मदद से बार-बार कई मतदाताओं को दिखाकर लाखों एवं करोड़ों वोटों को आसानी से चुरा सकता है।<br>.<br>(07) 2010 में ही महात्मा हरी प्रसाद जी ने असली evm में - रिमोट कंट्रोल द्वारा वोटों की चोरी करके सहारा समय राष्ट्रीय न्यूज़ चैनल पर दिखा दिया था। इस लिंक पर जाकर वीडियो देखें Tinyurl.com/mhp2010<br>.<br>(08) 2017 से चुनाव आयोग ने evm-vvpat के पारदर्शी काँच को बदलकर गहरा &gt;काला काँच&lt; लगा दिया है और vvpat में &gt;लाइट सेंसर&lt; भी लगा दिया है और vvpat में रौशनी जलने की अवधि को घटाकर 15 सेकंड से &gt;7 सेकंड&lt; कर दिया है। <br>.<br>(09) &gt;यह 3 बदलाव तो सभी नागरिकों के सामने हुआ है जो हमारे आंखों से दिखाई भी देता है&lt;<br>.<br>(10) vvpat का काला काँच - अंधेरे में कागज की पर्चियों की चोरी को छुपा सकता है।<br>.<br>(11) लाइट सेंसर - सामने खड़े मतदाताओं को सेंस कर सकता है कि मतदाता सामने खड़ा है या नहीं।<br>.<br>(12) vvpat की रौशनी जलने की अवधि को 7 सेकंड कर देने से मतदाताओं को अपने वोट की जांच करने से टाला जा सकता है , स्टाफ बोलते हैं - आपका वोट हो गया आप जल्दी से बाहर चले जाओ।<br>.<br>(13) evm-vvpat में किए गए यह 3 बदलावों की वजह से और evm में डाले जाने वाले &gt;सॉफ्टवेयर प्रोग्रामेबल सिम्बोल लोडिंग फाइल&lt; की मदद से  — एक हीं पर्ची को बार-बार कई मतदाताओं को दिखाकर &gt;मॉक पोल&lt; को बायपास करते हुए करोड़ों वोटों को चुराया जा सकता है।</p>
+
 
 
     </div>
@@ -2327,7 +2286,6 @@ Tujhe evm hack karna aata hai?
     <div hidden data-pagefind-filter="author" show-empty="false">Rahul Tiwari Jury</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">hi</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

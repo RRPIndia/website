@@ -59,11 +59,22 @@
           
             
               <li>
+                <a href="/drafts/hi/dhan-vapasi-passbook/">
+                  1.
+                  Dhan Vapasi Passbook
+                </a>
+              </li>
+            
+          
+            
+              <li>
                 <a href="/drafts/hi/gau-niti/">
                   11.
                   देशी नस्ल के गाय की सुरक्षा
                 </a>
               </li>
+            
+          
             
           
             
@@ -103,26 +114,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2185,69 +2227,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2264,22 +2248,19 @@
 
 
 
-      <p>आज के समय में हमें यह समझना होगा कि हर युग का अपना संघर्ष और अपनी लड़ाई होती है।
-कभी भारत में शास्त्रार्थ का दौर था — जहाँ आदि गुरु शंकराचार्य और स्वामी दयानंद सरस्वती जैसे महान विद्वान तर्क, ज्ञान और विचारों से समाज को दिशा देते थे। उस समय मतभेद होते थे, लेकिन सम्मान भी होता था। हारने वाला भी सत्य को स्वीकार करता था और जीतने वाला भी विनम्र रहता था।</p>
+      
+<p>आज के समय में हमें यह समझना होगा कि हर युग का अपना संघर्ष और अपनी लड़ाई होती है।<br>कभी भारत में शास्त्रार्थ का दौर था — जहाँ आदि गुरु शंकराचार्य और स्वामी दयानंद सरस्वती जैसे महान विद्वान तर्क, ज्ञान और विचारों से समाज को दिशा देते थे। उस समय मतभेद होते थे, लेकिन सम्मान भी होता था। हारने वाला भी सत्य को स्वीकार करता था और जीतने वाला भी विनम्र रहता था।</p>
 <p>फिर एक समय ऐसा आया जब देश को आज़ादी दिलाने के लिए भगत सिंह, चंद्रशेखर आज़ाद, रामप्रसाद बिस्मिल और अनेक क्रांतिकारियों को हथियार उठाने पड़े। वह दौर बंदूकों और बलिदान का था।</p>
-<p>लेकिन आज का समय अलग है।
-आज न तो शास्त्रार्थ की वह परंपरा बची है, और न ही बंदूकों से परिवर्तन संभव है। आज देश और दुनिया कानूनों से चलती है। यदि कानून देशहित में होंगे तो देश आगे बढ़ेगा, और यदि कानून जनता के विरुद्ध होंगे तो समस्याएँ बढ़ती जाएँगी — चाहे वह बेरोज़गारी हो, गरीबी हो, महंगाई या भ्रष्टाचार</p>
+<p>लेकिन आज का समय अलग है।<br>आज न तो शास्त्रार्थ की वह परंपरा बची है, और न ही बंदूकों से परिवर्तन संभव है। आज देश और दुनिया कानूनों से चलती है। यदि कानून देशहित में होंगे तो देश आगे बढ़ेगा, और यदि कानून जनता के विरुद्ध होंगे तो समस्याएँ बढ़ती जाएँगी — चाहे वह बेरोज़गारी हो, गरीबी हो, महंगाई या भ्रष्टाचार</p>
 <p>1947 में हमें वोट देने का अधिकार तो मिला, लेकिन वोट वापसी पासबुक (Right to Recall) जैसी जनता की वास्तविक शक्ति नहीं मिली। आज जनता केवल नेता चुन सकती है, लेकिन यदि वही नेता अपने वादे तोड़ दे तो जनता के पास उसे हटाने का अधिकार नहीं है। यही कारण है कि चुनाव जीतने के बाद कई नेता जनता से किए गए वादों को भूल जाते है और भ्रष्टाचार करने लगते है पर जनता अगले 5 वर्ष तक कुछ भी नही कर सकती और लाचार होकर शासक वर्ग का अत्याचार बढ़ता जाता है और आगे भी बढ़ेगा</p>
 <p>अब समय आ गया है कि देश का प्रत्येक जागरूक नागरिक देशभक्त युवा आगे आए और प्रक्रिया/ड्राफ्ट के आधार पर शांतिपूर्ण आंदोलन खड़ा करे</p>
 <p>हमें “Vote Vapasi” Dhan Vapasi” जैसे प्रस्तावित कानूनों को समझना होगा, पढ़ना होगा और लोगों तक पहुँचाना होगा। प्रत्येक महीने पोस्टकार्ड/निर्देश पत्र के माध्यम से मुख्यमंत्री और प्रधानमंत्री कार्यालय तक अपनी बात पहुँचानी होगी, ताकि जनता की आवाज़ सीधे सत्ता तक पहुँचे जिस से की हमे किसी नेता/लीडर या पत्रकार या मीडिया के सहारे ना रहना पड़े</p>
-<p>हम चाहते हैं कि देश के नौजवान जागें, पढ़ें, समझें और देशहित में बनाए गए प्रस्तावित कानूनों का प्रचार-प्रसार करें।
-यदि भारत को फिर से “सोने की चिड़िया” और “विश्वगुरु” बनाना है, तो यह कार्य केवल जागरूक नागरिकों और मजबूत जनशक्ति से ही संभव होगा। इसके लिए कोई भी युवाओ को नेता/लीडर या मीडिया पर निर्भर नही रहना</p>
+<p>हम चाहते हैं कि देश के नौजवान जागें, पढ़ें, समझें और देशहित में बनाए गए प्रस्तावित कानूनों का प्रचार-प्रसार करें।<br>यदि भारत को फिर से “सोने की चिड़िया” और “विश्वगुरु” बनाना है, तो यह कार्य केवल जागरूक नागरिकों और मजबूत जनशक्ति से ही संभव होगा। इसके लिए कोई भी युवाओ को नेता/लीडर या मीडिया पर निर्भर नही रहना</p>
 <p>35 प्रस्तावित कानून ड्राफ्ट का लिंक</p>
-<p><a href="https://Tinyurl.com/RrpDraftsHindi">https://Tinyurl.com/RrpDraftsHindi</a></p>
-<p>संपर्क :
-अभिषेक : 09005916215
-उत्तर प्रदेश, बाराबंकी</p>
+<p>https://Tinyurl.com/RrpDraftsHindi</p>
+<p>संपर्क :<br>अभिषेक : 09005916215<br>उत्तर प्रदेश, बाराबंकी </p>
 <p>धन्यवाद। 🇮🇳</p>
+
 
 
     </div>
@@ -2314,7 +2295,6 @@
     <div hidden data-pagefind-filter="author" show-empty="false">Abhishek Kumar</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">hi</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 

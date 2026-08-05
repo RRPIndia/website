@@ -55,9 +55,13 @@
               <li>
                 <a href="/drafts/en/gau-niti/">
                   11.
-                  Protection indigenous cow
+                  Protecting indigenous cow
                 </a>
               </li>
+            
+          
+            
+          
             
           
             
@@ -96,26 +100,57 @@
     </div>
 
     <!-- ROW 3.5: Display Settings -->
-    <div class="display-settings">
-      <details>
-        <summary>
-          <span class="setting-label">font size</span>
-          <div class="setting-controls">
-            <button id="btn-font-dec" class="setting-btn" aria-label="Decrease font size">-</button>
-            <button id="btn-font-inc" class="setting-btn" aria-label="Increase font size">+</button>
-          </div>
-        </summary>
-        <div class="setting-item">
-          <span class="setting-label">line space</span>
-          <div class="setting-controls">
-            <button id="btn-line-dec" class="setting-btn" aria-label="Decrease line spacing">-</button>
-            <button id="btn-line-inc" class="setting-btn" aria-label="Increase line spacing">+</button>
-          </div>
-        </div>
-      </details>
-    </div>
+    <!-- Pagefind Container -->
+<div id="search" class="search-container"></div>
 
-    <!-- ROW-4  -->
+<!-- Typography Toolbar -->
+<div class="reading-toolbar" aria-label="Reading options">
+  
+  <!-- Font Family Selector -->
+  <div class="toolbar-group">
+    <label for="font-family" class="sr-only">Font Style</label>
+    <select id="font-family" class="toolbar-select" title="Font Style">
+      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
+      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+    </select>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Font Size Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="size-label">Size</span>
+    <div class="btn-group" role="group" aria-labelledby="size-label">
+      <button type="button" id="size-down" title="Decrease font size" aria-label="Decrease font size">A−</button>
+      <button type="button" id="size-reset" title="Reset font size" aria-label="Reset font size">100%</button>
+      <button type="button" id="size-up" title="Increase font size" aria-label="Increase font size">A+</button>
+    </div>
+  </div>
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Line Spacing Toggles -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="spacing-label">Spacing</span>
+    <div class="btn-group" role="group" aria-labelledby="spacing-label">
+      <button type="button" class="spacing-btn" data-lh="1.3" title="Compact spacing" aria-label="Compact line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn active" data-lh="1.6" title="Normal spacing" aria-label="Normal line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16M4 12h16M4 20h16"/></svg>
+      </button>
+      <button type="button" class="spacing-btn" data-lh="1.9" title="Relaxed spacing" aria-label="Relaxed line spacing">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 2h16M4 12h16M4 22h16"/></svg>
+      </button>
+    </div>
+  </div>
+
+</div>
+
+
+
+        <!-- ROW-4  -->
     
 
 
@@ -2178,69 +2213,11 @@
       
         
       
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
-        
-          
-        
-      
-        
-      
-        
-      
-        
-      
-        
-      
 
       
-        <a href="/fb-export/">
+        <span class="crumb-disabled">
           fb export
-        </a>
+        </span>
       
     
   
@@ -2257,30 +2234,26 @@
 
 
 
-      <p>I was always confused about why &quot;paid media&quot; seems to promote the Indian Army so consistently.</p>
+      
+<p>I was always confused about why &quot;paid media&quot; seems to promote the Indian Army so consistently.</p>
 <p>By paid media, I mean newspapers, TV channels, Bollywood, and even social media algorithms that shape public perception over time.</p>
-<p>For a long time, I couldn’t see a clear logical reason for them to highlight mostly positive stories about the army.</p>
-<p>But a few days back, I started thinking that it could be a strategic narrative, as it keeps common citizens and voters from questioning whether individuals should have access to weapons.</p>
+<p>For a long time, I couldn’t see a clear logical reason for them to highlight mostly positive stories about the army. </p>
+<p>But a few days back, I started thinking that it could be a strategic narrative, as it keeps common citizens and voters from questioning whether individuals should have access to weapons. </p>
 <p>Many Indians grow up believing that, in times of danger, someone in an Indian Army uniform will arrive who is disciplined, ethical, and ready to sacrifice to protect civilians.</p>
 <p>This belief, in my view, has been strengthened over decades through repeated exposure to heroic stories about the Indian Army.</p>
 <p>So one possible outcome of this narrative environment is that the public stays distant from discussions around weapon manufacturing, civilian training, and regulated access to firearms to protect themselves.</p>
 <p>There may be corruption in institutions, including the army, but citizens rarely have access to detailed internal data, so many issues remain outside public visibility.</p>
 <p>At the same time, soldiers at junior ranks are widely seen as loyal and committed to national service, while decision-making at higher levels can sometimes intersect with business and policy interests.</p>
 <p>The army operates under the Defence Ministry, and like any disciplined force, personnel are trained to follow lawful orders.</p>
-<p>So when deployments happen, for example in sensitive regions like Manipur they act according to the directives given and may fail to protect citizens.</p>
+<p>So when deployments happen, for example in sensitive regions like Manipur they act according to the directives given and may fail to protect citizens. </p>
 <p>Heroic stories about the army can also create a strong image of national power, which sometimes shifts public attention away from the fact of dependence on imported weapons.</p>
-<p>India imports a large share of its weapons, as domestic manufacturing capabilities are not skilled or developed and when international powers send you weapons they come with kill switch risk.</p>
-<p>So solutions, in my view, would be</p>
-<ul>
-<li>
-<p>to strengthen maths and science education across govt schools in the country</p>
-</li>
-<li>
-<p>Reduce barriers like high land prices so that manufacturing and housing becomes affordable and triggers innovation</p>
-</li>
-</ul>
+<p>India imports a large share of its weapons, as domestic manufacturing capabilities are not skilled or developed and when international powers send you weapons they come with kill switch risk. </p>
+<p>So solutions, in my view, would be </p>
+<p>- to strengthen maths and science education across govt schools in the country</p>
+<p>- Reduce barriers like high land prices so that manufacturing and housing becomes affordable and triggers innovation</p>
 <p>Voters and Citizens should also focus on creating a nation wide demand for referrendum on law that allows common citizens to keep license free but registered weapons at home.</p>
 <p>Similar to laws seen in countries like the US, Switzerland and Coorg district in Karnataka.</p>
+
 
 
     </div>
@@ -2315,7 +2288,6 @@
     <div hidden data-pagefind-filter="author" show-empty="false">Chinmaya Amte</div>
     <div hidden data-pagefind-filter="group" show-empty="false">Right to Recall Party (national)</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">en</div>
-    <div hidden data-pagefind-filter="source" show-empty="false">facebook-group</div>
 
   </div>
 
