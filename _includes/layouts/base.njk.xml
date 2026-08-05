@@ -18,7 +18,9 @@
 
   gtag('config', 'G-HHVG075GJS');
 
- (function() {
+ </script>
+ <script>
+ 	function() {
       const size = localStorage.getItem('user-font-size');
       const font = localStorage.getItem('user-font-family');
       const lh = localStorage.getItem('user-line-height');
