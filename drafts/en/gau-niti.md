@@ -1,14 +1,13 @@
 ---
-title: Protection indigenous cow
+title: Protecting indigenous cow
 draftNumber: 11
 driveLink:
 lang: en
 facebook: https://www.facebook.com/share/p/1F7FAxGDD2/
-tags:
-  - draft
 author: Rahul Mehta Gandhinagar LsCandidate
 layout: layouts/base.njk
 ---
+{% include "drafts/gau-niti/gist.en.md" %}
 
 ---
 ## Part - I: Instructions to Citizens

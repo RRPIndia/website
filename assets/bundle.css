@@ -121,106 +121,136 @@
 }
 
 /* ROW 3.5: Display Settings */
-.display-settings {
-  display: flex;
-  justify-content: center;
-  margin-top: 0.5rem;
+/* Screen reader visually hidden utility */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
 }
 
-.display-settings details {
-  width: 100%;
-  max-width: 400px;
-  background: #f9f9f9;
-  border: 1px solid #e5e5e5;
-  border-radius: 6px;
+/* Toolbar Container */
+.reading-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
   padding: 0.5rem 0.75rem;
-}
-
-.display-settings summary {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  cursor: pointer;
-  list-style: none; /* Hide default triangle on some browsers */
-}
-
-/* Hide default marker in webkit */
-.display-settings summary::-webkit-details-marker {
-  display: none;
-}
-
-.display-settings .setting-item {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   margin-top: 0.75rem;
-  padding-top: 0.75rem;
-  border-top: 1px solid #e5e5e5;
+  background: var(--toolbar-bg, #f4f4f5);
+  border: 1px solid var(--toolbar-border, #e4e4e7);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  flex-wrap: wrap; /* Wraps gracefully on very small screens */
 }
 
-.setting-label {
-  font-weight: 500;
-  color: #333;
-}
-
-.setting-controls {
+.toolbar-group {
   display: flex;
+  align-items: center;
   gap: 0.5rem;
 }
 
-.setting-btn {
-  width: 32px;
-  height: 32px;
+.toolbar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 1.25rem;
+  background-color: var(--toolbar-border, #d4d4d8);
+}
+
+/* Dropdown styling */
+.toolbar-select {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--toolbar-border, #d4d4d8);
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* Segmented Button Groups */
+.btn-group {
   display: inline-flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--toolbar-border, #d4d4d8);
+  background: white;
+}
+
+.btn-group button {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1.2rem;
-  line-height: 1;
-  background: #fff;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  cursor: pointer;
-  color: #333;
-  transition: background-color 0.2s, border-color 0.2s;
+  transition: background 0.15s ease;
 }
 
-.setting-btn:hover,
-.setting-btn:focus-visible {
-  background: #eee;
-  border-color: #bbb;
+.btn-group button:not(:last-child) {
+  border-right: 1px solid var(--toolbar-border, #e4e4e7);
 }
 
-.setting-btn:active {
-  background: #ddd;
+.btn-group button:hover {
+  background: #f0f0f0;
 }
+
+.btn-group button.active {
+  background: #0066cc;
+  color: white;
+}
+
 
 /* =========================
    BASE LAYOUT
-   ========================= */
+========================= */
+
+/* 1. Define root variables with fallbacks */
+:root {
+  --font-family: Arial, sans-serif;
+  --font-size: 1rem;
+  --line-height: 1.5;
+}
 
 body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
   margin: 0;
-  font-family: Arial, sans-serif;
+  /* 2. Bind body to the CSS variables */
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
   background-color: #d3d1d41e;
   color: #333;
-  line-height: 1.5;
 }
 
 /* =========================
    MAIN CONTENT
-   ========================= */
-
-main {
+========================= */
+main, .content {
   flex: 1;
   margin-block: 5vw;
+  max-width: 93vw;
+  /* 3. Ensure container inherits the variables */
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
 
-.content {
-  max-width: 93vw;
+/* 4. Force text elements to inherit from container */
+main p, main li, main div, .content p, .content li {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
 }
+
 
 /* Safe <br> */
 br {
