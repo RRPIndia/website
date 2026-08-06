@@ -210,12 +210,10 @@
 /* =========================
    BASE LAYOUT
 ========================= */
-
-/* 1. Define root variables with fallbacks */
 :root {
-  --font-family: Arial, sans-serif;
   --font-size: 1rem;
-  --line-height: 1.5;
+  --font-family: system-ui, sans-serif;
+  --line-height: 1.6;
 }
 
 body {
