@@ -14,22 +14,7 @@
     {% include "header/section.njk" %}
     
     <!-- ROW 3: Search -->
-    <div class="header-search">
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-      <script src="/pagefind/pagefind-ui.js"></script>
-
-      <div id="search"></div>
-
-      <script>
-        window.addEventListener('DOMContentLoaded', () => {
-          new PagefindUI({
-            element: "#search",
-	    showEmptyFilters: false,
-            showSubResults: true
-          });
-        });
-      </script>
-    </div>
+    {% include "search/search.njk" %}
 
     <!-- ROW 3.5: Display Settings -->
     {% include "header/font.njk" %}
