@@ -19,18 +19,17 @@
   gtag('config', 'G-HHVG075GJS');
 
  </script>
- <script>
- 	(function() {
-      const size = localStorage.getItem('user-font-size');
-      const font = localStorage.getItem('user-font-family');
-      const lh = localStorage.getItem('user-line-height');
-      
-      const root = document.documentElement;
-      if (size) root.style.setProperty('--font-size', size + 'rem');
-      if (font) root.style.setProperty('--font-family', font);
-      if (lh) root.style.setProperty('--line-height', lh);
-    })();
+<script>
+  (function() {
+    const size = localStorage.getItem('user-font-size');
+    const font = localStorage.getItem('user-font-family');
+    const lh = localStorage.getItem('user-line-height');
+    const root = document.documentElement;
 
+    if (size) root.style.setProperty('--font-size', size + 'rem');
+    if (font) root.style.setProperty('--font-family', font); // Direct assignment!
+    if (lh) root.style.setProperty('--line-height', lh);
+  })();
 </script>
 
 
@@ -128,9 +127,13 @@
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
     <select id="font-family" class="toolbar-select" title="Font Style">
+
       <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
       <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
       <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
+        <option value="'Times New Roman', Times, serif">Times New Roman</option>
+      <option value="cursive">Cursive</option>
+
     </select>
   </div>
 
