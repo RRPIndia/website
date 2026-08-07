@@ -1,5 +1,6 @@
 /* =========================
    RESET (breadcrumb only)
+   Resets all properties for breadcrumb elements to ensure consistent styling.
    ========================= */
 .breadcrumb,
 .breadcrumb * {
@@ -28,21 +29,22 @@
 }
 
 .breadcrumb a {
-  color: #034ad8;
+  color: var(--color-breadcrumb-link);
   cursor: pointer;
 }
 
 .breadcrumb .crumb-disabled {
-  color: #777;
+  color: var(--color-text-disabled);
 }
 
 .breadcrumb .crumb-sep {
-  color: #999;
+  color: var(--color-text-muted);
   user-select: none;
 }
 
 /* =========================
    SHARED PAGE CONTAINER
+   Provides a common max-width and padding for page alignment.
    🔑 THIS FIXES ALIGNMENT
    ========================= */
 
@@ -54,11 +56,12 @@
 
 /* =========================
    HEADER
+   Styles for the main site header, including brand, navigation, and toolbar.
    ========================= */
 
 .elv-header {
-  background: #fff;
-  border-bottom: 1px solid #e5e5e5;
+  background: var(--color-bg-header);
+  border-bottom: 1px solid var(--color-border-header);
   z-index: 100;
 }
 
@@ -82,7 +85,7 @@
   font-size: clamp(28px, 11vw, 48px);
   font-weight: 900;
   line-height: 1.15;
-  color: #000;
+  color: var(--color-brand-link);
   letter-spacing: -0.02em;
 }
 
@@ -105,13 +108,13 @@
   align-items: center;
   padding: 0.45rem 0.7rem;
   border-radius: 6px;
-  color: #111;
+  color: var(--color-nav-link);
   font-weight: 500;
 }
 
 .elv-nav-menu a:hover,
 .elv-nav-menu a:focus-visible {
-  background: rgba(0, 0, 0, 0.06);
+  background: var(--color-nav-hover);
 }
 
 /* ROW 3: search / lang switch */
@@ -134,8 +137,8 @@
   gap: 0.75rem;
   padding: 0.5rem 0.75rem;
   margin-top: 0.75rem;
-  background: var(--toolbar-bg, #f4f4f5);
-  border: 1px solid var(--toolbar-border, #e4e4e7);
+  background: var(--toolbar-bg, var(--color-bg-toolbar));
+  border: 1px solid var(--toolbar-border, var(--color-border-toolbar));
   border-radius: 8px;
   font-size: 0.875rem;
   flex-wrap: wrap; /* Wraps gracefully on very small screens */
@@ -158,14 +161,14 @@
 .toolbar-divider {
   width: 1px;
   height: 1.25rem;
-  background-color: var(--toolbar-border, #d4d4d8);
+  background-color: var(--toolbar-border, var(--color-border-light));
 }
 
 /* Dropdown styling */
 .toolbar-select {
   padding: 0.25rem 0.5rem;
   border-radius: 6px;
-  border: 1px solid var(--toolbar-border, #d4d4d8);
+  border: 1px solid var(--toolbar-border, var(--color-border-light));
   background: white;
   font-size: 0.85rem;
   cursor: pointer;
@@ -176,7 +179,7 @@
   display: inline-flex;
   border-radius: 6px;
   overflow: hidden;
-  border: 1px solid var(--toolbar-border, #d4d4d8);
+  border: 1px solid var(--toolbar-border, var(--color-border-light));
   background: white;
 }
 
@@ -194,15 +197,15 @@
 }
 
 .btn-group button:not(:last-child) {
-  border-right: 1px solid var(--toolbar-border, #e4e4e7);
+  border-right: 1px solid var(--toolbar-border, var(--color-border-toolbar));
 }
 
 .btn-group button:hover {
-  background: #f0f0f0;
+  background: var(--color-bg-btn-hover);
 }
 
 .btn-group button.active {
-  background: #0066cc;
+  background: var(--color-btn-active);
   color: white;
 }
 
@@ -210,6 +213,34 @@
 /* =========================
    BASE LAYOUT
 ========================= */
+/* =========================
+   VARIABLES
+   Global color variables replacing hard-coded values.
+   ========================= */
+:root {
+  --color-brand-link: #000;
+  --color-btn-active: #0066cc;
+  --color-breadcrumb-link: #034ad8;
+  --color-nav-link: #111;
+  --color-text-main: #333;
+  --color-link-default: #6200ea;
+  --color-footer-bg: #666464;
+  --color-text-disabled: #777;
+  --color-text-muted: #999;
+  --color-border-light: #d4d4d8;
+  --color-border-disclaimer: #ddd;
+  --color-border-toolbar: #e4e4e7;
+  --color-border-header: #e5e5e5;
+  --color-bg-btn-hover: #f0f0f0;
+  --color-bg-toolbar: #f4f4f5;
+  --color-bg-disclaimer: #f6f6f6;
+  --color-footer-link: #fcf4f4;
+  --color-bg-header: #fff;
+  --color-nav-hover: rgba(0, 0, 0, 0.06);
+  --color-main-link: hsla(249, 62%, 29%, 0.993);
+  --color-bg-main: #d3d1d41e;
+}
+
 :root {
   --font-size: 1rem;
   --font-family: system-ui, sans-serif;
@@ -225,28 +256,18 @@ body {
   font-family: var(--font-family);
   font-size: var(--font-size);
   line-height: var(--line-height);
-  background-color: #d3d1d41e;
-  color: #333;
+  background-color: var(--color-bg-main);
+  color: var(--color-text-main);
 }
 
 /* =========================
    MAIN CONTENT
-========================= */
+   Layout rules for the main content area.
+   ========================= */
 main, .content {
   flex: 1;
   margin-block: 5vw;
   max-width: 93vw;
-  /* 3. Ensure container inherits the variables */
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-/* 4. Force text elements to inherit from container */
-main p, main li, main div, .content p, .content li {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
 
 
@@ -257,6 +278,7 @@ br {
 
 /* =========================
    TABLES
+   Styles for responsive, horizontally scrollable tables.
    ========================= */
 
 .table-wrapper {
@@ -282,10 +304,11 @@ table td {
 
 /* =========================
    LINKS
+   Global link styles, hover effects, and overflow handling.
    ========================= */
 
 a {
-  color: #6200ea;
+  color: var(--color-link-default);
   text-decoration: none;
   font-weight: bold;
   overflow-wrap: anywhere;
@@ -297,13 +320,14 @@ a:hover {
 
 main a {
   font-weight: 100;
-  color: hsla(249, 62%, 29%, 0.993);
+  color: var(--color-main-link);
   display: block;
   margin-bottom: 2vh;
 }
 
 /* =========================
    FOOTER
+   Grid-based footer layout for contact, social, and disclaimer sections.
    ========================= */
 
 footer {
@@ -313,14 +337,14 @@ footer {
     "social join"
     "disclaimer disclaimer";
   justify-items: center;
-  background-color: #666464;
+  background-color: var(--color-footer-bg);
   text-align: center;
   margin-top: 100px;
   padding: 10px;
 }
 
 footer p a {
-  color: #fcf4f4;
+  color: var(--color-footer-link);
   font-size: 17px;
   font-weight: bolder;
 }
@@ -329,13 +353,14 @@ footer p a {
   grid-area: disclaimer;
   font-size: 12.5px;
   line-height: 1.45;
-  background: #f6f6f6;
-  border-top: 1px solid #ddd;
+  background: var(--color-bg-disclaimer);
+  border-top: 1px solid var(--color-border-disclaimer);
   padding: 12px 16px;
 }
 
 /* =========================
    RESPONSIVE
+   Media queries for adjusting navigation and header layout on smaller screens.
    ========================= */
 
 @media (max-width: 768px) {
