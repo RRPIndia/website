@@ -1,0 +1,4 @@
+Printer with backfeed. This Printer can take paper back inside. So if vvpat printer has backfeed printer, then program can take uncut Banana back  
+.
+https://youtu.be/TX_YnIoS2v0
+.

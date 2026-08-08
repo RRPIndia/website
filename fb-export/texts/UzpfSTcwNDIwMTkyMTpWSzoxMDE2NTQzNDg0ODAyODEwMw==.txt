@@ -1,0 +1,13 @@
+Evm was never standalone
+
+If one sees actual standard operating Evm procrdure,  then one can see that Evm had never been standalone since 2001 and not today.
+ 
+Old non vvpat evm was connected to FLCU aka First Level Checking Unit to set its clock. 
+.
+So say 4 days after candidate list is made ie say about 13 days before polling, evm shows wrong clock time. Then BEL technician will connect it to FLCU and set its time. 
+.
+So now FLCU can pass polling date,  candidate number to be favored , % votes to be added, candidare number to be defeated, % votes. 
+
+So EVM was never standalone !!!
+
+FLCU was never shown to public or even candidates !!! It remained with BEL technicians and even most RO never knew about. It was not mentioned in any public document or even manuals given to RO.

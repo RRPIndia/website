@@ -1,0 +1,1 @@
+Attan all : use "shift <" to reduce speed of youtube video. This is useful while watching vvpat vidoes

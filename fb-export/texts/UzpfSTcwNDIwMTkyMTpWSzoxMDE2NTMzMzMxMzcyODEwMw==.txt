@@ -1,0 +1,27 @@
+Most often argument against proposal of election / recall of judges, election / recall of police chiefs - bharatiya are casteism
+. 
+Imo, best counter argument is - range voting ends casteism.
+.
+How imo range voting ends casteism. And preferential voting also ends casteism. .
+.
+( Range voting is easier to explain and doesnt suffer from arrow's useless uncertainty theorm. But range voting is very difficult to implement using secret ballot and easy to implement using open voting.)
+.
+Say a voter V is casteism. Say there 10 candidates c1 to c10 and say c1 to c5 are casteists and c6 to c10 are caste neutral
+.
+In range voting, voter gives 0 to 100 score to zero or more candidate.
+.
+So now say V gives 100 points to C1 due to caste factor. And same V will give 0 to C2 to C5 because they are casteists from other castes. 
+
+Now V knows most voters will not vote for C1. So V will now give 99 or some score to one or more of C6 to C10. 
+.
+And all casteist voters will act that way
+
+Now in any constituency of over 2 lakhs, one caste doesnt have more than 10%. And in case they do, caste votes get divided in subcastes or personalities. 
+.
+So C1 will get points from atmost 10% to atmost 20% voters only. While caste neutral candidates will get votes from across population.
+.
+So none of the casteist candidate will win
+.
+Preferential voting will work in same way. 
+.
+So Preferential voting and range voting ends influence of casteism in elections.

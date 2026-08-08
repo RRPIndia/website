@@ -1,0 +1,10 @@
+Does vvpat go on error mode if too much light falls on it?
+Is there any line on vvpat manual which says that vvpat will go in error mode if too much light falls on it?
+
+.
+
+Pls give page scan
+
+.
+
+Also pls give page scan proving that it has light sensor. @everyone

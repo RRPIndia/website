@@ -1,0 +1,9 @@
+Transaction tax problem - say A has rs 100k in his account. Say A adds B name in his account and then removes A name. 
+
+So effectively, rs 100k moved from A to B. 
+
+But there is no transaction as defined by bank. So will Transaction Tax apply?
+.
+Problem is - Transaction tax people dont give full draft , since 1991 !!! 
+
+Basically, TT people used TT only to crush information spread on wealth tax. And they never did any electoral activism against tax laws from 1991 till today
