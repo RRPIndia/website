@@ -99,24 +99,16 @@
 
     
     <!-- ROW 3: Search -->
-    <div class="header-search">
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-      <script src="/pagefind/pagefind-ui.js"></script>
+    
+  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+  <pagefind-input></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
 
-      <div id="search"></div>
+<pagefind-filter-pane></pagefind-filter-pane>
 
-      <script>
-        window.addEventListener('DOMContentLoaded', () => {
-          new PagefindUI({
-            element: "#search",
-	    showEmptyFilters: false,
-            showSubResults: true
-          });
-        });
-      </script>
-    </div>
-
-    <!-- ROW 3.5: Display Settings -->
+       <!-- ROW 3.5: Display Settings -->
     <!-- Pagefind Container -->
 <div id="search" class="search-container"></div>
 
@@ -211,8 +203,19 @@
   
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
-    <div class="page-container content">
-        
+
+  
+    <span data-pagefind-filter="lang" hidden>en</span>
+  
+
+
+  
+    <span data-pagefind-filter="author" hidden>en</span>
+  
+
+
+  <div class="page-container content">
+    
 
 
 
@@ -2221,6 +2224,8 @@
       
         
           
+        
+      
         
       
         
@@ -4263,6 +4268,8 @@
       
         
       
+        
+      
 
       
         <a href="/drafts/en/">
@@ -4283,7 +4290,7 @@
 </nav>
 
 
-        <p>This law will reduce butchering of indigenous cow and  strengthen their protection. pasing this law in VS is not needed. Chief Minster can directly print this in gazette.</p>
+    <p>This law will reduce butchering of indigenous cow and  strengthen their protection. pasing this law in VS is not needed. Chief Minster can directly print this in gazette.</p>
 <hr>
 <h2>Part - I: Instructions to Citizens</h2>
 <p>(01) Within 30 days of the publication of this law in the Gazette, every voter in the State shall get a Vote Vapsi Passbook. The following officers will come under the purview of this Vote Vapsi Passbook:</p>
@@ -4350,8 +4357,9 @@
 <p>(15.2) If a voter wishes to register his approval on an affidavit submitted under section 15.1, he can register his YES / NO at Patwari office by paying a fee of Rs. 3. Patwari will register it and will put YES / NO of the voter with his voter id number on the Chief Minister's website.</p>
 <p>--------- End of Gau Niti Draft ---------</p>
 
-    </div>
-  </main>
+  </div>
+
+</main>
 
   <footer>
   <a class="contact" href="/pages/footer/contact.html">Contact Us</a>

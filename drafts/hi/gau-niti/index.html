@@ -113,24 +113,16 @@
 
     
     <!-- ROW 3: Search -->
-    <div class="header-search">
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-      <script src="/pagefind/pagefind-ui.js"></script>
+    
+  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+  <pagefind-input></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
 
-      <div id="search"></div>
+<pagefind-filter-pane></pagefind-filter-pane>
 
-      <script>
-        window.addEventListener('DOMContentLoaded', () => {
-          new PagefindUI({
-            element: "#search",
-	    showEmptyFilters: false,
-            showSubResults: true
-          });
-        });
-      </script>
-    </div>
-
-    <!-- ROW 3.5: Display Settings -->
+       <!-- ROW 3.5: Display Settings -->
     <!-- Pagefind Container -->
 <div id="search" class="search-container"></div>
 
@@ -225,8 +217,17 @@
   
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
-    <div class="page-container content">
-        
+
+  
+    <span data-pagefind-filter="lang" hidden>hi</span>
+  
+
+
+  
+
+
+  <div class="page-container content">
+    
 
 
 
@@ -2235,6 +2236,8 @@
       
         
           
+        
+      
         
       
         
@@ -4277,6 +4280,8 @@
       
         
       
+        
+      
 
       
         <a href="/drafts/hi/">
@@ -4297,7 +4302,7 @@
 </nav>
 
 
-        <h1>गौ नीति : भारतीय नस्ल के गौ-धन को सरंक्षित करने के लिए प्रस्तावित क़ानून</h1>
+    <h1>गौ नीति : भारतीय नस्ल के गौ-धन को सरंक्षित करने के लिए प्रस्तावित क़ानून</h1>
 <p>(इस क़ानून ड्राफ्ट का पीडीऍफ़ एवं अन्य सम्बंधित जानकारी के लिए इस पोस्ट के पहले 3 कमेन्ट देखें। पीडीऍफ़ पेम्पलेट छपवाने और मोबाईल पर पढने के फोर्मेट में है।)</p>
 <h2>इस कानून का सार :</h2>
 <p>इस क़ानून के गेजेट में आने से देशी गाय की हत्या में कमी आएगी और गौ वंश का सरंक्षण होगा। इस कानून को विधानसभा से पास करने की जरूरत नहीं है। मुख्यमंत्री इसे सीधे गेजेट में छाप सकते है।</p>
@@ -4410,8 +4415,9 @@
 </ol>
 <hr>
 
-    </div>
-  </main>
+  </div>
+
+</main>
 
   <footer>
   <a class="contact" href="/pages/footer/contact.html">Contact Us</a>

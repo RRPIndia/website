@@ -99,24 +99,16 @@
 
     
     <!-- ROW 3: Search -->
-    <div class="header-search">
-      <link href="/pagefind/pagefind-ui.css" rel="stylesheet">
-      <script src="/pagefind/pagefind-ui.js"></script>
+    
+  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
+  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+  <pagefind-input></pagefind-input>
+<pagefind-summary></pagefind-summary>
+<pagefind-results></pagefind-results>
 
-      <div id="search"></div>
+<pagefind-filter-pane></pagefind-filter-pane>
 
-      <script>
-        window.addEventListener('DOMContentLoaded', () => {
-          new PagefindUI({
-            element: "#search",
-	    showEmptyFilters: false,
-            showSubResults: true
-          });
-        });
-      </script>
-    </div>
-
-    <!-- ROW 3.5: Display Settings -->
+       <!-- ROW 3.5: Display Settings -->
     <!-- Pagefind Container -->
 <div id="search" class="search-container"></div>
 
@@ -198,13 +190,22 @@
   
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
-    <div class="page-container content">
-        
+
+  
+    <span data-pagefind-filter="lang" hidden>en</span>
+  
+
+
+  
+
+
+  <div class="page-container content">
+    
 
 
 
 
-        
+    
 
 <!-- ================= PAGE LAYOUT CSS ================= -->
 
@@ -999,8 +1000,9 @@ function toggleVVPAT() {
 
 
 
-    </div>
-  </main>
+  </div>
+
+</main>
 
   <footer>
   <a class="contact" href="/pages/footer/contact.html">Contact Us</a>
