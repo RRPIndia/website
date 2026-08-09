@@ -1,3 +1,0 @@
-Print exam papers in exam Hall just before exam starts. Scan answer sheets of all exam givers immediately after exam ends and make sha2 hash of all answersheet image public. ( not answer sheet). 
-
-Later, answer sheet of all successful candidates will be made public. And answersheet of all others who want to make it public will be made public.

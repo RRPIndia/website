@@ -1,1 +1,0 @@
-4000 evm burnt. Only to supress EvmBlackGlass EvmLightSensor demo  impact.

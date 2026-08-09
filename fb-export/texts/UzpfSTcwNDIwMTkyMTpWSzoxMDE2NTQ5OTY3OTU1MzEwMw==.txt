@@ -1,1 +1,0 @@
-In EvmDemoVideo , on each frame left down corner , write 12M , in white text in font sizes equal to 5% of frame height. @everyone

@@ -1,3 +1,0 @@
-Ending OMR sheet is nonsense. If answers are entered in computer, then server admin can incresse score of any number of exam givers leaving no proofs. 
-.
-Priyanshu Chauhan Dehradun UkActivist suggested a good wayout. answer sheet must be in writing and must be scanned immediately after exam and sha2 hash must be made public or whole answer sheet must be made public. Final score can be given in 7 days

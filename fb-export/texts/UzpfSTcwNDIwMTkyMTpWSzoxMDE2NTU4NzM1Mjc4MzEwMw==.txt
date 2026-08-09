@@ -1,2 +1,0 @@
-Allow only digital money into RJBD. No cash. Put SBI counter at gate. A person can give cash and take card, like cards in metro or many malls.
-.
