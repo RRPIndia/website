@@ -1,13 +1,10 @@
 <!DOCTYPE html>
 <html lang="{{ lang }}">
 <head>
-
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <meta name="google-site-verification"
-        content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
-
+  <meta name="google-site-verification" content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
+  
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
   <script>
@@ -17,13 +14,22 @@
     gtag('config', 'G-HHVG075GJS');
   </script>
 
-  <title>{{ title or "Facebook Archives" }}</title>
+  <script>
+    (function() {
+      const size = localStorage.getItem('user-font-size');
+      const font = localStorage.getItem('user-font-family');
+      const lh = localStorage.getItem('user-line-height');
+      const root = document.documentElement;
+      if (size) root.style.setProperty('--font-size', size + 'rem');
+      if (font) root.style.setProperty('--font-family', font);
+      if (lh) root.style.setProperty('--line-height', lh);
+    })();
+  </script>
 
+  <title>{{ title or "Facebook Archives" }}</title>
   <link rel="stylesheet" href="/assets/bundle.css">
   <script src="/assets/bundle.js" defer></script>
-
 </head>
-
 <body>
 
   {% include "header/header.njk" %}
@@ -31,18 +37,37 @@
   <main data-pagefind-body>
     <div class="page-container content">
       {% include "header/breadcrumb.njk" %}
-
       {{ content | safe }}
-
     </div>
   </main>
 
   <div class="page-container content">
-
     <hr>
 
-    <h2>Post Information</h2>
+    <!-- PREVIOUS / NEXT POST NAVIGATION -->
+    {% set previousPost = collections.facebook | getPreviousCollectionItem(page) %}
+    {% set nextPost = collections.facebook | getNextCollectionItem(page) %}
 
+    {% if previousPost or nextPost %}
+      <nav class="post-navigation">
+        {% if previousPost %}
+          <a href="{{ previousPost.url }}" class="nav-btn prev-btn">
+            ← Previous Post
+          </a>
+        {% else %}
+          <div></div> <!-- Spacer when no previous post exists -->
+        {% endif %}
+
+        {% if nextPost %}
+          <a href="{{ nextPost.url }}" class="nav-btn next-btn">
+            Next Post →
+          </a>
+        {% endif %}
+      </nav>
+      <hr>
+    {% endif %}
+
+    <h2>Post Information</h2>
     {% if author %}
       <p><strong>Author:</strong> {{ author }}</p>
     {% endif %}
@@ -66,10 +91,10 @@
     <div hidden data-pagefind-filter="author" show-empty="false">{{ author }}</div>
     <div hidden data-pagefind-filter="group" show-empty="false">{{ group }}</div>
     <div hidden data-pagefind-filter="lang" show-empty="false">{{ lang }}</div>
-
   </div>
 
   {% include "footer/footer.html" %}
 
 </body>
 </html>
+

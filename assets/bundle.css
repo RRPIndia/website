@@ -1,3 +1,5 @@
+@import "fb.css";
+
 /* =========================
    RESET (breadcrumb only)
    ========================= */
@@ -296,8 +298,7 @@ a:hover {
 }
 
 main a {
-  font-weight: 100;
-  color: hsla(249, 62%, 29%, 0.993);
+  color: green;
   display: block;
   margin-bottom: 2vh;
 }
@@ -305,6 +306,86 @@ main a {
 /* =========================
    FOOTER
    ========================= */
+footer {
+  /* CSS Grid creates a 2-column layout for links and a full-width bottom row */
+  display: grid;
+  
+  /* Maps visual areas: 'contact' & 'about' on row 1, 'social' & 'join' on row 2, 
+     and 'disclaimer' spanning across both columns on row 3 */
+  grid-template-areas:
+    "contact about"
+    "social join"
+    "disclaimer disclaimer";
+
+  /* Centers the content inside each grid cell horizontally */
+  justify-items: center;
+
+  /* Slightly darker neutral grey than body background (#d3d1d41e) for subtle contrast */
+  background-color: #bebcbf;
+  
+  /* Text alignment fallback for inner inline elements */
+  text-align: center;
+
+  /* Separates the footer from main content above */
+  margin-top: 100px;
+
+  /* Padding around footer content: 20px top, 0px sides, 0px bottom (disclaimer handles bottom) */
+  padding: 20px 0 0 0;
+
+  /* Adds consistent spacing between grid rows and columns */
+  gap: 1.25rem 1rem;
+}
+
+/* Styles links inside <p> elements within the footer */
+footer p a {
+  /* Dark text color to maintain strong contrast against the light grey background */
+  color: #1a1a1a;
+  
+  font-size: 17px;
+  
+  /* Heavy font weight to make footer links distinct and easy to tap/read */
+  font-weight: 700;
+
+  /* Removes default blue underlines for a cleaner UI button/nav feel */
+  text-decoration: none;
+}
+
+/* Interactive hover state for links */
+footer p a:hover {
+  text-decoration: underline;
+}
+
+/* Disclaimer section spanning the bottom of the footer */
+.disclaimer {
+  /* Assigns this element to the 2-column wide 'disclaimer' area defined in grid-template-areas */
+  grid-area: disclaimer;
+
+  /* Smaller font size for legal/secondary disclaimers */
+  font-size: 12.5px;
+
+  /* Increases vertical spacing between lines of small text for improved legibility */
+  line-height: 1.45;
+
+  /* Slightly darker tint than main footer background to ground the bottom edge */
+  background-color: #aeacaf;
+
+  /* Muted dark grey text for legal copy */
+  color: #2b2b2b;
+
+  /* Subtle border line separating main links from disclaimer copy */
+  border-top: 1px solid #9e9c9f;
+
+  /* Inner spacing around disclaimer text */
+  padding: 14px 16px;
+
+  /* Ensures padding doesn't push element width past 100% and break grid layout */
+  box-sizing: border-box;
+
+  /* Forces the disclaimer bar to stretch completely across both grid columns */
+  width: 100%;
+}
+
+<!--
 
 footer {
   display: grid;
@@ -333,7 +414,7 @@ footer p a {
   border-top: 1px solid #ddd;
   padding: 12px 16px;
 }
-
+-->
 /* =========================
    RESPONSIVE
    ========================= */
