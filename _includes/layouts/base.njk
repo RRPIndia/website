@@ -36,7 +36,9 @@
   <title>{{ title or "Right to Recall Party" }}</title>
 
   <link rel="stylesheet" href="/assets/bundle.css">
-  <script src="/assets/bundle.js" defer></script>
+  <script type="module" src="/assets/bundle.js"></script>
+</head>
+
 
 </head>
 
@@ -49,17 +51,6 @@
   {# MAIN CONTENT #}
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
-
-<!--
-  {% if lang %}
-    <span data-pagefind-filter="lang" hidden>{{ lang }}</span>
-  {% endif %}
-
-
-  {% if author %}
-    <span data-pagefind-filter="author" hidden>{{ author }}</span>
-  {% endif %}
--->
 
 
   <div class="page-container content">

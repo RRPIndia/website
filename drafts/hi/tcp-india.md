@@ -2,10 +2,10 @@
 title: पारदर्शी शिकायत प्रणाली
 draftNumber: 18
 shortName: TCPIndia
-layout: layouts/base.njk
 driveLink: https://drive.google.com/drive/folders/1IVs2I7toaI1EbjzClssp9SOJqAYPmqSv
+fbPost: https://www.facebook.com/pawan.jury/posts/2785178204933731
 ---
-{% include "drafts/tcpindia/gist.hi.md" %}
+{% include "drafts/tcp-india/gist.hi.md" %}
 
 **यह कानून कैसे काम करेगा**
 मान लीजिए प्रधानमंत्री नागरिकों के दबाव में आकर टीसीपी कानून पर हस्ताक्षर कर देते हैं ।

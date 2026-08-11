@@ -3,9 +3,8 @@ layout: layouts/base.njk
 title: "Facebook Archives"
 ---
 
-<h1>Facebook Archives</h1>
+<h2>Facebook Archives</h2>
 
-<h2>Select a Year</h2>
 <ul>
   {% for yData in collections.postsByYear %}
     <li><a href="/fb-export/{{ yData.year }}/">{{ yData.year }} Archives</a></li>

@@ -1,7 +1,15 @@
+---
+title: रिक्त भूमि कर
+draftNumber: 2
+driveLink: https://drive.google.com/drive/folders/1JUDoFKDKaccw11MpNOXpfJU4ym69T2dQ
+fbPost: https://www.facebook.com/pawan.jury/posts/2391504844301071
+---
+
+
 # प्रस्तावित रिक्त भूमि कर 
 
 ## क़ानून का सार : 
-{% include "drafts/gau-niti/gist.hi.md" %} 
+{% include "drafts/rikt-bhoomi-kar/gist.hi.md" %} 
 
 यदि आप इस क़ानून का समर्थन करते है और देश में इसे लागू करना चाहते है तो पीएम को एक पोस्टकार्ड लिखें। पोस्टकार्ड में यह लिखे :
 

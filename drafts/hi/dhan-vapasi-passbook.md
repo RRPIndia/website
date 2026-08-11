@@ -1,9 +1,8 @@
 ---
-title: Dhan Vapasi Passbook
+title: धन वापसी पासबुक
 driveLink: https://drive.google.com/drive/folders/1-ECjeeJKDzWIprpS5f4pL0SFEPGEpHHd
 draftNumber: 1
-facebook: https://www.facebook.com/pawan.jury/posts/2212549868863237
-layout: layouts/base.njk
+fbPost: https://www.facebook.com/pawan.jury/posts/2212549868863237
 ---
 # धनवापसी पासबुक – खनिज रॉयल्टी सीधे नागरिको के खातों में भेजने का प्रस्ताव
 (DhanVapsi Passbook– Directly Deposit Mineral Royalty in Citizens Account)
