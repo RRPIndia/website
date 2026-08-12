@@ -28,7 +28,7 @@
 
   <title>Facebook Archives</title>
   <link rel="stylesheet" href="/assets/bundle.css">
-  <script src="/assets/bundle.js" defer></script>
+  <script type="module" src="/assets/bundle.js"></script>
 </head>
 <body>
 
@@ -80,6 +80,18 @@
           
             
           
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
+            
+          
         </ul>
       </details>
     </li>
@@ -103,18 +115,18 @@
 
 <!-- Typography Toolbar -->
 <div class="reading-toolbar" aria-label="Reading options">
-  
+
   <!-- Font Family Selector -->
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
     <select id="font-family" class="toolbar-select" title="Font Style">
 
-      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <!-- apple might igbire these -->
+      <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
       <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
-      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
-        <option value="'Times New Roman', Times, serif">Times New Roman</option>
-      <option value="cursive">Cursive</option>
-
+      <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
+      <option value="'Times New Roman', Times, serif" style="font-family: 'Times New Roman', Times, serif;">Times New Roman</option>
+      <option value="cursive" style="font-family: cursive;">Cursive</option>
     </select>
   </div>
 
@@ -132,6 +144,17 @@
 
   <span class="toolbar-divider" aria-hidden="true"></span>
 
+    <!-- NEW: Boldness Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="weight-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="weight-label">
+      <button type="button" id="weight-down" title="Decrease boldness" aria-label="Decrease boldness">B−</button>
+      <button type="button" id="weight-reset" title="Reset boldness" aria-label="Reset boldness">Normal</button>
+      <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
+    </div>
+  </div>
+	
+  
   <!-- Line Spacing Toggles -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="spacing-label"></span>
@@ -206,6 +229,18 @@
 
     
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -4242,6 +4277,18 @@
         
       
         
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
           
         
       
@@ -4266,6 +4313,18 @@
 
     
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       

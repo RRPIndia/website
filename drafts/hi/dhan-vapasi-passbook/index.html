@@ -33,10 +33,12 @@
 </script>
 
 
-  <title>Dhan Vapasi Passbook</title>
+  <title>धन वापसी पासबुक</title>
 
   <link rel="stylesheet" href="/assets/bundle.css">
-  <script src="/assets/bundle.js" defer></script>
+  <script type="module" src="/assets/bundle.js"></script>
+</head>
+
 
 </head>
 
@@ -78,7 +80,34 @@
               <li>
                 <a href="/drafts/hi/dhan-vapasi-passbook/">
                   1.
-                  Dhan Vapasi Passbook
+                  धन वापसी पासबुक
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/elt/">
+                  2.
+                  रिक्त भूमि कर
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/woic/">
+                  6.
+                  विदेशी निवेश में कटौतियां
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/rhb/">
+                  10.
+                  राष्ट्रीय हिन्दू बोर्ड
                 </a>
               </li>
             
@@ -98,7 +127,34 @@
           
             
               <li>
-                <a href="/drafts/hi/tcpindia/">
+                <a href="/drafts/hi/jury-court/">
+                  3.
+                  जूरी कोर्ट
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/jila-jury-court/">
+                  5.
+                  जिला जूरी कोर्ट
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/nrci/">
+                  14.
+                  भारतीय राष्ट्रिय नागरिकता रजिस्टर अधिनियम
+                </a>
+              </li>
+            
+          
+            
+              <li>
+                <a href="/drafts/hi/tcp-india/">
                   18.
                   पारदर्शी शिकायत प्रणाली
                 </a>
@@ -128,18 +184,18 @@
 
 <!-- Typography Toolbar -->
 <div class="reading-toolbar" aria-label="Reading options">
-  
+
   <!-- Font Family Selector -->
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
     <select id="font-family" class="toolbar-select" title="Font Style">
 
-      <option value="system-ui, -apple-system, sans-serif">Sans-Serif</option>
+      <!-- apple might igbire these -->
+      <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
       <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
-      <option value="'Courier New', monospace" style="font-family: monospace;">Monospace</option>
-        <option value="'Times New Roman', Times, serif">Times New Roman</option>
-      <option value="cursive">Cursive</option>
-
+      <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
+      <option value="'Times New Roman', Times, serif" style="font-family: 'Times New Roman', Times, serif;">Times New Roman</option>
+      <option value="cursive" style="font-family: cursive;">Cursive</option>
     </select>
   </div>
 
@@ -157,6 +213,17 @@
 
   <span class="toolbar-divider" aria-hidden="true"></span>
 
+    <!-- NEW: Boldness Controls -->
+  <div class="toolbar-group">
+    <span class="toolbar-label" id="weight-label"></span>
+    <div class="btn-group" role="group" aria-labelledby="weight-label">
+      <button type="button" id="weight-down" title="Decrease boldness" aria-label="Decrease boldness">B−</button>
+      <button type="button" id="weight-reset" title="Reset boldness" aria-label="Reset boldness">Normal</button>
+      <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
+    </div>
+  </div>
+	
+  
   <!-- Line Spacing Toggles -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="spacing-label"></span>
@@ -218,15 +285,6 @@
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
 
-<!--
-  
-    <span data-pagefind-filter="lang" hidden>hi</span>
-  
-
-
-  
--->
-
 
   <div class="page-container content">
     
@@ -245,6 +303,18 @@
 
     
       
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
+      
+        
       
         
       
@@ -4261,7 +4331,19 @@
         
       
         
+      
+        
+      
+        
           
+        
+      
+        
+      
+        
+      
+        
+      
         
       
         
@@ -4316,8 +4398,8 @@
 <p>(DhanVapsi Passbook– Directly Deposit Mineral Royalty in Citizens Account)</p>
 <p>(इस क़ानून ड्राफ्ट का पीडीऍफ़ एवं अन्य सम्बंधित जानकारी के लिए इस पोस्ट के कमेन्ट देखें। पीडीऍफ़ पेम्पलेट छपवाने और मोबाईल पर पढने के फोर्मेट में है।)</p>
 <h2>इस कानून का सार :</h2>
-<p>यह क़ानून देश के खनिजो की लूट रोकने के लिए लिखा गया है। इस प्रस्तावित क़ानून के गेजेट में छपने के तुरंत बाद भारत सरकार के नियंत्रण में मौजूद सभी खनिज एवं प्राकृतिक संसाधन देश के नागरिको की संपत्ति घोषित हो जायेंगे, और 30 दिनों के भीतर प्रत्येक मतदाता को एक धनवापसी पासबुक मिलेगी। तब देश के समस्त खनिज+स्पेक्ट्रम+सरकारी भूमि से प्राप्त होने वाली रॉयल्टी एवं किराया “ 135 करोड़ भारतीयों का संयुक्त खाता ” नामक बैंक एकाउंट में जमा होगा। इकट्ठा हुयी इस राशि का 65% हिस्सा सभी भारतीयों में बराबर बांटा जाएगा और 35% हिस्सा सेना के खाते में जाएगा। प्रत्येक भारतीय के हिस्से में आयी राशि की एंट्री धन वापसी पासबुक में आएगी।</p>
-<p>खनिजो की नीलामी करके पैसा इकठ्ठा करने वाला राष्ट्रिय खनिज रॉयल्टी अधिकारी धन वापसी पासबुक में दायरे में होगा और नागरिक पटवारी कार्यालय में जाकर उसे नौकरी से निकालने के लिए अपनी स्वीकृति दे सकेंगे। यदि खनिज अधिकारी या उसके स्टाफ के खिलाफ घपला करने की या अन्य कोई शिकायत आती है तो सुनवाई करने और दंड देने की शक्ति जज के पास न होकर आम नागरिको की जूरी के पास रहेगी। यह क़ानून देश की सभी खदानों की बिक्री पर प्रतिबंध लगाता है। इस क़ानून को संसद से पास करने की जरूरत नही है। प्रधानमंत्री इसे सीधे गेजेट में छाप सकते है।</p>
+<p>यह क़ानून देश के खनिजो की लूट रोकने के लिए लिखा गया है। इस प्रस्तावित क़ानून के गेजेट में छपने के तुरंत बाद भारत सरकार के नियंत्रण में मौजूद सभी खनिज एवं प्राकृतिक संसाधन देश के नागरिको की संपत्ति घोषित हो जायेंगे, और 30 दिनों के भीतर प्रत्येक मतदाता को एक धनवापसी पासबुक मिलेगी। तब देश के समस्त खनिज+स्पेक्ट्रम+सरकारी भूमि से प्राप्त होने वाली रॉयल्टी एवं किराया “ 135 करोड़ भारतीयों का संयुक्त खाता ” नामक बैंक एकाउंट में जमा होगा। इकट्ठा हुयी इस राशि का 65% हिस्सा सभी भारतीयों में बराबर बांटा जाएगा और 35% हिस्सा सेना के खाते में जाएगा। प्रत्येक भारतीय के हिस्से में आयी राशि की एंट्री धन वापसी पासबुक में आएगी।
+खनिजो की नीलामी करके पैसा इकठ्ठा करने वाला राष्ट्रिय खनिज रॉयल्टी अधिकारी धन वापसी पासबुक में दायरे में होगा और नागरिक पटवारी कार्यालय में जाकर उसे नौकरी से निकालने के लिए अपनी स्वीकृति दे सकेंगे। यदि खनिज अधिकारी या उसके स्टाफ के खिलाफ घपला करने की या अन्य कोई शिकायत आती है तो सुनवाई करने और दंड देने की शक्ति जज के पास न होकर आम नागरिको की जूरी के पास रहेगी। यह क़ानून देश की सभी खदानों की बिक्री पर प्रतिबंध लगाता है। इस क़ानून को संसद से पास करने की जरूरत नही है। प्रधानमंत्री इसे सीधे गेजेट में छाप सकते है।</p>
 <hr>
 <p>यदि आप इस क़ानून का समर्थन करते है तो पीएम को एक पोस्टकार्ड भेजे। पोस्टकार्ड में यह लिखे :</p>
 <p>“प्रधानमंत्री जी, कृपया प्रस्तावित  धनवापसी पासबुक  क़ानून गेजेट में छापें  - #DhanVapsiPassbook  , #P20180436101</p>

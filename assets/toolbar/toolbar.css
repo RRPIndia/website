@@ -1,0 +1,131 @@
+/* ========================================================
+   1. TYPOGRAPHY VARIABLES (Required for JS functionality)
+   ======================================================== */
+:root {
+  /* Default Fallbacks */
+  --font-family: system-ui, -apple-system, sans-serif;
+  --font-size: 1.0rem;
+  --font-weight: 400;
+  --line-height: 1.6;
+}
+/* Apply the variables to your main content area, posts, AND specifically paragraphs */
+main, 
+.fb-post, 
+main p, 
+.fb-post p, 
+.fb-excerpt {
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  
+  /* Force the weight to apply, overriding browser defaults */
+  font-weight: var(--font-weight) !important;
+  
+  line-height: var(--line-height);
+  
+  /* Smoothly animate changes */
+  transition: font-size 0.2s ease, font-weight 0.2s ease, line-height 0.2s ease;
+}
+
+  
+/* ========================================================
+   2. ACCESSIBILITY UTILITIES
+   ======================================================== */
+/* Screen reader visually hidden utility */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0, 0, 0, 0); border: 0;
+}
+
+/* ========================================================
+   3. TOOLBAR CONTAINER & LAYOUT
+   ======================================================== */
+.reading-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.75rem;
+  margin-top: 0.75rem;
+  background: var(--toolbar-bg, #f4f4f5);
+  border: 1px solid var(--toolbar-border, #e4e4e7);
+  border-radius: 8px;
+  font-size: 0.875rem;
+  flex-wrap: wrap; /* Wraps gracefully on very small screens */
+}
+
+.toolbar-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.toolbar-label {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  opacity: 0.7;
+}
+
+.toolbar-divider {
+  width: 1px;
+  height: 1.25rem;
+  background-color: var(--toolbar-border, #d4d4d8);
+}
+
+/* ========================================================
+   4. DROPDOWN STYLING
+   ======================================================== */
+.toolbar-select {
+  padding: 0.25rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--toolbar-border, #d4d4d8);
+  background: white;
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+
+/* ========================================================
+   5. SEGMENTED BUTTON GROUPS
+   ======================================================== */
+.btn-group {
+  display: inline-flex;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 1px solid var(--toolbar-border, #d4d4d8);
+  background: white;
+}
+
+.btn-group button {
+  border: none;
+  background: transparent;
+  padding: 0.25rem 0.6rem;
+  font-size: 0.8rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s ease;
+}
+
+/* Prevent text-indicator buttons from jumping in width */
+#weight-reset {
+  min-width: 68px; 
+}
+#size-reset {
+  min-width: 55px;
+}
+
+.btn-group button:not(:last-child) {
+  border-right: 1px solid var(--toolbar-border, #e4e4e7);
+}
+
+.btn-group button:hover {
+  background: #f0f0f0;
+}
+
+.btn-group button.active {
+  background: #0066cc;
+  color: white;
+}
+
