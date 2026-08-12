@@ -9,7 +9,7 @@ fbPost: https://www.facebook.com/pawan.jury/posts/2391504844301071
 # प्रस्तावित रिक्त भूमि कर 
 
 ## क़ानून का सार : 
-{% include "drafts/rikt-bhoomi-kar/gist.hi.md" %} 
+{% include "drafts/elt/gist.hi.md" %} 
 
 यदि आप इस क़ानून का समर्थन करते है और देश में इसे लागू करना चाहते है तो पीएम को एक पोस्टकार्ड लिखें। पोस्टकार्ड में यह लिखे :
 
