@@ -1,0 +1,15 @@
+pagefind-results {
+  --pf-results-display: block !important;
+  --pf-results-flex-direction: column !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  min-width: 0 !important;
+  white-space: normal !important;
+}
+
+pagefind-results * {
+  white-space: normal !important;
+  text-overflow: clip !important;
+}
+
+
