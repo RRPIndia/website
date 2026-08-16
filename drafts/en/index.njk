@@ -1,32 +1,36 @@
 ---
-title: All Draft Laws
+title: List of All Draft Laws
 layout: layouts/base.njk
 ---
 
 <h1>English Drafts</h1>
 
-{% set posts = collections.draft | sort(false, true, "data.draftNumber") %}
+{% set posts = drafts | sort(false, false, "id") %}
 
-{% for post in posts %}
-  {% if post.data.lang == lang and post.data.draftNumber %}
+{% for draft in posts %}
 
-    {% set gistPath = "drafts/" + post.fileSlug + "/gist.en.md" %}
+  <article class="draft">
 
-    <article class="draft">
-      <h2>
-        <a href="{{ post.url }}">
-          {{ post.data.draftNumber }}. {{ post.data.title }}
-        </a>
-      </h2>
+    <h2>
+      <a href="/drafts/en/{{ draft.shortName }}/">
+        {{ draft.id }}. {{ draft.enTitle or draft.shortName }}
+      </a>
+    </h2>
 
+    {% if draft.enDesc %}
       <div class="gist">
-        {% include gistPath %}
+        {{ draft.enDesc }}
       </div>
+    {% endif %}
 
-      <p><a href="{{ post.url }}">Read full draft →</a></p>
-    </article>
+    <p>
+      <a href="/drafts/en/{{ draft.shortName }}/">
+        Read the full draft →
+      </a>
+    </p>
 
-    <hr>
+  </article>
 
-  {% endif %}
+  <hr>
+
 {% endfor %}

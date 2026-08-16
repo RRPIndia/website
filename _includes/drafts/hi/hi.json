@@ -1,0 +1,5 @@
+{
+  "lang": "hi",
+  "tags": ["draft"],
+  "layout": "layouts/base.njk"
+}

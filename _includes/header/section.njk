@@ -2,6 +2,7 @@
   <ul class="elv-nav-menu">
     <li>
       <details class="nav-expand">
+
         <summary>
           {% if lang == "hi" %}
             ड्राफ्ट्स
@@ -11,17 +12,60 @@
         </summary>
 
         <ul>
-          {% for draft in collections.draft | sort(false, false, "data.draftNumber") %}
-            {% if draft.data.lang == lang and draft.data.draftNumber %}
-              <li>
-                <a href="{{ draft.url }}">
-                  {{ draft.data.draftNumber }}.
-                  {{ draft.data.title }}
+
+          {% set posts = drafts | sort(false, false, "id") %}
+
+          {% for draft in posts %}
+
+            <li class="nav-draft">
+
+              <h3>
+                <a href="/drafts/{{ lang }}/{{ draft.shortName }}/">
+                  {{ draft.id }}.
+                  {% if lang == "hi" %}
+                    {{ draft.hiTitle or draft.shortName }}
+                  {% else %}
+                    {{ draft.enTitle or draft.shortName }}
+                  {% endif %}
                 </a>
-              </li>
-            {% endif %}
+              </h3>
+
+              {% if lang == "hi" and draft.hiDesc %}
+                <div class="nav-draft-gist">
+                  {{ draft.hiDesc }}
+                </div>
+              {% elif lang == "en" and draft.enDesc %}
+                <div class="nav-draft-gist">
+                  {{ draft.enDesc }}
+                </div>
+              {% endif %}
+
+              <a
+                class="nav-draft-read"
+                href="/drafts/{{ lang }}/{{ draft.shortName }}/">
+                {% if lang == "hi" %}
+                  पूरा ड्राफ्ट पढ़ें →
+                {% else %}
+                  Read full draft →
+                {% endif %}
+              </a>
+
+            </li>
+
           {% endfor %}
+
+          <li class="nav-all-drafts">
+            <a href="/drafts/{{ lang }}/">
+              {% if lang == "hi" %}
+                सभी ड्राफ्ट्स देखें →
+              {% else %}
+                View all drafts →
+              {% endif %}
+            </a>
+          </li>
+
         </ul>
+
       </details>
     </li>
   </ul>
