@@ -1,9 +1,3 @@
----
-title: भारतीय राष्ट्रिय नागरिकता रजिस्टर अधिनियम
-fbPost: https://www.facebook.com/pawan.jury/posts/2694929377291948
-driveLink: https://drive.google.com/drive/folders/1jYTs4J2XwFspOe-psfHl3Cjz9ojo5szq
-draftNumber: 14
----
 
 NRCI ; प्रस्तावित भारतीय राष्ट्रिय नागरिकता रजिस्टर अधिनियम
 .

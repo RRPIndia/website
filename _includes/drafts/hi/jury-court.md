@@ -1,9 +1,3 @@
----
-title: जूरी कोर्ट
-draftNumber: 3
-driveLink: https://drive.google.com/drive/folders/1GYy9sHHk82jLXsk1Zym8V5sEx6UX9rSb
-fbPost: https://www.facebook.com/pawan.jury/posts/2297657633685793
----
 जूरी कोर्ट – थानों-अदालतों को सुधारने के लिए जूरी अदालतें
 .
 Jury Court - Proposed Notification to Enact Jury Courts 

@@ -23,11 +23,21 @@ layout: layouts/base.njk
       </div>
     {% endif %}
 
-    <p>
-      <a href="/drafts/hi/{{ draft.shortName }}/">
-        पूरा ड्राफ्ट पढ़ें →
-      </a>
-    </p>
+    {% if draft.hiDrive %}
+      <p>
+        <a href="{{ draft.hiDrive }}" target="_blank" rel="noopener">
+          PDF
+        </a>
+      </p>
+    {% endif %}
+
+    {% if draft.hiFb %}
+      <p>
+        <a href="{{ draft.hiFb }}" target="_blank" rel="noopener">
+          Facebook
+        </a>
+      </p>
+    {% endif %}
 
   </article>
 

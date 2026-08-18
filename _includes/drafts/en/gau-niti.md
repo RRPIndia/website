@@ -1,15 +1,3 @@
----
-title: Protecting indigenous cow
-draftNumber: 11
-driveLink:
-lang: en
-facebook: https://www.facebook.com/share/p/1F7FAxGDD2/
-author: Rahul Mehta Gandhinagar LsCandidate
-layout: layouts/base.njk
----
-
-
----
 ## Part - I: Instructions to Citizens
 
 (01) Within 30 days of the publication of this law in the Gazette, every voter in the State shall get a Vote Vapsi Passbook. The following officers will come under the purview of this Vote Vapsi Passbook:

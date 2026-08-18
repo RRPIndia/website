@@ -1,5 +1,5 @@
 ---
-title: List of All Draft Laws
+title: All Draft Laws
 layout: layouts/base.njk
 ---
 
@@ -23,11 +23,21 @@ layout: layouts/base.njk
       </div>
     {% endif %}
 
-    <p>
-      <a href="/drafts/en/{{ draft.shortName }}/">
-        Read the full draft →
-      </a>
-    </p>
+    {% if draft.enDrive %}
+      <p>
+        <a href="{{ draft.enDrive }}" target="_blank" rel="noopener">
+          PDF
+        </a>
+      </p>
+    {% endif %}
+
+    {% if draft.enFb %}
+      <p>
+        <a href="{{ draft.enFb }}" target="_blank" rel="noopener">
+          Facebook
+        </a>
+      </p>
+    {% endif %}
 
   </article>
 

@@ -2,7 +2,6 @@
   <ul class="elv-nav-menu">
     <li>
       <details class="nav-expand">
-
         <summary>
           {% if lang == "hi" %}
             ड्राफ्ट्स
@@ -12,58 +11,20 @@
         </summary>
 
         <ul>
+          {% for draft in drafts | sort(false, false, "id") %}
 
-          {% set posts = drafts | sort(false, false, "id") %}
-
-          {% for draft in posts %}
-
-            <li class="nav-draft">
-
-              <h3>
-                <a href="/drafts/{{ lang }}/{{ draft.shortName }}/">
-                  {{ draft.id }}.
-                  {% if lang == "hi" %}
-                    {{ draft.hiTitle or draft.shortName }}
-                  {% else %}
-                    {{ draft.enTitle or draft.shortName }}
-                  {% endif %}
-                </a>
-              </h3>
-
-              {% if lang == "hi" and draft.hiDesc %}
-                <div class="nav-draft-gist">
-                  {{ draft.hiDesc }}
-                </div>
-              {% elif lang == "en" and draft.enDesc %}
-                <div class="nav-draft-gist">
-                  {{ draft.enDesc }}
-                </div>
-              {% endif %}
-
-              <a
-                class="nav-draft-read"
-                href="/drafts/{{ lang }}/{{ draft.shortName }}/">
+            <li>
+              <a href="/drafts/{{ lang }}/{{ draft.shortName }}/">
+                {{ draft.id }}.
                 {% if lang == "hi" %}
-                  पूरा ड्राफ्ट पढ़ें →
+                  {{ draft.hiTitle or draft.shortName }}
                 {% else %}
-                  Read full draft →
+                  {{ draft.enTitle or draft.shortName }}
                 {% endif %}
               </a>
-
             </li>
 
           {% endfor %}
-
-          <li class="nav-all-drafts">
-            <a href="/drafts/{{ lang }}/">
-              {% if lang == "hi" %}
-                सभी ड्राफ्ट्स देखें →
-              {% else %}
-                View all drafts →
-              {% endif %}
-            </a>
-          </li>
-
         </ul>
 
       </details>

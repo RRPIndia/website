@@ -1,9 +1,3 @@
----
-title: रिक्त भूमि कर
-draftNumber: 2
-driveLink: https://drive.google.com/drive/folders/1JUDoFKDKaccw11MpNOXpfJU4ym69T2dQ
-fbPost: https://www.facebook.com/pawan.jury/posts/2391504844301071
----
 
 
 # प्रस्तावित रिक्त भूमि कर 

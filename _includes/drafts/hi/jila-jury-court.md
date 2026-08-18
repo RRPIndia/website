@@ -1,9 +1,3 @@
----
-title: जिला जूरी कोर्ट
-draftNumber: 5
-fbPost: https://www.facebook.com/pawan.jury/posts/3173085952809619
-driveLink: https://drive.google.com/drive/folders/1OFjlDvl8iMd5tAtVD3f2b-B2bXtvlUqc
----
 
 
 जिला जूरी कोर्ट – थानों-अदालतों को सुधारने के लिए जिला स्तरीय जूरी अदालतें

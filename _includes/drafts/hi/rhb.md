@@ -1,9 +1,3 @@
----
-title: राष्ट्रीय हिन्दू बोर्ड
-draftNumber: 10
-driveLink: https://drive.google.com/drive/folders/1AdaZQBJRdxuLABhqrtIBXxUrl2xkVYj3
-fbPost: https://www.facebook.com/pawan.jury/posts/2241776019273955
----
 राष्ट्रीय हिन्दू बोर्ड  – हिन्दू देवालयों एवं धार्मिक सम्प्रदायों के प्रबंधन के लिए प्रस्तावित संघ   
 .
 ( Rashtriya Hindu Board - Proposed National Temple & Sect Management Body )
