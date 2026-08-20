@@ -1,4 +1,7 @@
+import { RenderPlugin } from "@11ty/eleventy";
+
 export default function(eleventyConfig) {
+  eleventyConfig.addPlugin(RenderPlugin);
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("CNAME");
