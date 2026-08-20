@@ -37,6 +37,5 @@ permalink: "/drafts/hi/{{ draft.shortName }}/"
 
   <hr>
 
-  {% include "drafts/hi/" + draft.shortName + ".md" %}
-
+{% renderFile "_includes/drafts/hi/" + draft.shortName + ".md" %}
 </article>
