@@ -48,13 +48,14 @@
         {% include "header/header.njk" %}
 
 
+
   {# MAIN CONTENT #}
   <!-- Add data-pagefind-body here so Pagefind knows what to index -->
   <main data-pagefind-body>
 
 
   <div class="page-container content">
-    {% include "header/breadcrumb.njk" %}
+  {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
     {{ content | safe }}
   </div>
 

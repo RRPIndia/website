@@ -20,6 +20,10 @@
 
         <!-- ROW-4  -->
     {% include "header/lang-switcher.njk" %}
+    
+    {% if eleventyNavigation %}
+      {% include "header/breadcrumb.njk" %}
+    {% endif %}
 
   </div>
 </header>

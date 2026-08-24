@@ -7,8 +7,18 @@ pagination:
   alias: draft
 
 permalink: "/drafts/hi/{{ draft.shortName }}/"
----
 
+eleventyComputed:
+  eleventyNavigation:
+    key: "draft-hi-{{ draft.shortName }}"
+    parent: "drafts-hi"
+    title: "{{ draft.hiTitle or draft.shortName }}"
+---
+<pre>
+key: {{ eleventyNavigation.key }}
+parent: {{ eleventyNavigation.parent }}
+title: {{ eleventyNavigation.title }}
+</pre>
 <article class="draft">
 
   <h1>{{ draft.hiTitle or draft.shortName }}</h1>
@@ -37,5 +47,6 @@ permalink: "/drafts/hi/{{ draft.shortName }}/"
 
   <hr>
 
-{% renderFile "_includes/drafts/hi/" + draft.shortName + ".md" %}
+  {% renderFile "_includes/drafts/hi/" + draft.shortName + ".md" %}
+
 </article>
