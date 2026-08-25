@@ -1,41 +1,69 @@
-{% set canonicalUrl = page.url
-  | replace("index.html", "")
-%}
+{% if eleventyNavigation and eleventyNavigation.key %}
+  {% set navCrumbs = collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key, { includeSelf: true, allowMissing: true }) %}
+{% else %}
+  {% set navCrumbs = [] %}
+{% endif %}
 
-{% set segments = canonicalUrl | pathSegments | reject("equalto", "") %}
-{% if segments.length > 1 %}
+{% if navCrumbs.length > 1 %}
 <nav class="breadcrumb" aria-label="Breadcrumb">
-  <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
-  Home
-</a>
-  {% set currentPath = "/" %}
-
-  {% for part in segments %}
-    <span class="crumb-sep">›</span>
-    {% set currentPath = currentPath + part + "/" %}
-
+  {% for crumb in navCrumbs %}
+    {% if not loop.first %}
+      <span class="crumb-sep">›</span>
+    {% endif %}
     {% if loop.last %}
-      <a href="{{ canonicalUrl }}">
-        {{ part | replace("-", " ") }}
+      <a href="{{ crumb.url }}">
+        {{ crumb.title or crumb.key }}
       </a>
     {% else %}
-      {% set hasIndex = false %}
-      {% for p in collections.all %}
-        {% if p.url == currentPath %}
-          {% set hasIndex = true %}
-        {% endif %}
-      {% endfor %}
-
-      {% if hasIndex %}
-        <a href="{{ currentPath }}">
-          {{ part | replace("-", " ") }}
+      {% if crumb.url %}
+        <a href="{{ crumb.url }}">
+          {{ crumb.title or crumb.key }}
         </a>
       {% else %}
         <span class="crumb-disabled">
-          {{ part | replace("-", " ") }}
+          {{ crumb.title or crumb.key }}
         </span>
       {% endif %}
     {% endif %}
   {% endfor %}
 </nav>
+{% else %}
+  {% set canonicalUrl = page.url | replace("index.html", "") %}
+  {% set segments = canonicalUrl | pathSegments | reject("equalto", "") %}
+  {% if segments.length > 1 %}
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
+    Home
+  </a>
+    {% set currentPath = "/" %}
+
+    {% for part in segments %}
+      <span class="crumb-sep">›</span>
+      {% set currentPath = currentPath + part + "/" %}
+
+      {% if loop.last %}
+        <a href="{{ canonicalUrl }}">
+          {{ part | replace("-", " ") }}
+        </a>
+      {% else %}
+        {% set hasIndex = false %}
+        {% for p in collections.all %}
+          {% if p.url == currentPath %}
+            {% set hasIndex = true %}
+          {% endif %}
+        {% endfor %}
+
+        {% if hasIndex %}
+          <a href="{{ currentPath }}">
+            {{ part | replace("-", " ") }}
+          </a>
+        {% else %}
+          <span class="crumb-disabled">
+            {{ part | replace("-", " ") }}
+          </span>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+  </nav>
+  {% endif %}
 {% endif %}
