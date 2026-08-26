@@ -7,6 +7,12 @@ pagination:
   alias: draft
 
 permalink: "/drafts/en/{{ draft.shortName }}/"
+
+eleventyComputed:
+  eleventyNavigation:
+    key: "{{ draft.shortName }}ennav"
+    title: "{{ draft.enTitle or draft.shortName }}"
+    parent: drafts-en
 ---
 
 <article class="draft">
