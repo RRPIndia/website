@@ -4,13 +4,45 @@
   <ul class="docs-nav__list">
     {% for entry in navPages %}
       <li class="docs-nav__item">
-        {% if entry.children and entry.children.length %}
+        
+        {# Special Handling for Facebook Archive (Multi-level Paginated Tree) #}
+        {% if entry.key == "fb" %}
           <details class="docs-nav__details">
             <summary class="docs-nav__summary">
               <span class="docs-nav__arrow" aria-hidden="true">▶</span>
               <span class="docs-nav__title">{{ entry.title }}</span>
             </summary>
+            
+            <ul class="docs-nav__sublist">
+              {% for yData in collections.postsByYear %}
+                <li class="docs-nav__subitem">
+                  <details class="docs-nav__details">
+                    <summary class="docs-nav__summary">
+                      <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                      <span class="docs-nav__title">{{ yData.year }}</span>
+                    </summary>
+                    <ul class="docs-nav__sublist">
+                      {% for m in yData.months %}
+                        <li class="docs-nav__subitem">
+                          <a class="docs-nav__link" href="/fb-export/{{ yData.year }}/{{ m }}/">
+                            {{ m }}
+                          </a>
+                        </li>
+                      {% endfor %}
+                    </ul>
+                  </details>
+                </li>
+              {% endfor %}
+            </ul>
+          </details>
 
+        {# Standard Eleventy Navigation for blog, drafts, etc. #}
+        {% elif entry.children and entry.children.length %}
+          <details class="docs-nav__details">
+            <summary class="docs-nav__summary">
+              <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+              <span class="docs-nav__title">{{ entry.title }}</span>
+            </summary>
             <ul class="docs-nav__sublist">
               {% for child in entry.children %}
                 <li class="docs-nav__subitem">
@@ -26,6 +58,7 @@
             {{ entry.title }}
           </a>
         {% endif %}
+
       </li>
     {% endfor %}
   </ul>

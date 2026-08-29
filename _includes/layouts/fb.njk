@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="{{ lang }}">
+<html lang="{% if lang and lang != 'unknown' %}{{ lang }}{% else %}en{% endif %}">>
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="google-site-verification" content="nOVhyCaoXpjBXXPo-CqrEgfb2rKBCeNpaKtmZ-xNaeM">
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-HHVG075GJS"></script>
   <script>
@@ -26,7 +26,7 @@
     })();
   </script>
 
-  <title>{{ title or "Facebook Archives" }}</title>
+  <title>{{ title or (author ~ " - Facebook Post") or "Facebook Archives" }}</title>
   <link rel="stylesheet" href="/assets/bundle.css">
   <script type="module" src="/assets/bundle.js"></script>
 </head>
@@ -36,63 +36,79 @@
 
   <main data-pagefind-body>
     <div class="page-container content">
-      {{ content | safe }}
+
+      <!-- Universal URL Breadcrumb -->
+      {% include "components/breadcrumb.njk" %}
+
+      <article class="fb-post">
+        <!-- Post Header -->
+        <header class="fb-post__header">
+          {% if author %}
+            <h1 class="fb-post__author">{{ author }}</h1>
+          {% endif %}
+          <time class="fb-post__date" datetime="{{ date }}">{{ date }}</time>
+        </header>
+
+        <!-- Main Body & Shared Content -->
+        <div class="fb-post__body">
+          {{ content | safe }}
+        </div>
+      </article>
+
+      <!-- PREVIOUS / NEXT POST NAVIGATION -->
+      {% set previousPost = collections.facebook | getPreviousCollectionItem(page) %}
+      {% set nextPost = collections.facebook | getNextCollectionItem(page) %}
+
+      {% if previousPost or nextPost %}
+        <hr class="fb-divider">
+        <nav class="post-navigation" aria-label="Post pagination">
+          {% if previousPost %}
+            <a href="{{ previousPost.url }}" class="nav-btn prev-btn">
+              ← Previous Post
+            </a>
+          {% else %}
+            <div></div>
+          {% endif %}
+
+          {% if nextPost %}
+            <a href="{{ nextPost.url }}" class="nav-btn next-btn">
+              Next Post →
+            </a>
+          {% endif %}
+        </nav>
+      {% endif %}
+
+      <!-- Metadata Box -->
+      <section class="fb-metadata">
+        <h2>Post Information</h2>
+        {% if author %}
+          <p><strong>Author:</strong> {{ author }}</p>
+        {% endif %}
+
+        {% if group %}
+          <p><strong>Group:</strong> {{ group }}</p>
+        {% endif %}
+
+        <p><strong>Date:</strong> {{ date }}</p>
+
+        {% if facebook %}
+          <p>
+            <strong>Original:</strong>
+            <a href="{{ facebook }}" target="_blank" rel="noopener noreferrer">
+              View on Facebook ↗
+            </a>
+          </p>
+        {% endif %}
+      </section>
+
+      <!-- Pagefind search filters -->
+      <div hidden data-pagefind-filter="author" show-empty="false">{{ author }}</div>
+      <div hidden data-pagefind-filter="group" show-empty="false">{{ group }}</div>
+
     </div>
   </main>
-
-  <div class="page-container content">
-    <hr>
-
-    <!-- PREVIOUS / NEXT POST NAVIGATION -->
-    {% set previousPost = collections.facebook | getPreviousCollectionItem(page) %}
-    {% set nextPost = collections.facebook | getNextCollectionItem(page) %}
-
-    {% if previousPost or nextPost %}
-      <nav class="post-navigation">
-        {% if previousPost %}
-          <a href="{{ previousPost.url }}" class="nav-btn prev-btn">
-            ← Previous Post
-          </a>
-        {% else %}
-          <div></div> <!-- Spacer when no previous post exists -->
-        {% endif %}
-
-        {% if nextPost %}
-          <a href="{{ nextPost.url }}" class="nav-btn next-btn">
-            Next Post →
-          </a>
-        {% endif %}
-      </nav>
-      <hr>
-    {% endif %}
-
-    <h2>Post Information</h2>
-    {% if author %}
-      <p><strong>Author:</strong> {{ author }}</p>
-    {% endif %}
-
-    {% if group %}
-      <p><strong>Group:</strong> {{ group }}</p>
-    {% endif %}
-
-    <p><strong>Date:</strong> {{ date }}</p>
-
-    {% if facebook %}
-      <p>
-        <strong>Original:</strong>
-        <a href="{{ facebook }}" target="_blank" rel="noopener">
-          View on Facebook
-        </a>
-      </p>
-    {% endif %}
-
-    <!-- Pagefind facets -->
-    <div hidden data-pagefind-filter="author" show-empty="false">{{ author }}</div>
-    <div hidden data-pagefind-filter="group" show-empty="false">{{ group }}</div>
-  </div>
 
   {% include "footer/footer.html" %}
 
 </body>
 </html>
-
