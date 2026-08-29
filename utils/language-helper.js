@@ -2,9 +2,15 @@ function getTranslatedUrl(currentUrl, currentLang, collections) {
   const targetLang = currentLang === 'en' ? 'hi' : 'en';
   const fallbackUrl = targetLang === 'hi' ? '/hi/' : '/';
 
+  let segments = currentUrl.split('/').filter(Boolean);
+
+  // If neither 'en' nor 'hi' exists anywhere in the URL path, go straight to the homepage
+  if (!segments.includes('en') && !segments.includes('hi')) {
+    return fallbackUrl;
+  }
+
   // 1. Try the exact translated URL first
-  let exactSegments = currentUrl.split('/').filter(Boolean);
-  exactSegments = exactSegments.map(seg => (seg === currentLang ? targetLang : seg));
+  let exactSegments = segments.map(seg => (seg === currentLang ? targetLang : seg));
   
   if (exactSegments.length > 0) {
     const exactCandidate = '/' + exactSegments.join('/') + '/';
@@ -17,7 +23,7 @@ function getTranslatedUrl(currentUrl, currentLang, collections) {
   // 2. If exact match fails, start walking up the parent tree
   let fallbackSegments = [...exactSegments];
   while (fallbackSegments.length > 0) {
-    fallbackSegments.pop(); // Strip the last segment to find parent
+    fallbackSegments.pop();
     if (fallbackSegments.length === 0) break;
 
     const candidateUrl = '/' + fallbackSegments.join('/') + '/';
