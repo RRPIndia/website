@@ -46,15 +46,45 @@
     </div>
 
     <!-- ROW 2: Search -->
-    
-  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
-  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+    <div class="search-widget" role="search">
+  <div class="search-field">
+    <span class="search-field__icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="site-search-input"
+      class="search-field__input"
+      placeholder="Search archives (English & Hindi)..."
+      autocomplete="off"
+      aria-label="Search site content"
+    >
+  </div>
 
-<pagefind-filter-pane></pagefind-filter-pane>
-<pagefind-input></pagefind-input>
-<pagefind-summary></pagefind-summary>
-<pagefind-results max-results="10"></pagefind-results>
-<pagefind-config faceted></pagefind-config>
+  <div class="search-filters" id="search-filters-bar">
+    <div class="search-filter-item">
+      <label for="filter-author" class="search-filter-label">Author</label>
+      <div class="select-wrapper">
+        <select id="filter-author" class="search-select">
+          <option value="">All Authors</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-filter-item">
+      <label for="filter-group" class="search-filter-label">Group</label>
+      <div class="select-wrapper">
+        <select id="filter-group" class="search-select">
+          <option value="">All Groups</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="search-results-wrapper" class="search-results" hidden>
+    <ul id="search-results-list" class="search-results-list"></ul>
+  </div>
+</div>
+
+<script type="module" src="/assets/search.js"></script>
 
 
     <!-- ROW 3: Display Settings -->

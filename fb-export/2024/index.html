@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">>
+<html lang="en">
 <head>
 
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@
     })();
   </script>
 
-  <title>Right to Recall Party</title>
+  <title>Facebook Archive - 2024</title>
 
   <link rel="stylesheet" href="/assets/bundle.css">
   <script type="module" src="/assets/bundle.js"></script>
@@ -52,15 +52,45 @@
     </div>
 
     <!-- ROW 2: Search -->
-    
-  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
-  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+    <div class="search-widget" role="search">
+  <div class="search-field">
+    <span class="search-field__icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="site-search-input"
+      class="search-field__input"
+      placeholder="Search archives (English & Hindi)..."
+      autocomplete="off"
+      aria-label="Search site content"
+    >
+  </div>
 
-<pagefind-filter-pane></pagefind-filter-pane>
-<pagefind-input></pagefind-input>
-<pagefind-summary></pagefind-summary>
-<pagefind-results max-results="10"></pagefind-results>
-<pagefind-config faceted></pagefind-config>
+  <div class="search-filters" id="search-filters-bar">
+    <div class="search-filter-item">
+      <label for="filter-author" class="search-filter-label">Author</label>
+      <div class="select-wrapper">
+        <select id="filter-author" class="search-select">
+          <option value="">All Authors</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-filter-item">
+      <label for="filter-group" class="search-filter-label">Group</label>
+      <div class="select-wrapper">
+        <select id="filter-group" class="search-select">
+          <option value="">All Groups</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="search-results-wrapper" class="search-results" hidden>
+    <ul id="search-results-list" class="search-results-list"></ul>
+  </div>
+</div>
+
+<script type="module" src="/assets/search.js"></script>
 
 
     <!-- ROW 3: Display Settings -->
@@ -520,98 +550,100 @@
 
       <!-- Page content -->
       
-<h2>Months in 2024</h2>
+<div data-pagefind-ignore="all">
+  <h2>Months in 2024</h2>
 
-<ul>
-  
-    <li>
-      <a href="/fb-export/2024/12/">
-        2024-12
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/11/">
-        2024-11
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/10/">
-        2024-10
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/09/">
-        2024-09
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/08/">
-        2024-08
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/07/">
-        2024-07
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/06/">
-        2024-06
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/05/">
-        2024-05
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/04/">
-        2024-04
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/03/">
-        2024-03
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/02/">
-        2024-02
-      </a>
-    </li>
-  
-    <li>
-      <a href="/fb-export/2024/01/">
-        2024-01
-      </a>
-    </li>
-  
-</ul>
+  <ul>
+    
+      <li>
+        <a href="/fb-export/2024/12/">
+          2024-12
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/11/">
+          2024-11
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/10/">
+          2024-10
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/09/">
+          2024-09
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/08/">
+          2024-08
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/07/">
+          2024-07
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/06/">
+          2024-06
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/05/">
+          2024-05
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/04/">
+          2024-04
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/03/">
+          2024-03
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/02/">
+          2024-02
+        </a>
+      </li>
+    
+      <li>
+        <a href="/fb-export/2024/01/">
+          2024-01
+        </a>
+      </li>
+    
+  </ul>
 
-<!-- AUTOMATIC YEAR NAVIGATION -->
-<nav class="post-navigation">
-  
-    <a href="/fb-export/2025/" class="nav-btn">
-      ← Newer Year
-    </a>
-  
+  <!-- AUTOMATIC YEAR NAVIGATION -->
+  <nav class="post-navigation">
+    
+      <a href="/fb-export/2025/" class="nav-btn">
+        ← Newer Year
+      </a>
+    
 
-  
-    <a href="/fb-export/2023/" class="nav-btn">
-      Older Year →
-    </a>
-  
-</nav>
+    
+      <a href="/fb-export/2023/" class="nav-btn">
+        Older Year →
+      </a>
+    
+  </nav>
+</div>
 
 
     </div>

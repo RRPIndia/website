@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">>
+<html lang="en">
 <head>
 
   <meta charset="UTF-8">
@@ -29,7 +29,7 @@
     })();
   </script>
 
-  <title>Right to Recall Party</title>
+  <title>Facebook Archive - 2024-07</title>
 
   <link rel="stylesheet" href="/assets/bundle.css">
   <script type="module" src="/assets/bundle.js"></script>
@@ -52,15 +52,45 @@
     </div>
 
     <!-- ROW 2: Search -->
-    
-  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
-  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+    <div class="search-widget" role="search">
+  <div class="search-field">
+    <span class="search-field__icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="site-search-input"
+      class="search-field__input"
+      placeholder="Search archives (English & Hindi)..."
+      autocomplete="off"
+      aria-label="Search site content"
+    >
+  </div>
 
-<pagefind-filter-pane></pagefind-filter-pane>
-<pagefind-input></pagefind-input>
-<pagefind-summary></pagefind-summary>
-<pagefind-results max-results="10"></pagefind-results>
-<pagefind-config faceted></pagefind-config>
+  <div class="search-filters" id="search-filters-bar">
+    <div class="search-filter-item">
+      <label for="filter-author" class="search-filter-label">Author</label>
+      <div class="select-wrapper">
+        <select id="filter-author" class="search-select">
+          <option value="">All Authors</option>
+        </select>
+      </div>
+    </div>
+
+    <div class="search-filter-item">
+      <label for="filter-group" class="search-filter-label">Group</label>
+      <div class="select-wrapper">
+        <select id="filter-group" class="search-select">
+          <option value="">All Groups</option>
+        </select>
+      </div>
+    </div>
+  </div>
+
+  <div id="search-results-wrapper" class="search-results" hidden>
+    <ul id="search-results-list" class="search-results-list"></ul>
+  </div>
+</div>
+
+<script type="module" src="/assets/search.js"></script>
 
 
     <!-- ROW 3: Display Settings -->
@@ -520,46 +550,48 @@
 
       <!-- Page content -->
       
-<h1>Posts for 2024-07</h1>
+<div data-pagefind-ignore="all">
+  <h1>Posts for 2024-07</h1>
 
-
-  <article class="fb-post">
-    <h2><a href="/fb-export/2024/07/2024-07-03-171416/">Pawan Jury BhilwaraRj</a></h2>
-    <p class="fb-date">Wed Jul 03 2024 17:14:16 GMT+0000 (Coordinated Universal Time)</p>
-    <div class="fb-excerpt">
-      
+  
+    <article class="fb-post">
+      <h2><a href="/fb-export/2024/07/2024-07-03-171416/">Pawan Jury BhilwaraRj</a></h2>
+      <p class="fb-date">Wed Jul 03 2024 17:14:16 GMT+0000 (Coordinated Universal Time)</p>
+      <div class="fb-excerpt">
+        
 <blockquote>
   <strong>Yaxit Patel:</strong><br>
 </blockquote>
 
 
-    </div>
-    <p><a href="/fb-export/2024/07/2024-07-03-171416/">Read full post →</a></p>
-  </article>
-  <hr>
-
-  <article class="fb-post">
-    <h2><a href="/fb-export/2024/07/2024-07-22-095512/">Pawan Jury BhilwaraRj</a></h2>
-    <p class="fb-date">Mon Jul 22 2024 09:55:12 GMT+0000 (Coordinated Universal Time)</p>
-    <div class="fb-excerpt">
-      
-
-    </div>
-    <p><a href="/fb-export/2024/07/2024-07-22-095512/">Read full post →</a></p>
-  </article>
-  <hr>
-
-
-<!-- AUTOMATIC MONTH NAVIGATION -->
-<nav class="post-navigation">
+      </div>
+      <p><a href="/fb-export/2024/07/2024-07-03-171416/">Read full post →</a></p>
+    </article>
+    <hr>
   
-    <a href="/fb-export/2024/08/" class="nav-btn">← Newer Month</a>
+    <article class="fb-post">
+      <h2><a href="/fb-export/2024/07/2024-07-22-095512/">Pawan Jury BhilwaraRj</a></h2>
+      <p class="fb-date">Mon Jul 22 2024 09:55:12 GMT+0000 (Coordinated Universal Time)</p>
+      <div class="fb-excerpt">
+        
+
+      </div>
+      <p><a href="/fb-export/2024/07/2024-07-22-095512/">Read full post →</a></p>
+    </article>
+    <hr>
   
 
-  
-    <a href="/fb-export/2024/06/" class="nav-btn">Older Month →</a>
-  
-</nav>
+  <!-- AUTOMATIC MONTH NAVIGATION -->
+  <nav class="post-navigation">
+    
+      <a href="/fb-export/2024/08/" class="nav-btn">← Newer Month</a>
+    
+
+    
+      <a href="/fb-export/2024/06/" class="nav-btn">Older Month →</a>
+    
+  </nav>
+</div>
 
 
     </div>
