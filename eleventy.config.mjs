@@ -1,9 +1,13 @@
-import { RenderPlugin } from "@11ty/eleventy";
 import navigationPlugin from "@11ty/eleventy-navigation";
+import { getTranslatedUrl } from './utils/language-helper.js';
 
 export default function(eleventyConfig) {
+  // Register the custom filter for language switching with fallback support
+  eleventyConfig.addNunjucksFilter('translatedUrl', function(currentUrl, currentLang) {
+    return getTranslatedUrl(currentUrl, currentLang, this.ctx.collections.all);
+  });
+
   // Plugins
-  eleventyConfig.addPlugin(RenderPlugin);
   eleventyConfig.addPlugin(navigationPlugin);
 
   // Passthrough files
@@ -37,12 +41,10 @@ export default function(eleventyConfig) {
     const segments = cleanUrl.split("/").filter(Boolean);
     if (segments.length === 0) return [];
 
-    // Detect Hindi from lang variable or if 'hi' is a path segment
     const isHindi = lang === "hi" || segments.includes("hi");
     const homeUrl = segments[0] === "hi" ? "/hi/" : "/";
     const homeLabel = isHindi ? "होम" : "Home";
 
-    // Root homepage check
     if (cleanUrl === "" || cleanUrl === "/hi") return [];
 
     const crumbs = [
@@ -55,7 +57,6 @@ export default function(eleventyConfig) {
       accumulated += `/${segment}`;
       const isLast = index === segments.length - 1;
 
-      // Skip rendering 'hi' as an isolated breadcrumb segment
       if (segment === "hi" && index === 0) return;
 
       let title = decodeURIComponent(segment).replace(/[-_]/g, " ");
@@ -142,4 +143,4 @@ export default function(eleventyConfig) {
       output: "_site"
     }
   };
-}
+};
