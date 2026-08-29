@@ -5,31 +5,35 @@ pagination:
   size: 1
   alias: yearData
 permalink: "fb-export/{{ yearData.year }}/index.html"
+eleventyComputed:
+  title: "Facebook Archive - {{ yearData.year }}"
 ---
 
-<h2>Months in {{ yearData.year }}</h2>
+<div data-pagefind-ignore="all">
+  <h2>Months in {{ yearData.year }}</h2>
 
-<ul>
-  {% for m in yearData.months %}
-    <li>
-      <a href="/fb-export/{{ yearData.year }}/{{ m }}/">
-        {{ yearData.year }}-{{ m }}
+  <ul>
+    {% for m in yearData.months %}
+      <li>
+        <a href="/fb-export/{{ yearData.year }}/{{ m }}/">
+          {{ yearData.year }}-{{ m }}
+        </a>
+      </li>
+    {% endfor %}
+  </ul>
+
+  <!-- AUTOMATIC YEAR NAVIGATION -->
+  <nav class="post-navigation">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="nav-btn">
+        ← Newer Year
       </a>
-    </li>
-  {% endfor %}
-</ul>
+    {% endif %}
 
-<!-- AUTOMATIC YEAR NAVIGATION -->
-<nav class="post-navigation">
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}" class="nav-btn">
-      ← Newer Year
-    </a>
-  {% endif %}
-
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}" class="nav-btn">
-      Older Year →
-    </a>
-  {% endif %}
-</nav>
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="nav-btn">
+        Older Year →
+      </a>
+    {% endif %}
+  </nav>
+</div>

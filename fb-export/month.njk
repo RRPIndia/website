@@ -5,29 +5,33 @@ pagination:
   size: 1
   alias: monthData
 permalink: "fb-export/{{ monthData.year }}/{{ monthData.month }}/index.html"
+eleventyComputed:
+  title: "Facebook Archive - {{ monthData.year }}-{{ monthData.month }}"
 ---
 
-<h1>Posts for {{ monthData.year }}-{{ monthData.month }}</h1>
+<div data-pagefind-ignore="all">
+  <h1>Posts for {{ monthData.year }}-{{ monthData.month }}</h1>
 
-{% for post in monthData.posts %}
-  <article class="fb-post">
-    <h2><a href="{{ post.url }}">{{ post.data.author or "Post" }}</a></h2>
-    <p class="fb-date">{{ post.data.date }}</p>
-    <div class="fb-excerpt">
-      {{ post.templateContent | safe }}
-    </div>
-    <p><a href="{{ post.url }}">Read full post →</a></p>
-  </article>
-  <hr>
-{% endfor %}
+  {% for post in monthData.posts %}
+    <article class="fb-post">
+      <h2><a href="{{ post.url }}">{{ post.data.author or "Post" }}</a></h2>
+      <p class="fb-date">{{ post.data.date }}</p>
+      <div class="fb-excerpt">
+        {{ post.templateContent | safe }}
+      </div>
+      <p><a href="{{ post.url }}">Read full post →</a></p>
+    </article>
+    <hr>
+  {% endfor %}
 
-<!-- AUTOMATIC MONTH NAVIGATION -->
-<nav class="post-navigation">
-  {% if pagination.href.previous %}
-    <a href="{{ pagination.href.previous }}" class="nav-btn">← Newer Month</a>
-  {% endif %}
+  <!-- AUTOMATIC MONTH NAVIGATION -->
+  <nav class="post-navigation">
+    {% if pagination.href.previous %}
+      <a href="{{ pagination.href.previous }}" class="nav-btn">← Newer Month</a>
+    {% endif %}
 
-  {% if pagination.href.next %}
-    <a href="{{ pagination.href.next }}" class="nav-btn">Older Month →</a>
-  {% endif %}
-</nav>
+    {% if pagination.href.next %}
+      <a href="{{ pagination.href.next }}" class="nav-btn">Older Month →</a>
+    {% endif %}
+  </nav>
+</div>

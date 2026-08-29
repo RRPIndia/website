@@ -1,9 +1,36 @@
+<div class="search-container" role="search">
+  <div class="search-input-wrapper">
+    <span class="search-icon" aria-hidden="true">🔍</span>
+    <input
+      type="search"
+      id="site-search-input"
+      class="search-input"
+      placeholder="Search all archives (English & Hindi)..."
+      autocomplete="off"
+      aria-label="Search site content"
+    >
+  </div>
 
-  <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
-  <script type="module" src="/pagefind/pagefind-component-ui.js"></script>
+  <!-- Dynamic Filter Dropdowns -->
+  <div class="search-filters-bar" id="search-filters-bar">
+    <div class="search-filter-group">
+      <label for="filter-author">Author:</label>
+      <select id="filter-author" class="search-filter-select">
+        <option value="">All Authors</option>
+      </select>
+    </div>
 
-<pagefind-filter-pane></pagefind-filter-pane>
-<pagefind-input></pagefind-input>
-<pagefind-summary></pagefind-summary>
-<pagefind-results max-results="10"></pagefind-results>
-<pagefind-config faceted></pagefind-config>
+    <div class="search-filter-group">
+      <label for="filter-group">Group:</label>
+      <select id="filter-group" class="search-filter-select">
+        <option value="">All Groups</option>
+      </select>
+    </div>
+  </div>
+
+  <div id="search-results-wrapper" class="search-results" hidden>
+    <ul id="search-results-list" class="search-results-list"></ul>
+  </div>
+</div>
+
+<script type="module" src="/assets/search.js"></script>
