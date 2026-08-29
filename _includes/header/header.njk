@@ -3,7 +3,7 @@
 
     <!-- ROW 1: Party name -->
     <div class="header-brand">
-      <a href="/">
+      <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
         <span class="brand-link">
           Right to Recall<br>
           Party
@@ -11,17 +11,17 @@
       </a>
     </div>
 
-    <!-- ROW 3: Search -->
+    <!-- ROW 2: Search -->
     {% include "search/search.njk" %}
 
-    <!-- ROW 4: Display Settings -->
+    <!-- ROW 3: Display Settings -->
     {% include "header/toolbar.njk" %}
 
-    <!-- ROW 5: Language Switcher -->
+    <!-- ROW 4: Language Switcher -->
     {% include "header/lang-switcher.njk" %}
 
     <!-- ROW 6: Navigation Tree -->
-    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
+    {% include "components/nav-tree.njk" %}
 
   </div>
 </header>

@@ -1,0 +1,105 @@
+/* ========================================================
+   TREE NAVIGATION
+   ======================================================== */
+.docs-nav {
+  margin: 0.75rem 0;
+  width: 100%;
+}
+
+.docs-nav__list,
+.docs-nav__sublist {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.docs-nav__item {
+  margin-block: 0.25rem;
+}
+
+/* 1. Parent Accordion Header */
+.docs-nav__summary {
+  display: flex;
+  align-items: center;
+  padding: 0.4rem 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #0f172a;
+  cursor: pointer;
+  border-radius: 4px;
+  user-select: none;
+  list-style: none;
+  background: transparent !important;
+  outline: none;
+  /* Disable mobile tap flash */
+  -webkit-tap-highlight-color: transparent;
+}
+
+.docs-nav__summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Triangle indicator */
+.docs-nav__arrow {
+  display: inline-block;
+  font-size: 0.65rem;
+  margin-right: 0.6rem;
+  color: #475569;
+  transition: transform 0.15s ease;
+}
+
+.docs-nav__details[open] > .docs-nav__summary > .docs-nav__arrow {
+  transform: rotate(90deg);
+}
+
+/* 2. Distinct Child Container */
+.docs-nav__sublist {
+  margin-left: 1.25rem;
+  padding-left: 0.85rem;
+  border-left: 2px solid #cbd5e1;
+  margin-block: 0.25rem 0.5rem;
+}
+
+.docs-nav__subitem {
+  margin-block: 0.35rem;
+}
+
+/* 3. Child Links */
+.docs-nav a.docs-nav__link,
+main .docs-nav a.docs-nav__link {
+  display: inline-block !important;
+  padding: 0.2rem 0.4rem;
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: #334155 !important;
+  text-decoration: underline !important;
+  text-underline-offset: 3px;
+  background: transparent !important;
+  margin-bottom: 0 !important;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* 4. Disable sticky active / focus highlight states */
+.docs-nav__summary:active,
+.docs-nav__summary:focus,
+.docs-nav a.docs-nav__link:active,
+.docs-nav a.docs-nav__link:focus,
+main .docs-nav a.docs-nav__link:active,
+main .docs-nav a.docs-nav__link:focus {
+  background: transparent !important;
+  color: #334155 !important;
+  outline: none !important;
+}
+
+/* Root Items (Pages without children) */
+.docs-nav a.docs-nav__link--root,
+main .docs-nav a.docs-nav__link--root {
+  font-weight: 700 !important;
+  font-size: 1.05rem !important;
+  color: #0f172a !important;
+  text-decoration: none !important;
+  padding: 0.4rem 0.5rem;
+  outline: none;
+  -webkit-tap-highlight-color: transparent;
+}
