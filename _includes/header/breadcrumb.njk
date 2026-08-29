@@ -1,9 +1,0 @@
-{% if eleventyNavigation and eleventyNavigation.key %}
-  <ul>
-    {% for entry in collections.all | eleventyNavigationBreadcrumb(eleventyNavigation.key) %}
-      <li>
-        <a href="{{ entry.url }}">{{ entry.title }}</a>
-      </li>
-    {% endfor %}
-  </ul>
-{% endif %}

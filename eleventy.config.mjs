@@ -2,23 +2,21 @@ import { RenderPlugin } from "@11ty/eleventy";
 import navigationPlugin from "@11ty/eleventy-navigation";
 
 export default function(eleventyConfig) {
-
   // Plugins
   eleventyConfig.addPlugin(RenderPlugin);
   eleventyConfig.addPlugin(navigationPlugin);
 
   // Passthrough files
+  eleventyConfig.setServerPassthroughCopyBehavior("passthrough");
+
   eleventyConfig.addPassthroughCopy("assets");
   eleventyConfig.addPassthroughCopy("images");
   eleventyConfig.addPassthroughCopy("CNAME");
 
   // Markdown table wrapper
   eleventyConfig.amendLibrary("md", (md) => {
-    md.renderer.rules.table_open = () =>
-      '<div class="table-wrapper"><table>';
-
-    md.renderer.rules.table_close = () =>
-      '</table></div>';
+    md.renderer.rules.table_open = () => '<div class="table-wrapper"><table>';
+    md.renderer.rules.table_close = () => '</table></div>';
   });
 
   // URL path segments filter
@@ -29,93 +27,114 @@ export default function(eleventyConfig) {
       .filter(Boolean);
   });
 
-  // Facebook posts grouped by year
-  eleventyConfig.addCollection(
-    "postsByYear",
-    function(collectionApi) {
+  // Universal breadcrumb filter handling /hi/ anywhere in the path
+  eleventyConfig.addFilter("generateBreadcrumbs", function(url, lang) {
+    if (!url) return [];
 
-      const posts =
-        collectionApi.getFilteredByTag("facebook");
+    const cleanUrl = url.replace(/index\.html$/, "").replace(/\/$/, "");
+    if (!cleanUrl) return [];
 
-      const years = {};
+    const segments = cleanUrl.split("/").filter(Boolean);
+    if (segments.length === 0) return [];
 
-      posts.forEach((post) => {
+    // Detect Hindi from lang variable or if 'hi' is a path segment
+    const isHindi = lang === "hi" || segments.includes("hi");
+    const homeUrl = segments[0] === "hi" ? "/hi/" : "/";
+    const homeLabel = isHindi ? "होम" : "Home";
 
-        const year = post.data.year;
+    // Root homepage check
+    if (cleanUrl === "" || cleanUrl === "/hi") return [];
 
-        if (!year) {
-          return;
-        }
+    const crumbs = [
+      { title: homeLabel, url: homeUrl, isLast: false }
+    ];
 
-        if (!years[year]) {
-          years[year] = {
-            year,
-            posts: [],
-            months: new Set()
-          };
-        }
+    let accumulated = "";
 
-        years[year].posts.push(post);
+    segments.forEach((segment, index) => {
+      accumulated += `/${segment}`;
+      const isLast = index === segments.length - 1;
 
-        if (post.data.month) {
-          years[year].months.add(post.data.month);
-        }
+      // Skip rendering 'hi' as an isolated breadcrumb segment
+      if (segment === "hi" && index === 0) return;
+
+      let title = decodeURIComponent(segment).replace(/[-_]/g, " ");
+
+      if (segment === "hi") {
+        title = "हिंदी";
+      }
+
+      crumbs.push({
+        title: title,
+        url: `${accumulated}/`,
+        isLast: isLast
       });
+    });
 
-      return Object.values(years)
-        .map((yearData) => ({
-          ...yearData,
-          months: Array.from(yearData.months)
-            .sort()
-            .reverse()
-        }))
-        .sort((a, b) =>
-          b.year.localeCompare(a.year)
-        );
-    }
-  );
+    return crumbs;
+  });
+
+  // Facebook posts grouped by year
+  eleventyConfig.addCollection("postsByYear", function(collectionApi) {
+    const posts = collectionApi.getFilteredByTag("facebook");
+    const years = {};
+
+    posts.forEach((post) => {
+      const year = post.data.year;
+      if (!year) return;
+
+      if (!years[year]) {
+        years[year] = {
+          year,
+          posts: [],
+          months: new Set()
+        };
+      }
+
+      years[year].posts.push(post);
+
+      if (post.data.month) {
+        years[year].months.add(post.data.month);
+      }
+    });
+
+    return Object.values(years)
+      .map((yearData) => ({
+        ...yearData,
+        months: Array.from(yearData.months).sort().reverse()
+      }))
+      .sort((a, b) => b.year.localeCompare(a.year));
+  });
 
   // Facebook posts grouped by month
-  eleventyConfig.addCollection(
-    "postsByMonth",
-    function(collectionApi) {
+  eleventyConfig.addCollection("postsByMonth", function(collectionApi) {
+    const posts = collectionApi.getFilteredByTag("facebook");
+    const months = {};
 
-      const posts =
-        collectionApi.getFilteredByTag("facebook");
+    posts.forEach((post) => {
+      const year = post.data.year;
+      const month = post.data.month;
+      if (!year || !month) return;
 
-      const months = {};
+      const key = `${year}-${month}`;
 
-      posts.forEach((post) => {
+      if (!months[key]) {
+        months[key] = {
+          year,
+          month,
+          posts: []
+        };
+      }
 
-        const year = post.data.year;
-        const month = post.data.month;
+      months[key].posts.push(post);
+    });
 
-        if (!year || !month) {
-          return;
-        }
-
-        const key = `${year}-${month}`;
-
-        if (!months[key]) {
-          months[key] = {
-            year,
-            month,
-            posts: []
-          };
-        }
-
-        months[key].posts.push(post);
-      });
-
-      return Object.values(months)
-        .sort((a, b) => {
-          const dateA = `${a.year}-${a.month}`;
-          const dateB = `${b.year}-${b.month}`;
-
-          return dateB.localeCompare(dateA);
-        });
-    }
-  );
+    return Object.values(months).sort((a, b) => {
+      const dateA = `${a.year}-${a.month}`;
+      const dateB = `${b.year}-${b.month}`;
+      return dateB.localeCompare(dateA);
+    });
+  });
 
   return {
     dir: {

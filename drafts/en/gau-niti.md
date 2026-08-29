@@ -1,10 +1,6 @@
 ---
 title: "Gau Niti"
 description: "This law will reduce butchering of indigenous cow and strengthen their protection. pasing this law in VS is not needed. Chief Minster can directly print this in gazette."
-eleventyNavigation:
-  key: "draft-en-gau-niti"
-  parent: "drafts-en"
-  title: "Gau Niti"
 ---
 
 ## Part - I: Instructions to Citizens

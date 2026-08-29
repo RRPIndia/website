@@ -1,0 +1,18 @@
+{% set crumbs = page.url | generateBreadcrumbs(lang) %}
+
+{% if crumbs.length > 1 %}
+<nav class="breadcrumb" aria-label="Breadcrumb">
+  <ol class="breadcrumb-list">
+    {% for crumb in crumbs %}
+      <li class="breadcrumb-item">
+        {% if crumb.isLast %}
+          <span class="breadcrumb-current" aria-current="page">{{ crumb.title }}</span>
+        {% else %}
+          <a class="breadcrumb-link" href="{{ crumb.url }}">{{ crumb.title }}</a>
+          <span class="breadcrumb-sep" aria-hidden="true">›</span>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ol>
+</nav>
+{% endif %}

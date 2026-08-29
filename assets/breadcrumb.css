@@ -1,0 +1,54 @@
+/* ========================================================
+   BREADCRUMB COMPONENT
+   ======================================================== */
+.breadcrumb {
+  margin-block: 0.75rem 0.5rem;
+  font-size: 0.9rem;
+  line-height: 1;
+}
+
+.breadcrumb-list {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+  white-space: nowrap;
+  -webkit-overflow-scrolling: touch;
+}
+
+.breadcrumb-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  flex: 0 0 auto;
+}
+
+/* Explicit class targeting avoids global 'main a' conflicts */
+.breadcrumb-link {
+  display: inline-flex;
+  margin: 0;
+  color: #034ad8;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.breadcrumb-current,
+.breadcrumb-disabled {
+  color: #666666;
+  font-weight: 500;
+}
+
+.breadcrumb-sep {
+  color: #999999;
+  user-select: none;
+}

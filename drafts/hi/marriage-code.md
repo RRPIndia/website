@@ -1,10 +1,6 @@
 ---
 title: "marriage-code"
 description: ""
-eleventyNavigation:
-  key: "draft-hi-marriage-code"
-  parent: "drafts-hi"
-  title: "marriage-code"
 ---
 
 # Coming Soon

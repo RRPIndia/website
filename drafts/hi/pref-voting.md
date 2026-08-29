@@ -1,10 +1,6 @@
 ---
 title: "वरीय मतदान प्रणाली"
 description: ""
-eleventyNavigation:
-  key: "draft-hi-pref-voting"
-  parent: "drafts-hi"
-  title: "वरीय मतदान प्रणाली"
 ---
 
 # Coming Soon

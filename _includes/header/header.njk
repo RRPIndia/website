@@ -4,26 +4,24 @@
     <!-- ROW 1: Party name -->
     <div class="header-brand">
       <a href="/">
-      <span class="brand-link" >
-        Right to Recall<br>
-        Party </span>
+        <span class="brand-link">
+          Right to Recall<br>
+          Party
+        </span>
       </a>
     </div>
 
-    <!-- ROW 2: Sections -->
-    {% include "header/section.njk" %}
-    
     <!-- ROW 3: Search -->
     {% include "search/search.njk" %}
-       <!-- ROW 3.5: Display Settings -->
+
+    <!-- ROW 4: Display Settings -->
     {% include "header/toolbar.njk" %}
 
-        <!-- ROW-4  -->
+    <!-- ROW 5: Language Switcher -->
     {% include "header/lang-switcher.njk" %}
-    
-    {% if eleventyNavigation %}
-      {% include "header/breadcrumb.njk" %}
-    {% endif %}
+
+    <!-- ROW 6: Navigation Tree -->
+    {{ collections.all | eleventyNavigation | eleventyNavigationToHtml | safe }}
 
   </div>
 </header>

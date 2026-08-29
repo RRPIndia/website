@@ -1,10 +1,6 @@
 ---
 title: "सोशल मीडिया पॉलिसी"
 description: ""
-eleventyNavigation:
-  key: "draft-hi-sm-policy"
-  parent: "drafts-hi"
-  title: "सोशल मीडिया पॉलिसी"
 ---
 
 # Coming Soon

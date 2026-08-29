@@ -1,10 +1,6 @@
 ---
 title: "woic"
 description: ""
-eleventyNavigation:
-  key: "draft-en-woic"
-  parent: "drafts-en"
-  title: "woic"
 ---
 
 WOIC; Law Draft for Wholly Owned by Indian citizens Company

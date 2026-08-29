@@ -3,6 +3,12 @@ title: Solution to My addiction
 lang: en
 layout: layouts/base.njk
 author: Sartaj Ansari
+tags:
+  - blog
+eleventyNavigation:
+  key: addiction
+  parent: blog
+  date: 2026-08-28
 ---
 # Cure to my addiction 
 I am addicted to always looking at my phone even when it serves me no purpose so I have decided to find the cure or say I have defined goal to reach when I can say I am no longer addicted to my phone 
@@ -27,7 +33,8 @@ These are the rules which will always exist
 ## Whatsapp Rules
 1. not allowed to listen or watch YouTube videos from outside source. this include me sending myself link to any video. receiving any video is fine.
 2. not allowed to use WhatsApp as a browser at any cost. 1 time for an hour a month for work is exempted.
-3. not allowed to use AI chat.
+3. not allowed to use AI chat except 3 specific questions
+4. don't join or see any suggested channel
 
 ### exemption
 - SSC CGL word meaning 

@@ -1,10 +1,6 @@
 ---
 title: "mbp"
 description: ""
-eleventyNavigation:
-  key: "draft-hi-mbp"
-  parent: "drafts-hi"
-  title: "mbp"
 ---
 
 # Coming Soon
