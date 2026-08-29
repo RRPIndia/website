@@ -1,80 +1,85 @@
+@import "nav-tree.css";
+@import "breadcrumb.css";
 @import "fb.css";
 @import "search.css";
 @import "toolbar/toolbar.css";
 
 /* =========================
-   RESET (breadcrumb only)
+   GLOBAL RESET & TOKENS
    ========================= */
-.breadcrumb,
-.breadcrumb * {
-  all: unset;
+:root {
+  --font-family: system-ui, -apple-system, sans-serif;
+  --font-size: 1rem;
+  --font-weight: 400;
+  --line-height: 1.6;
 }
 
-.breadcrumb {
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-
-  overflow-x: auto;
-  white-space: nowrap;
-  -webkit-overflow-scrolling: touch;
-
-  font-size: 0.9rem;
-  line-height: 1;
-}
-
-.breadcrumb a,
-.breadcrumb span {
-  display: inline-flex;
-  align-items: center;
-  line-height: 1;
-  flex: 0 0 auto;
-}
-
-.breadcrumb a {
-  color: #034ad8;
-  cursor: pointer;
-}
-
-.breadcrumb .crumb-disabled {
-  color: #777;
-}
-
-.breadcrumb .crumb-sep {
-  color: #999;
-  user-select: none;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
+  font-family: var(--font-family);
+  font-size: var(--font-size);
+  line-height: var(--line-height);
+  background-color: #d3d1d41e;
+  color: #333;
 }
 
 /* =========================
-   SHARED PAGE CONTAINER
-   🔑 THIS FIXES ALIGNMENT
+   CONTAINERS & MAIN CONTENT
    ========================= */
-
 .page-container {
   max-width: 80ch;
   margin-inline: auto;
   padding-inline: 4vw;
 }
 
+main,
+.content {
+  flex: 1;
+  margin-block: 3vw 5vw;
+  max-width: 93vw;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+main p,
+main li,
+main div,
+.content p,
+.content li {
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+br {
+  line-height: 1.5;
+}
+
 /* =========================
    HEADER
    ========================= */
-
 .elv-header {
   background: #fff;
   border-bottom: 1px solid #e5e5e5;
   z-index: 100;
+  position: relative;
 }
 
-/* header content is constrained */
 .elv-header-inner {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  row-gap: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
   padding-block: 1rem 0.75rem;
 }
 
-/* ROW 1: brand */
 .header-brand {
   display: flex;
   justify-content: center;
@@ -90,7 +95,6 @@
   letter-spacing: -0.02em;
 }
 
-/* ROW 2: navigation */
 .header-sections {
   width: 100%;
 }
@@ -102,6 +106,7 @@
   padding: 0;
   list-style: none;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .elv-nav-menu a {
@@ -111,6 +116,7 @@
   border-radius: 6px;
   color: #111;
   font-weight: 500;
+  text-decoration: none;
 }
 
 .elv-nav-menu a:hover,
@@ -118,92 +124,14 @@
   background: rgba(0, 0, 0, 0.06);
 }
 
-/* ROW 3: search / lang switch */
 .header-search {
   display: flex;
   justify-content: center;
 }
 
-/* ROW 3.5: Display Settings */
-
-
 /* =========================
-   BASE LAYOUT
-========================= */
-:root {
-  --font-size: 1rem;
-  --font-family: system-ui, sans-serif;
-  --line-height: 1.6;
-}
-
-body {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  margin: 0;
-  /* 2. Bind body to the CSS variables */
-  font-family: var(--font-family);
-  font-size: var(--font-size);
-  line-height: var(--line-height);
-  background-color: #d3d1d41e;
-  color: #333;
-}
-
-/* =========================
-   MAIN CONTENT
-========================= */
-main, .content {
-  flex: 1;
-  margin-block: 5vw;
-  max-width: 93vw;
-  /* 3. Ensure container inherits the variables */
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-/* 4. Force text elements to inherit from container */
-main p, main li, main div, .content p, .content li {
-  font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
-}
-
-
-/* Safe <br> */
-br {
-  line-height: 1.5;
-}
-
-/* =========================
-   TABLES
+   LINKS & TABLES
    ========================= */
-
-.table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.table-wrapper table {
-  width: max-content;
-  border-collapse: collapse;
-}
-
-.table-wrapper th,
-.table-wrapper td {
-  white-space: nowrap;
-  text-align: left;
-}
-
-table th,
-table td {
-  padding: 0.5rem 0.75rem;
-}
-
-/* =========================
-   LINKS
-   ========================= */
-
 a {
   color: #6200ea;
   text-decoration: none;
@@ -221,127 +149,66 @@ main a {
   margin-bottom: 2vh;
 }
 
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+  width: max-content;
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  white-space: nowrap;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+}
+
 /* =========================
    FOOTER
    ========================= */
 footer {
-  /* CSS Grid creates a 2-column layout for links and a full-width bottom row */
   display: grid;
-  
-  /* Maps visual areas: 'contact' & 'about' on row 1, 'social' & 'join' on row 2, 
-     and 'disclaimer' spanning across both columns on row 3 */
   grid-template-areas:
     "contact about"
     "social join"
     "disclaimer disclaimer";
-
-  /* Centers the content inside each grid cell horizontally */
   justify-items: center;
-
-  /* Slightly darker neutral grey than body background (#d3d1d41e) for subtle contrast */
   background-color: #bebcbf;
-  
-  /* Text alignment fallback for inner inline elements */
   text-align: center;
-
-  /* Separates the footer from main content above */
   margin-top: 100px;
-
-  /* Padding around footer content: 20px top, 0px sides, 0px bottom (disclaimer handles bottom) */
   padding: 20px 0 0 0;
-
-  /* Adds consistent spacing between grid rows and columns */
   gap: 1.25rem 1rem;
 }
 
-/* Styles links inside <p> elements within the footer */
 footer p a {
-  /* Dark text color to maintain strong contrast against the light grey background */
   color: #1a1a1a;
-  
   font-size: 17px;
-  
-  /* Heavy font weight to make footer links distinct and easy to tap/read */
   font-weight: 700;
-
-  /* Removes default blue underlines for a cleaner UI button/nav feel */
   text-decoration: none;
 }
 
-/* Interactive hover state for links */
 footer p a:hover {
   text-decoration: underline;
 }
 
-/* Disclaimer section spanning the bottom of the footer */
 .disclaimer {
-  /* Assigns this element to the 2-column wide 'disclaimer' area defined in grid-template-areas */
   grid-area: disclaimer;
-
-  /* Smaller font size for legal/secondary disclaimers */
   font-size: 12.5px;
-
-  /* Increases vertical spacing between lines of small text for improved legibility */
   line-height: 1.45;
-
-  /* Slightly darker tint than main footer background to ground the bottom edge */
   background-color: #aeacaf;
-
-  /* Muted dark grey text for legal copy */
   color: #2b2b2b;
-
-  /* Subtle border line separating main links from disclaimer copy */
   border-top: 1px solid #9e9c9f;
-
-  /* Inner spacing around disclaimer text */
   padding: 14px 16px;
-
-  /* Ensures padding doesn't push element width past 100% and break grid layout */
-  box-sizing: border-box;
-
-  /* Forces the disclaimer bar to stretch completely across both grid columns */
   width: 100%;
 }
 
-<!--
-
-footer {
-  display: grid;
-  grid-template-areas:
-    "contact about"
-    "social join"
-    "disclaimer disclaimer";
-  justify-items: center;
-  background-color: #666464;
-  text-align: center;
-  margin-top: 100px;
-  padding: 10px;
-}
-
-footer p a {
-  color: #fcf4f4;
-  font-size: 17px;
-  font-weight: bolder;
-}
-
-.disclaimer {
-  grid-area: disclaimer;
-  font-size: 12.5px;
-  line-height: 1.45;
-  background: #f6f6f6;
-  border-top: 1px solid #ddd;
-  padding: 12px 16px;
-}
--->
 /* =========================
    RESPONSIVE
    ========================= */
-
 @media (max-width: 768px) {
-  .elv-nav-menu {
-    flex-wrap: wrap;
-  }
-
   .elv-header-inner {
     row-gap: 0.5rem;
   }
