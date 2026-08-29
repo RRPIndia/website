@@ -3,13 +3,17 @@
 
     <!-- ROW 1: Party name -->
     <div class="header-brand">
-      <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
-        <span class="brand-link">
-          Right to Recall<br>
-          Party
-        </span>
-      </a>
-    </div>
+    <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
+    <span class="brand-link">
+      {% if lang == 'hi' %}
+        राइट टू रिकॉल<br>पार्टी
+      {% else %}
+        Right to Recall<br>Party
+      {% endif %}
+     </span>
+     </a>
+     </div>
+
 
     <!-- ROW 2: Search -->
     {% include "search/search.njk" %}
