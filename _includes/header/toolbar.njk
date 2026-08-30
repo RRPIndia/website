@@ -8,8 +8,6 @@
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
     <select id="font-family" class="toolbar-select" title="Font Style">
-
-      <!-- apple might igbire these -->
       <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
       <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
       <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
@@ -32,7 +30,7 @@
 
   <span class="toolbar-divider" aria-hidden="true"></span>
 
-    <!-- NEW: Boldness Controls -->
+  <!-- Boldness Controls -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="weight-label"></span>
     <div class="btn-group" role="group" aria-labelledby="weight-label">
@@ -41,8 +39,9 @@
       <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
     </div>
   </div>
-	
-  
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
   <!-- Line Spacing Toggles -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="spacing-label"></span>
@@ -59,5 +58,11 @@
     </div>
   </div>
 
-</div>
+  <span class="toolbar-divider" aria-hidden="true"></span>
 
+  <!-- Language Switcher -->
+  <div class="toolbar-group">
+    {% include "header/lang-switcher.njk" %}
+  </div>
+
+</div>

@@ -3,29 +3,24 @@
 
     <!-- ROW 1: Party name -->
     <div class="header-brand">
-    <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
-    <span class="brand-link">
-      {% if lang == 'hi' %}
-        राइट टू रिकॉल<br>पार्टी
-      {% else %}
-        Right to Recall<br>Party
-      {% endif %}
-     </span>
-     </a>
-     </div>
-
+      <a href="{% if lang == 'hi' %}/hi/{% else %}/{% endif %}">
+        <span class="brand-link">
+          {% if lang == 'hi' %}
+            राइट टू रिकॉल<br>पार्टी
+          {% else %}
+            Right to Recall<br>Party
+          {% endif %}
+        </span>
+      </a>
+    </div>
 
     <!-- ROW 2: Search -->
     {% include "search/search.njk" %}
 
-    <!-- ROW 3: Language Switcher -->
-    {% include "header/lang-switcher.njk" %}
-
-    <!-- ROW 4: Display Settings -->
+    <!-- ROW 3: Display Settings & Language Switcher -->
     {% include "header/toolbar.njk" %}
 
-    
-    <!-- ROW 5: Navigation Tree -->
+    <!-- ROW 4: Navigation Tree -->
     {% include "components/nav-tree.njk" %}
 
   </div>
