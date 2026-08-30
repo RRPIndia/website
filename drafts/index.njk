@@ -6,13 +6,80 @@ eleventyNavigation:
 ---
 
 <h1>Drafts</h1>
-
 <ul>
   <li>
     <a href="/drafts/hi/">हिंदी ड्राफ्ट्स</a>
   </li>
-
   <li>
     <a href="/drafts/en/">English Drafts</a>
   </li>
 </ul>
+
+<hr>
+
+<!-- English Table -->
+<h2>English Drafts</h2>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Draft</th>
+        <th>FB Link</th>
+        <th>Drive Link</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in drafts %}
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>{{ item.enTitle | default(item.shortName, true) }}</td>
+        <td>
+          {% if item.enFb %}
+            <a href="{{ item.enFb }}" target="_blank" rel="noopener noreferrer">FB Link</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if item.enDrive %}
+            <a href="{{ item.enDrive }}" target="_blank" rel="noopener noreferrer">Drive Link</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<!-- Hindi Table -->
+<h2>हिंदी ड्राफ्ट्स (Hindi Drafts)</h2>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>ड्राफ्ट (Draft)</th>
+        <th>फेसबुक लिंक (FB Link)</th>
+        <th>ड्राइव लिंक (Drive Link)</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for item in drafts %}
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>{{ item.hiTitle | default(item.shortName, true) }}</td>
+        <td>
+          {% if item.hiFb %}
+            <a href="{{ item.hiFb }}" target="_blank" rel="noopener noreferrer">FB Link</a>
+          {% endif %}
+        </td>
+        <td>
+          {% if item.hiDrive %}
+            <a href="{{ item.hiDrive }}" target="_blank" rel="noopener noreferrer">Drive Link</a>
+          {% endif %}
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
