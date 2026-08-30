@@ -2,6 +2,57 @@
 {% set targetUrl = page.url | translatedUrl(lang) %}
 
 <nav class="lang-switcher">
-  <a href="{{ targetUrl }}">{{ otherLabel }}</a>
+  <a href="{{ targetUrl }}" id="lang-switch-link" data-current-url="{{ page.url }}">
+    {{ otherLabel }}
+  </a>
 </nav>
 
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('lang-switch-link');
+    if (!link) return;
+
+    const currentUrl = link.dataset.currentUrl;
+    
+    // Safely pull the current language from Nunjucks into JS
+    const currentLang = "{{ lang }}"; 
+    const targetLang = currentLang === 'en' ? 'hi' : 'en';
+
+    // We save under the language we are leaving, and look up the language we are targeting
+    const saveKey = 'return_path_' + currentLang;
+    const lookupKey = 'return_path_' + targetLang;
+
+    const justSwitched = sessionStorage.getItem('just_switched');
+    const savedReturnPath = sessionStorage.getItem(lookupKey);
+    const isCurrentlyHome = (currentUrl === '/' || currentUrl === '/hi/');
+
+    // 1. Check if the user arrived here via the language switcher or normal browsing
+    if (justSwitched === 'true') {
+      // Consume the flag so the next normal page click is detected accurately
+      sessionStorage.removeItem('just_switched');
+    } else {
+      // The user navigated normally. Clear the return history to start fresh.
+      sessionStorage.removeItem('return_path_en');
+      sessionStorage.removeItem('return_path_hi');
+    }
+
+    // 2. If we are on the homepage and have a stored return path, update the link
+    if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+      link.setAttribute('href', sessionStorage.getItem(lookupKey));
+    }
+
+    // 3. Handle the actual click event
+    link.addEventListener('click', () => {
+      // Save the current page URL before we leave it
+      sessionStorage.setItem(saveKey, currentUrl);
+      
+      // Set a flag so the next page knows this was a language switch, not a normal click
+      sessionStorage.setItem('just_switched', 'true');
+
+      // If we are using the return path right now, clean it up
+      if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+        sessionStorage.removeItem(lookupKey);
+      }
+    });
+  });
+</script>
