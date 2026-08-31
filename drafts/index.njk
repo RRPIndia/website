@@ -24,8 +24,8 @@ eleventyNavigation:
     <thead>
       <tr>
         <th>Draft</th>
-        <th>FB Link</th>
-        <th>Drive Link</th>
+        <th>Facebook</th>
+        <th>Drive PDF</th>
       </tr>
     </thead>
     <tbody>
@@ -35,7 +35,7 @@ eleventyNavigation:
         <td>{{ item.enTitle | default(item.shortName, true) }}</td>
         <td>
           {% if item.enFb %}
-            <a href="{{ item.enFb }}" target="_blank" rel="noopener noreferrer">FB Link</a>
+            <a href="{{ item.enFb }}" target="_blank" rel="noopener noreferrer"> {{ item.enFb }} </a>
           {% endif %}
         </td>
         <td>

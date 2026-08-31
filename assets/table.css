@@ -1,0 +1,5 @@
+.table-wrapper {                                       overflow-x: auto;
+  -webkit-overflow-scrolling: touch;                 }
+                                                     .table-wrapper table {                                 width: max-content;                                  border-collapse: collapse;                         }
+
+.table-wrapper th,                                   .table-wrapper td {                                    white-space: nowrap;                                 text-align: left;                                    padding: 0.5rem 0.75rem;                           }

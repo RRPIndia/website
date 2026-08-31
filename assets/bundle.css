@@ -3,6 +3,7 @@
 @import "fb.css";
 @import "search.css";
 @import "toolbar/toolbar.css";
+@import "table.css";
 
 /* =========================
    GLOBAL RESET & TOKENS
@@ -147,23 +148,6 @@ main a {
   color: green;
   display: block;
   margin-bottom: 2vh;
-}
-
-.table-wrapper {
-  overflow-x: auto;
-  -webkit-overflow-scrolling: touch;
-}
-
-.table-wrapper table {
-  width: max-content;
-  border-collapse: collapse;
-}
-
-.table-wrapper th,
-.table-wrapper td {
-  white-space: nowrap;
-  text-align: left;
-  padding: 0.5rem 0.75rem;
 }
 
 /* =========================
