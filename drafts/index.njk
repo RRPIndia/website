@@ -23,6 +23,7 @@ eleventyNavigation:
   <table>
     <thead>
       <tr>
+        <th>Sr. No.</th>
         <th>Draft</th>
         <th>Facebook</th>
         <th>Drive PDF</th>
@@ -32,6 +33,7 @@ eleventyNavigation:
       {% for item in drafts %}
       <tr>
         <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>{{ item.id }}</td>
         <td>{{ item.enTitle | default(item.shortName, true) }}</td>
         <td>
           {% if item.enFb %}
@@ -40,7 +42,7 @@ eleventyNavigation:
         </td>
         <td>
           {% if item.enDrive %}
-            <a href="{{ item.enDrive }}" target="_blank" rel="noopener noreferrer">Drive Link</a>
+            <a href="{{ item.enDrive }}" target="_blank" rel="noopener noreferrer"> {{ item.enDrive }}</a>
           {% endif %}
         </td>
       </tr>
@@ -57,6 +59,7 @@ eleventyNavigation:
   <table>
     <thead>
       <tr>
+        <th> क्रमांक </th>
         <th>ड्राफ्ट (Draft)</th>
         <th>फेसबुक लिंक (FB Link)</th>
         <th>ड्राइव लिंक (Drive Link)</th>
@@ -66,15 +69,16 @@ eleventyNavigation:
       {% for item in drafts %}
       <tr>
         <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>{{ item.id }}</td>
         <td>{{ item.hiTitle | default(item.shortName, true) }}</td>
         <td>
           {% if item.hiFb %}
-            <a href="{{ item.hiFb }}" target="_blank" rel="noopener noreferrer">FB Link</a>
+            <a href="{{ item.hiFb }}" target="_blank" rel="noopener noreferrer"> {{ item.hiFb }} </a>
           {% endif %}
         </td>
         <td>
           {% if item.hiDrive %}
-            <a href="{{ item.hiDrive }}" target="_blank" rel="noopener noreferrer">Drive Link</a>
+            <a href="{{ item.hiDrive }}" target="_blank" rel="noopener noreferrer">{{ item.hiDrive }} </a>
           {% endif %}
         </td>
       </tr>

@@ -1,5 +1,20 @@
-.table-wrapper {                                       overflow-x: auto;
-  -webkit-overflow-scrolling: touch;                 }
-                                                     .table-wrapper table {                                 width: max-content;                                  border-collapse: collapse;                         }
 
-.table-wrapper th,                                   .table-wrapper td {                                    white-space: nowrap;                                 text-align: left;                                    padding: 0.5rem 0.75rem;                           }
+
+.table-wrapper {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+.table-wrapper table {
+  width: 145%; /* Change this from max-content to 100% */
+  table-layout: auto; /* This tells the browser to distribute space intelligently */
+  border-collapse: collapse;
+}
+
+.table-wrapper th,
+.table-wrapper td {
+  /* Remove white-space: nowrap; so long text can wrap if the screen gets too small */
+  text-align: left;
+  vertical-align: top;
+  padding: 0.5rem 0.75rem;
+}
