@@ -1,3 +1,8 @@
+pagefind-input {
+  width: 50%; /* adjust width as needed */
+}
+
+
 pagefind-results {
   --pf-results-display: block !important;
   --pf-results-flex-direction: column !important;

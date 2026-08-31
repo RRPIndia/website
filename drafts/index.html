@@ -43,15 +43,14 @@
 
     <!-- ROW 1: Party name -->
     <div class="header-brand">
-    <a href="/">
-    <span class="brand-link">
-      
-        Right to Recall<br>Party
-      
-     </span>
-     </a>
-     </div>
-
+      <a href="/">
+        <span class="brand-link">
+          
+            Right to Recall<br>Party
+          
+        </span>
+      </a>
+    </div>
 
     <!-- ROW 2: Search -->
     <link href="/pagefind/pagefind-component-ui.css" rel="stylesheet">
@@ -64,7 +63,7 @@
 <pagefind-config faceted></pagefind-config>
 
 
-    <!-- ROW 3: Display Settings -->
+    <!-- ROW 3: Display Settings & Language Switcher -->
     <!-- Pagefind Container -->
 <div id="search" class="search-container"></div>
 
@@ -75,8 +74,6 @@
   <div class="toolbar-group">
     <label for="font-family" class="sr-only">Font Style</label>
     <select id="font-family" class="toolbar-select" title="Font Style">
-
-      <!-- apple might igbire these -->
       <option value="system-ui, -apple-system, sans-serif" style="font-family: system-ui, -apple-system, sans-serif;">Sans-Serif</option>
       <option value="Georgia, serif" style="font-family: Georgia, serif;">Serif</option>
       <option value="'Courier New', monospace" style="font-family: 'Courier New', monospace;">Monospace</option>
@@ -99,7 +96,7 @@
 
   <span class="toolbar-divider" aria-hidden="true"></span>
 
-    <!-- NEW: Boldness Controls -->
+  <!-- Boldness Controls -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="weight-label"></span>
     <div class="btn-group" role="group" aria-labelledby="weight-label">
@@ -108,8 +105,9 @@
       <button type="button" id="weight-up" title="Increase boldness" aria-label="Increase boldness">B+</button>
     </div>
   </div>
-	
-  
+
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
   <!-- Line Spacing Toggles -->
   <div class="toolbar-group">
     <span class="toolbar-label" id="spacing-label"></span>
@@ -126,21 +124,64 @@
     </div>
   </div>
 
+  <span class="toolbar-divider" aria-hidden="true"></span>
+
+  <!-- Language Switcher -->
+  <div class="toolbar-group">
+    
+
+<div class="btn-group">
+  <a href="/" id="lang-switch-link" class="lang-switch-btn" data-current-url="/drafts/" title="Switch Language">
+    <span class="lang-lbl ">हि</span>
+    <span class="lang-sep">।</span>
+    <span class="lang-lbl ">en</span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const link = document.getElementById('lang-switch-link');
+    if (!link) return;
+
+    const currentUrl = link.dataset.currentUrl;
+    const currentLang = ""; 
+    const targetLang = currentLang === 'en' ? 'hi' : 'en';
+
+    const saveKey = 'return_path_' + currentLang;
+    const lookupKey = 'return_path_' + targetLang;
+
+    const justSwitched = sessionStorage.getItem('just_switched');
+    const savedReturnPath = sessionStorage.getItem(lookupKey);
+    const isCurrentlyHome = (currentUrl === '/' || currentUrl === '/hi/');
+
+    if (justSwitched === 'true') {
+      sessionStorage.removeItem('just_switched');
+    } else {
+      sessionStorage.removeItem('return_path_en');
+      sessionStorage.removeItem('return_path_hi');
+    }
+
+    if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+      link.setAttribute('href', sessionStorage.getItem(lookupKey));
+    }
+
+    link.addEventListener('click', () => {
+      sessionStorage.setItem(saveKey, currentUrl);
+      sessionStorage.setItem('just_switched', 'true');
+
+      if (isCurrentlyHome && sessionStorage.getItem(lookupKey)) {
+        sessionStorage.removeItem(lookupKey);
+      }
+    });
+  });
+</script>
+
+  </div>
+
 </div>
 
 
-
-    <!-- ROW 4: Language Switcher -->
-    
-
-
-<nav class="lang-switcher">
-  <a href="/drafts/">English</a>
-</nav>
-
-
-
-    <!-- ROW 6: Navigation Tree -->
+    <!-- ROW 4: Navigation Tree -->
     
 
 <nav class="docs-nav" aria-label="Navigation Tree">
@@ -776,16 +817,1045 @@
       <!-- Page content -->
       
 <h1>Drafts</h1>
-
 <ul>
   <li>
     <a href="/drafts/hi/">हिंदी ड्राफ्ट्स</a>
   </li>
-
   <li>
     <a href="/drafts/en/">English Drafts</a>
   </li>
 </ul>
+
+<hr>
+
+<!-- English Table -->
+<h2>English Drafts</h2>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th>Sr. No.</th>
+        <th>Draft</th>
+        <th>Facebook</th>
+        <th>Drive PDF</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>1</td>
+        <td>dhan-vapasi</td>
+        <td>
+          
+            <a href="https://www.facebook.com/share/p/1JRugAsqS7/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/share/p/1JRugAsqS7/ </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>2</td>
+        <td>Empty Land Tax</td>
+        <td>
+          
+            <a href="https://www.facebook.com/groups/rrp02/permalink/2221683364651406/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/groups/rrp02/permalink/2221683364651406/ </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>3</td>
+        <td>Jury Court </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>4</td>
+        <td>State Jury Court </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>5</td>
+        <td>District Jury Court </td>
+        <td>
+          
+            <a href="https://www.facebook.com/groups/rrp03/permalink/677712686982661/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/groups/rrp03/permalink/677712686982661/ </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>6</td>
+        <td>woic</td>
+        <td>
+          
+            <a href="https://www.facebook.com/groups/123626143087908/permalink/390579613059225/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/groups/123626143087908/permalink/390579613059225/ </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>7</td>
+        <td>vvp-dd-chairman</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>8</td>
+        <td>vvp-central-minister</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>9</td>
+        <td>vvp-state-minister</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>10</td>
+        <td>rhb</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>11</td>
+        <td>Gau Niti</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>12</td>
+        <td>jury-panchayat</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>13</td>
+        <td>two-child-law</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>14</td>
+        <td>nrci</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>15</td>
+        <td>gun-law</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>16</td>
+        <td>state-gun-law</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>17</td>
+        <td>dist-gun-law</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>18</td>
+        <td>tcp-india</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>19</td>
+        <td>state-tcp</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>20</td>
+        <td>dist-tcp</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>21</td>
+        <td>vvp-mp</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>22</td>
+        <td>redo</td>
+        <td>
+          
+            <a href="https://www.facebook.com/singhrsl/posts/pfbid02c6rBNyodz9w7MdxQydkesySjg4ZPLsL5qsfxEbwsWd5akRqwGszbmPcd3Pr47L2Tl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/singhrsl/posts/pfbid02c6rBNyodz9w7MdxQydkesySjg4ZPLsL5qsfxEbwsWd5akRqwGszbmPcd3Pr47L2Tl </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>23</td>
+        <td>rego</td>
+        <td>
+          
+            <a href="https://www.facebook.com/singhrsl/posts/pfbid02fxHvbdzXRwnXf6CAB369G41Qt8UBPaNMZdoicEEuZgapm4BZEVQsdrBFdjLPWnUwl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/singhrsl/posts/pfbid02fxHvbdzXRwnXf6CAB369G41Qt8UBPaNMZdoicEEuZgapm4BZEVQsdrBFdjLPWnUwl </a>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>24</td>
+        <td>vvp-cm</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>25</td>
+        <td>vvp-pm</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>26</td>
+        <td>hist-revised</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>27</td>
+        <td>reservation </td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>28</td>
+        <td>vvp-sarpanch</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>29</td>
+        <td>marriage-code</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>30</td>
+        <td>mbp</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>31</td>
+        <td>vvp-health-min</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>32</td>
+        <td>coorg-law-referendum</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>33</td>
+        <td>vvp</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>34</td>
+        <td>pref-voting</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If enTitle is null, it falls back to showing the shortName -->
+        <td>35</td>
+        <td>Social Media Policy</td>
+        <td>
+          
+        </td>
+        <td>
+          
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
+<br>
+
+<!-- Hindi Table -->
+<h2>हिंदी ड्राफ्ट्स (Hindi Drafts)</h2>
+<div class="table-wrapper">
+  <table>
+    <thead>
+      <tr>
+        <th> क्रमांक </th>
+        <th>ड्राफ्ट (Draft)</th>
+        <th>फेसबुक लिंक (FB Link)</th>
+        <th>ड्राइव लिंक (Drive Link)</th>
+      </tr>
+    </thead>
+    <tbody>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>1</td>
+        <td>धन वापसी पासबुक</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2212549868863237" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2212549868863237 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1-ECjeeJKDzWIprpS5f4pL0SFEPGEpHHd" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1-ECjeeJKDzWIprpS5f4pL0SFEPGEpHHd </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>2</td>
+        <td>रिक्त भूमि कर</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2391504844301071" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2391504844301071 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1JUDoFKDKaccw11MpNOXpfJU4ym69T2dQ" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1JUDoFKDKaccw11MpNOXpfJU4ym69T2dQ </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>3</td>
+        <td>जूरी कोर्ट</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2297657633685793" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2297657633685793 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1GYy9sHHk82jLXsk1Zym8V5sEx6UX9rSb" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1GYy9sHHk82jLXsk1Zym8V5sEx6UX9rSb </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>4</td>
+        <td>राज्य जूरी कोर्ट</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2298624793589077" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2298624793589077 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1NKKBG8N8O2IlkpxX5TyaN6ORVaSz0l6-" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1NKKBG8N8O2IlkpxX5TyaN6ORVaSz0l6- </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>5</td>
+        <td>जिला जूरी कोर्ट</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3173085952809619" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3173085952809619 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1OFjlDvl8iMd5tAtVD3f2b-B2bXtvlUqc" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1OFjlDvl8iMd5tAtVD3f2b-B2bXtvlUqc </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>6</td>
+        <td>संवेदनशील क्षेत्रो में FDI पर रोक</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3088232837961598" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3088232837961598 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/12x1Cqbai_cdtJFSEWRLzGyEWo2UysLt0" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/12x1Cqbai_cdtJFSEWRLzGyEWo2UysLt0 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>7</td>
+        <td>वोट वापसी दूरदर्शन चेयरमैन</td>
+        <td>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/19OzoLPK3mwvGUV8frH1QieubQu1g4kt1" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/19OzoLPK3mwvGUV8frH1QieubQu1g4kt1 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>8</td>
+        <td>वोट वापसी केंद्रीय मंत्री</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3066182976833251" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3066182976833251 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/17N9Xd36FzmjNLjK3y2i1esk2E1ENaact" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/17N9Xd36FzmjNLjK3y2i1esk2E1ENaact </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>9</td>
+        <td>वोट वापसी राज्यमंत्री</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3066182976833251" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3066182976833251 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1cmDhzLBoTgQo8iRpIaI6iTtnvhqI1hVO" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1cmDhzLBoTgQo8iRpIaI6iTtnvhqI1hVO </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>10</td>
+        <td>राष्ट्रीय हिंदू बोर्ड</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2241776019273955" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2241776019273955 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1AdaZQBJRdxuLABhqrtIBXxUrl2xkVYj3" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1AdaZQBJRdxuLABhqrtIBXxUrl2xkVYj3 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>11</td>
+        <td>गौ नीति</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2343503319101224" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2343503319101224 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1v3S94LiwaaTPhDKLv929NlatchM2K1iF" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1v3S94LiwaaTPhDKLv929NlatchM2K1iF </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>12</td>
+        <td>जूरी पंचायत</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2347698935348329" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2347698935348329 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1BA4or97wHM48O7keb5lEznnu18wtX0K3" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1BA4or97wHM48O7keb5lEznnu18wtX0K3 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>13</td>
+        <td>टू चाइल्ड लॉ</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/pfbid027cAuxmm78XthurCCnKQGfRbWo7Eazg3WU1i6UFC414vq6KWuEDEbxBjqWXXvSMKFl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/pfbid027cAuxmm78XthurCCnKQGfRbWo7Eazg3WU1i6UFC414vq6KWuEDEbxBjqWXXvSMKFl </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1y3VEeNO_zV2TizwWfKBt2YvaHHTm7jak" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1y3VEeNO_zV2TizwWfKBt2YvaHHTm7jak </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>14</td>
+        <td>भारतीय राष्ट्रीय नागरिकता रजिस्टर</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2694929377291948" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2694929377291948 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1jYTs4J2XwFspOe-psfHl3Cjz9ojo5szq" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1jYTs4J2XwFspOe-psfHl3Cjz9ojo5szq </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>15</td>
+        <td>gun-law</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2790516097733275" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2790516097733275 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/177SDEbFpJyxP0XoOvire9PJJPIw4Fxa8" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/177SDEbFpJyxP0XoOvire9PJJPIw4Fxa8 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>16</td>
+        <td>state-gun-law</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3173038446147703" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3173038446147703 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1F0jJ5zD30JIWLk7zCgoq1iImNYeuywYc" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1F0jJ5zD30JIWLk7zCgoq1iImNYeuywYc </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>17</td>
+        <td>dist-gun-law</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3173049442813270" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3173049442813270 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1KpVgGaHYoYNnDtVMpu_46S_4_Ze8Ln4Q" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1KpVgGaHYoYNnDtVMpu_46S_4_Ze8Ln4Q </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>18</td>
+        <td>पारदर्शी शिकायत प्रणाली - भारत</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2785178204933731" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2785178204933731 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1IVs2I7toaI1EbjzClssp9SOJqAYPmqSv" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1IVs2I7toaI1EbjzClssp9SOJqAYPmqSv </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>19</td>
+        <td>पारदर्शी शिकायत प्रणाली - राज्य</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3173090739475807" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3173090739475807 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1l8cA6PQXo3jXj2almqJIqyWGLxByfF8-" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1l8cA6PQXo3jXj2almqJIqyWGLxByfF8- </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>20</td>
+        <td>पारदर्शी शिकायत प्रणाली - जिला</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3173094346142113" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3173094346142113 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1-UmLq7Xw-myFCJG8MRcVVuFwlKKffdjY" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1-UmLq7Xw-myFCJG8MRcVVuFwlKKffdjY </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>21</td>
+        <td>वोट वापसी सांसद </td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2542090435909177" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2542090435909177 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1eKMWI8S9rEFgVfb8l6Iv4Ook_5gEgaLE" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1eKMWI8S9rEFgVfb8l6Iv4Ook_5gEgaLE </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>22</td>
+        <td>रेडो </td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2339863452798544" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2339863452798544 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1EQKBRynUE1RSbE9vZJ4kFGOT5pk-lsua" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1EQKBRynUE1RSbE9vZJ4kFGOT5pk-lsua </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>23</td>
+        <td>रेगो </td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2340635649387991" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2340635649387991 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/15HFHoVS0RnfCtcC5M9Og8pIPQqPUZt6t" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/15HFHoVS0RnfCtcC5M9Og8pIPQqPUZt6t </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>24</td>
+        <td>वोट वापसी  मुख्यमंत्री</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2980176852100531" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2980176852100531 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/15HFHoVS0RnfCtcC5M9Og8pIPQqPUZt6t" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/15HFHoVS0RnfCtcC5M9Og8pIPQqPUZt6t </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>25</td>
+        <td>वोट वापसी प्रधानमंत्री</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/2867848606666690" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/2867848606666690 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1uhguY2LpEJQqay1EyAeXjiJxASl5G8Og" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1uhguY2LpEJQqay1EyAeXjiJxASl5G8Og </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>26</td>
+        <td>इतिहास पुनरीक्षण </td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3165761576875390" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3165761576875390 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1uhguY2LpEJQqay1EyAeXjiJxASl5G8Og" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1uhguY2LpEJQqay1EyAeXjiJxASl5G8Og </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>27</td>
+        <td>आरक्षण समायोजन</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/3147315058720042" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/3147315058720042 </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1a0dp4MKzx1HvARNeE69boITPX8fLhMbQ" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1a0dp4MKzx1HvARNeE69boITPX8fLhMbQ </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>28</td>
+        <td>वोट वापसी  सरपंच</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/pfbid02dBeK4H8wxbEUzyngxDwCzPTPLzyobHCw2dbNJkEwBbAatKxfLYtsnSrLJrZ9frdzl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/pfbid02dBeK4H8wxbEUzyngxDwCzPTPLzyobHCw2dbNJkEwBbAatKxfLYtsnSrLJrZ9frdzl </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1jShvOlAz9wDkY1PrISiRXdLOTH9slhxI" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1jShvOlAz9wDkY1PrISiRXdLOTH9slhxI </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>29</td>
+        <td>marriage-code</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/pfbid02WLzYiBwW87UNwcbkWxwhCGLeAKnFHFhwNK53rJNpSdWeUM3zgyJaBcS1pf5ozjk4l" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/pfbid02WLzYiBwW87UNwcbkWxwhCGLeAKnFHFhwNK53rJNpSdWeUM3zgyJaBcS1pf5ozjk4l </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1thxRrgrEy49bisA4Su6xlE7kKK4d-y6Q" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1thxRrgrEy49bisA4Su6xlE7kKK4d-y6Q </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>30</td>
+        <td>mbp</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/pfbid02PMVgvSyDFCKGRyZL2N9rcHTZQZnvsA8u7js2YaqSoFEKDcrr6HVx2YBQn2UDSkntl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/pfbid02PMVgvSyDFCKGRyZL2N9rcHTZQZnvsA8u7js2YaqSoFEKDcrr6HVx2YBQn2UDSkntl </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1TDZVmPWYeLAhlld_y5qIg8Wsk-eMZshL" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1TDZVmPWYeLAhlld_y5qIg8Wsk-eMZshL </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>31</td>
+        <td>वोट वापसी  स्वास्थ्य मंत्री</td>
+        <td>
+          
+            <a href="https://www.facebook.com/pawan.jury/posts/pfbid0kNic2FjJzjxmGZYZtQcJrqsdH5STtEM7Ls8jua6yojiNWNMFKXeCjpFk5NQDKxTXl" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/pawan.jury/posts/pfbid0kNic2FjJzjxmGZYZtQcJrqsdH5STtEM7Ls8jua6yojiNWNMFKXeCjpFk5NQDKxTXl </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1_NE8Vqq24M6p1gF7qx78czNmcLaWlf0-" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1_NE8Vqq24M6p1gF7qx78czNmcLaWlf0- </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>32</td>
+        <td>coorg-law-referendum</td>
+        <td>
+          
+            <a href="https://www.facebook.com/100003247365514/posts/6072194916232027/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/100003247365514/posts/6072194916232027/ </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1FfQ8bCKb5u6BWm4zYX8ZP4gdnokSNoj-" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1FfQ8bCKb5u6BWm4zYX8ZP4gdnokSNoj- </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>33</td>
+        <td>वोट वापसी पासबुक </td>
+        <td>
+          
+            <a href="https://www.facebook.com/100003247365514/posts/6099407636844088/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/100003247365514/posts/6099407636844088/ </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1Bp9jFH_o-exZ0bmCp_IkJC-oaDZAS-83" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1Bp9jFH_o-exZ0bmCp_IkJC-oaDZAS-83 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>34</td>
+        <td>वरीय मतदान प्रणाली</td>
+        <td>
+          
+            <a href="https://www.facebook.com/100003247365514/posts/6286580794793437/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/100003247365514/posts/6286580794793437/ </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1Bp9jFH_o-exZ0bmCp_IkJC-oaDZAS-83" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1Bp9jFH_o-exZ0bmCp_IkJC-oaDZAS-83 </a>
+          
+        </td>
+      </tr>
+      
+      <tr>
+        <!-- If hiTitle is null, it falls back to showing the shortName -->
+        <td>35</td>
+        <td>सोशल मीडिया पॉलिसी</td>
+        <td>
+          
+            <a href="https://www.facebook.com/100003247365514/posts/6380464975405018/" target="_blank" rel="noopener noreferrer"> https://www.facebook.com/100003247365514/posts/6380464975405018/ </a>
+          
+        </td>
+        <td>
+          
+            <a href="https://drive.google.com/drive/folders/1j8wM1vrzl_CNy73EMx2AgPZaluloKRpz" target="_blank" rel="noopener noreferrer">https://drive.google.com/drive/folders/1j8wM1vrzl_CNy73EMx2AgPZaluloKRpz </a>
+          
+        </td>
+      </tr>
+      
+    </tbody>
+  </table>
+</div>
+
 
 
     </div>
