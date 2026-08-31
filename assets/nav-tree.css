@@ -17,7 +17,7 @@
   margin-block: 0.25rem;
 }
 
-/* 1. Parent Accordion Header */
+/* 1. Parent Accordion Header (Entire row is a clickable toggle) */
 .docs-nav__summary {
   display: flex;
   align-items: center;
@@ -39,7 +39,7 @@
   display: none;
 }
 
-/* Triangle indicator */
+/* Triangle indicator on the left */
 .docs-nav__arrow {
   display: inline-block;
   font-size: 0.65rem;
@@ -48,28 +48,31 @@
   transition: transform 0.15s ease;
 }
 
+/* Rotate arrow when open */
 .docs-nav__details[open] > .docs-nav__summary > .docs-nav__arrow {
   transform: rotate(90deg);
 }
 
 /* 2. Distinct Child Container */
 .docs-nav__sublist {
-  margin-left: 1.25rem;
-  padding-left: 0.85rem;
+  /* Aligns the vertical border nicely under the start of the parent text */
+  margin-left: 1rem; 
+  /* Reduces the gap between the vertical line and the child links */
+  padding-left: 0.25rem; 
   border-left: 2px solid #cbd5e1;
-  margin-block: 0.25rem 0.5rem;
+  margin-block: 0.15rem 0.5rem;
 }
 
 .docs-nav__subitem {
-  margin-block: 0.35rem;
+  margin-block: 0.15rem; /* Tightened up slightly for a better list feel */
 }
 
 /* 3. Child Links */
 .docs-nav a.docs-nav__link,
 main .docs-nav a.docs-nav__link {
-  display: inline-block !important;
-  padding: 0.2rem 0.4rem;
-  font-size: 0.92rem;
+  display: block !important; /* Changed from inline-block so the clickable area is wider */
+  padding: 0.3rem 0.5rem;
+  font-size: 0.95rem;
   font-weight: 400;
   color: #334155 !important;
   text-decoration: underline !important;
@@ -79,6 +82,7 @@ main .docs-nav a.docs-nav__link {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
+
 
 /* 4. Disable sticky active / focus highlight states */
 .docs-nav__summary:active,
@@ -103,3 +107,16 @@ main .docs-nav a.docs-nav__link--root {
   outline: none;
   -webkit-tap-highlight-color: transparent;
 }
+
+/* 5. Nested List Tweaks */
+/* Pulls the nested children slightly closer to the Overview link */
+.docs-nav__sublist--nested {
+  margin-top: 0.15rem;
+}
+
+/* Optional: Make the Overview text slightly bolder so it stands out as the parent */
+.docs-nav a.docs-nav__link--overview,
+main .docs-nav a.docs-nav__link--overview {
+  font-weight: 600 !important;
+}
+

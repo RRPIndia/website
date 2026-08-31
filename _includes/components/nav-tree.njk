@@ -1,11 +1,10 @@
 {% set navPages = collections.all | eleventyNavigation %}
-
 <nav class="docs-nav" aria-label="Navigation Tree">
   <ul class="docs-nav__list">
     {% for entry in navPages %}
       <li class="docs-nav__item">
-        
-        {# Special Handling for Facebook Archive (Multi-level Paginated Tree) #}
+
+        {# Special Handling for Facebook Archive #}
         {% if entry.key == "fb" %}
           <details class="docs-nav__details">
             <summary class="docs-nav__summary">
@@ -14,25 +13,35 @@
             </summary>
             
             <ul class="docs-nav__sublist">
-              {% for yData in collections.postsByYear %}
-                <li class="docs-nav__subitem">
-                  <details class="docs-nav__details">
-                    <summary class="docs-nav__summary">
-                      <span class="docs-nav__arrow" aria-hidden="true">▶</span>
-                      <span class="docs-nav__title">{{ yData.year }}</span>
-                    </summary>
-                    <ul class="docs-nav__sublist">
-                      {% for m in yData.months %}
-                        <li class="docs-nav__subitem">
-                          <a class="docs-nav__link" href="/fb-export/{{ yData.year }}/{{ m }}/">
-                            {{ m }}
-                          </a>
-                        </li>
-                      {% endfor %}
-                    </ul>
-                  </details>
-                </li>
-              {% endfor %}
+              <li class="docs-nav__subitem">
+                <a class="docs-nav__link docs-nav__link--overview" href="{{ entry.url | default('/fb-export/') }}">
+                  {{ entry.title }} Home
+                </a>
+              </li>
+
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  {% for yData in collections.postsByYear %}
+                    <li class="docs-nav__subitem">
+                      <details class="docs-nav__details">
+                        <summary class="docs-nav__summary">
+                          <span class="docs-nav__arrow" aria-hidden="true">▶</span>
+                          <span class="docs-nav__title">{{ yData.year }}</span>
+                        </summary>
+                        <ul class="docs-nav__sublist">
+                          {% for m in yData.months %}
+                            <li class="docs-nav__subitem">
+                              <a class="docs-nav__link" href="/fb-export/{{ yData.year }}/{{ m }}/">
+                                {{ m }}
+                              </a>
+                            </li>
+                          {% endfor %}
+                        </ul>
+                      </details>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
             </ul>
           </details>
 
@@ -43,16 +52,33 @@
               <span class="docs-nav__arrow" aria-hidden="true">▶</span>
               <span class="docs-nav__title">{{ entry.title }}</span>
             </summary>
+            
             <ul class="docs-nav__sublist">
-              {% for child in entry.children %}
+              {# Level 1 Indent: Overview Link #}
+              {% if entry.url %}
                 <li class="docs-nav__subitem">
-                  <a class="docs-nav__link" href="{{ child.url }}">
-                    {{ child.title }}
+                  <a class="docs-nav__link docs-nav__link--overview" href="{{ entry.url }}">
+                    {{ entry.title }} Overview
                   </a>
                 </li>
-              {% endfor %}
+              {% endif %}
+
+              {# Level 2 Indent: Children wrapped in a nested sublist #}
+              <li>
+                <ul class="docs-nav__sublist docs-nav__sublist--nested">
+                  {% for child in entry.children %}
+                    <li class="docs-nav__subitem">
+                      <a class="docs-nav__link" href="{{ child.url }}">
+                        {{ child.title }}
+                      </a>
+                    </li>
+                  {% endfor %}
+                </ul>
+              </li>
             </ul>
           </details>
+
+        {# Standard Single Links (No children) #}
         {% else %}
           <a class="docs-nav__link docs-nav__link--root" href="{{ entry.url }}">
             {{ entry.title }}
@@ -63,3 +89,4 @@
     {% endfor %}
   </ul>
 </nav>
+
