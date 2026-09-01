@@ -17,45 +17,46 @@ drafts_by_name = {
 def process_directory(lang):
     directory = ROOT / "drafts" / lang
 
-    for md_file in directory.glob("*.md"):
-        short_name = md_file.stem.strip()
+    # Gather both .md and .html files
+    files = list(directory.glob("*.md")) + list(directory.glob("*.html"))
+
+    for filepath in files:
+        short_name = filepath.stem.strip()
         draft = drafts_by_name.get(short_name)
 
         if not draft:
-            print(f"SKIP: {md_file} — no entry in drafts.json")
+            print(f"SKIP: {filepath} — no entry in drafts.json")
             continue
 
         if lang == "hi":
             title = draft.get("hiTitle") or draft["shortName"]
-            description = draft.get("hiDesc", "")
+            # FIXED: Added `or ""` to handle JSON nulls
+            description = draft.get("hiDesc") or "" 
             nav_key = draft.get("hiNav") or f"draft-hi-{short_name}"
             parent = "drafts-hi"
         else:
             title = draft.get("enTitle") or draft["shortName"]
-            description = draft.get("enDesc", "")
+            # FIXED: Added `or ""` to handle JSON nulls
+            description = draft.get("enDesc") or "" 
             nav_key = draft.get("enNav") or f"draft-en-{short_name}"
             parent = "drafts-en"
 
         front_matter = f"""---
 title: "{title.replace('"', '\\"')}"
 description: "{description.replace('"', '\\"').replace(chr(10), ' ')}"
-eleventyNavigation:
-  key: "{nav_key}"
-  parent: "{parent}"
-  title: "{title.replace('"', '\\"')}"
 ---
 
 """
 
-        content = md_file.read_text(encoding="utf-8")
+        content = filepath.read_text(encoding="utf-8")
 
         # Don't add front matter twice.
         if content.lstrip().startswith("---"):
-            print(f"SKIP: {md_file} — already has front matter")
+            print(f"SKIP: {filepath} — already has front matter")
             continue
 
-        md_file.write_text(front_matter + content, encoding="utf-8")
-        print(f"OK:   {md_file}")
+        filepath.write_text(front_matter + content, encoding="utf-8")
+        print(f"OK:   {filepath}")
 
 
 process_directory("hi")
